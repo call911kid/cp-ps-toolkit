@@ -4092,4 +4092,1232 @@ public static bool IsTPrime<T>(T n) where T : IBinaryInteger<T>
 }$end$]]></Code>
         </Snippet>
     </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>rup2d (cprup2d)</Title>
+            <Shortcut>cprup2d</Shortcut>
+            <Description>A 2D range update structure providing O(1) submatrix additions and O(R x C) reconstruction.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public sealed class RangeUpdate2D<T> where T : INumber<T>
+{
+    private readonly T[,] _diff;
+    private readonly int _rows;
+    private readonly int _cols;
+    public int Rows => _rows;
+    public int Cols => _cols;
+    public RangeUpdate2D(int rows, int cols)
+    {
+        _rows = rows;
+        _cols = cols;
+        _diff = new T[rows + 1, cols + 1];
+    }
+    public RangeUpdate2D(T[,] source) : this(source.GetLength(0), source.GetLength(1))
+    {
+        for (int i = 0; i < _rows; i++)
+        {
+            for (int j = 0; j < _cols; j++)
+            {
+                T top = i > 0 ? source[i - 1, j] : T.Zero;
+                T left = j > 0 ? source[i, j - 1] : T.Zero;
+                T diag = (i > 0 && j > 0) ? source[i - 1, j - 1] : T.Zero;
+                _diff[i, j] = source[i, j] - top - left + diag;
+            }
+        }
+    }
+    public void Add(int r1, int c1, int r2, int c2, T value)
+    {
+        _diff[r1, c1] += value;
+        _diff[r1, c2 + 1] -= value;
+        _diff[r2 + 1, c1] -= value;
+        _diff[r2 + 1, c2 + 1] += value;
+    }
+    public T[,] Build()
+    {
+        T[,] result = new T[_rows, _cols];
+        Build(result);
+        return result;
+    }
+    public void Build(T[,] destination)
+    {
+        for (int i = 0; i < _rows; i++)
+        {
+            for (int j = 0; j < _cols; j++)
+            {
+                T top = i > 0 ? destination[i - 1, j] : T.Zero;
+                T left = j > 0 ? destination[i, j - 1] : T.Zero;
+                T diag = (i > 0 && j > 0) ? destination[i - 1, j - 1] : T.Zero;
+                destination[i, j] = _diff[i, j] + top + left - diag;
+            }
+        }
+    }
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>rup2d (cp_rup2d)</Title>
+            <Shortcut>cp_rup2d</Shortcut>
+            <Description>A 2D range update structure providing O(1) submatrix additions and O(R x C) reconstruction.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public sealed class RangeUpdate2D<T> where T : INumber<T>
+{
+    private readonly T[,] _diff;
+    private readonly int _rows;
+    private readonly int _cols;
+    public int Rows => _rows;
+    public int Cols => _cols;
+    public RangeUpdate2D(int rows, int cols)
+    {
+        _rows = rows;
+        _cols = cols;
+        _diff = new T[rows + 1, cols + 1];
+    }
+    public RangeUpdate2D(T[,] source) : this(source.GetLength(0), source.GetLength(1))
+    {
+        for (int i = 0; i < _rows; i++)
+        {
+            for (int j = 0; j < _cols; j++)
+            {
+                T top = i > 0 ? source[i - 1, j] : T.Zero;
+                T left = j > 0 ? source[i, j - 1] : T.Zero;
+                T diag = (i > 0 && j > 0) ? source[i - 1, j - 1] : T.Zero;
+                _diff[i, j] = source[i, j] - top - left + diag;
+            }
+        }
+    }
+    public void Add(int r1, int c1, int r2, int c2, T value)
+    {
+        _diff[r1, c1] += value;
+        _diff[r1, c2 + 1] -= value;
+        _diff[r2 + 1, c1] -= value;
+        _diff[r2 + 1, c2 + 1] += value;
+    }
+    public T[,] Build()
+    {
+        T[,] result = new T[_rows, _cols];
+        Build(result);
+        return result;
+    }
+    public void Build(T[,] destination)
+    {
+        for (int i = 0; i < _rows; i++)
+        {
+            for (int j = 0; j < _cols; j++)
+            {
+                T top = i > 0 ? destination[i - 1, j] : T.Zero;
+                T left = j > 0 ? destination[i, j - 1] : T.Zero;
+                T diag = (i > 0 && j > 0) ? destination[i - 1, j - 1] : T.Zero;
+                destination[i, j] = _diff[i, j] + top + left - diag;
+            }
+        }
+    }
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>rup2d (rup2d)</Title>
+            <Shortcut>rup2d</Shortcut>
+            <Description>A 2D range update structure providing O(1) submatrix additions and O(R x C) reconstruction.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public sealed class RangeUpdate2D<T> where T : INumber<T>
+{
+    private readonly T[,] _diff;
+    private readonly int _rows;
+    private readonly int _cols;
+    public int Rows => _rows;
+    public int Cols => _cols;
+    public RangeUpdate2D(int rows, int cols)
+    {
+        _rows = rows;
+        _cols = cols;
+        _diff = new T[rows + 1, cols + 1];
+    }
+    public RangeUpdate2D(T[,] source) : this(source.GetLength(0), source.GetLength(1))
+    {
+        for (int i = 0; i < _rows; i++)
+        {
+            for (int j = 0; j < _cols; j++)
+            {
+                T top = i > 0 ? source[i - 1, j] : T.Zero;
+                T left = j > 0 ? source[i, j - 1] : T.Zero;
+                T diag = (i > 0 && j > 0) ? source[i - 1, j - 1] : T.Zero;
+                _diff[i, j] = source[i, j] - top - left + diag;
+            }
+        }
+    }
+    public void Add(int r1, int c1, int r2, int c2, T value)
+    {
+        _diff[r1, c1] += value;
+        _diff[r1, c2 + 1] -= value;
+        _diff[r2 + 1, c1] -= value;
+        _diff[r2 + 1, c2 + 1] += value;
+    }
+    public T[,] Build()
+    {
+        T[,] result = new T[_rows, _cols];
+        Build(result);
+        return result;
+    }
+    public void Build(T[,] destination)
+    {
+        for (int i = 0; i < _rows; i++)
+        {
+            for (int j = 0; j < _cols; j++)
+            {
+                T top = i > 0 ? destination[i - 1, j] : T.Zero;
+                T left = j > 0 ? destination[i, j - 1] : T.Zero;
+                T diag = (i > 0 && j > 0) ? destination[i - 1, j - 1] : T.Zero;
+                destination[i, j] = _diff[i, j] + top + left - diag;
+            }
+        }
+    }
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>rup2d (RangeUpdate2D)</Title>
+            <Shortcut>RangeUpdate2D</Shortcut>
+            <Description>A 2D range update structure providing O(1) submatrix additions and O(R x C) reconstruction.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public sealed class RangeUpdate2D<T> where T : INumber<T>
+{
+    private readonly T[,] _diff;
+    private readonly int _rows;
+    private readonly int _cols;
+    public int Rows => _rows;
+    public int Cols => _cols;
+    public RangeUpdate2D(int rows, int cols)
+    {
+        _rows = rows;
+        _cols = cols;
+        _diff = new T[rows + 1, cols + 1];
+    }
+    public RangeUpdate2D(T[,] source) : this(source.GetLength(0), source.GetLength(1))
+    {
+        for (int i = 0; i < _rows; i++)
+        {
+            for (int j = 0; j < _cols; j++)
+            {
+                T top = i > 0 ? source[i - 1, j] : T.Zero;
+                T left = j > 0 ? source[i, j - 1] : T.Zero;
+                T diag = (i > 0 && j > 0) ? source[i - 1, j - 1] : T.Zero;
+                _diff[i, j] = source[i, j] - top - left + diag;
+            }
+        }
+    }
+    public void Add(int r1, int c1, int r2, int c2, T value)
+    {
+        _diff[r1, c1] += value;
+        _diff[r1, c2 + 1] -= value;
+        _diff[r2 + 1, c1] -= value;
+        _diff[r2 + 1, c2 + 1] += value;
+    }
+    public T[,] Build()
+    {
+        T[,] result = new T[_rows, _cols];
+        Build(result);
+        return result;
+    }
+    public void Build(T[,] destination)
+    {
+        for (int i = 0; i < _rows; i++)
+        {
+            for (int j = 0; j < _cols; j++)
+            {
+                T top = i > 0 ? destination[i - 1, j] : T.Zero;
+                T left = j > 0 ? destination[i, j - 1] : T.Zero;
+                T diag = (i > 0 && j > 0) ? destination[i - 1, j - 1] : T.Zero;
+                destination[i, j] = _diff[i, j] + top + left - diag;
+            }
+        }
+    }
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>rup1d (cprup1d)</Title>
+            <Shortcut>cprup1d</Shortcut>
+            <Description>A 1D range update structure providing O(1) range additions and O(N) reconstruction.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public sealed class RangeUpdate<T> where T : INumber<T>
+{
+    private readonly T[] _diff;
+    private readonly int _length;
+    public int Length => _length;
+    public RangeUpdate(int length)
+    {
+        _length = length;
+        _diff = new T[length + 1];
+    }
+    public RangeUpdate(ReadOnlySpan<T> source) : this(source.Length)
+    {
+        if (source.IsEmpty) return;
+
+        _diff[0] = source[0];
+        for (int i = 1; i < source.Length; i++)
+        {
+            _diff[i] = source[i] - source[i - 1];
+        }
+    }
+    public void Add(int left, int right, T value)
+    {
+        _diff[left] += value;
+        _diff[right + 1] -= value;
+    }
+    public void Add(int index, T value) => Add(index, index, value);
+    public T[] Build()
+    {
+        T[] result = new T[_length];
+        Build(result);
+        return result;
+    }
+    public void Build(Span<T> destination)
+    {
+        T current = T.Zero;
+        for (int i = 0; i < _length; i++)
+        {
+            current += _diff[i];
+            destination[i] = current;
+        }
+    }
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>rup1d (cp_rup1d)</Title>
+            <Shortcut>cp_rup1d</Shortcut>
+            <Description>A 1D range update structure providing O(1) range additions and O(N) reconstruction.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public sealed class RangeUpdate<T> where T : INumber<T>
+{
+    private readonly T[] _diff;
+    private readonly int _length;
+    public int Length => _length;
+    public RangeUpdate(int length)
+    {
+        _length = length;
+        _diff = new T[length + 1];
+    }
+    public RangeUpdate(ReadOnlySpan<T> source) : this(source.Length)
+    {
+        if (source.IsEmpty) return;
+
+        _diff[0] = source[0];
+        for (int i = 1; i < source.Length; i++)
+        {
+            _diff[i] = source[i] - source[i - 1];
+        }
+    }
+    public void Add(int left, int right, T value)
+    {
+        _diff[left] += value;
+        _diff[right + 1] -= value;
+    }
+    public void Add(int index, T value) => Add(index, index, value);
+    public T[] Build()
+    {
+        T[] result = new T[_length];
+        Build(result);
+        return result;
+    }
+    public void Build(Span<T> destination)
+    {
+        T current = T.Zero;
+        for (int i = 0; i < _length; i++)
+        {
+            current += _diff[i];
+            destination[i] = current;
+        }
+    }
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>rup1d (rup1d)</Title>
+            <Shortcut>rup1d</Shortcut>
+            <Description>A 1D range update structure providing O(1) range additions and O(N) reconstruction.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public sealed class RangeUpdate<T> where T : INumber<T>
+{
+    private readonly T[] _diff;
+    private readonly int _length;
+    public int Length => _length;
+    public RangeUpdate(int length)
+    {
+        _length = length;
+        _diff = new T[length + 1];
+    }
+    public RangeUpdate(ReadOnlySpan<T> source) : this(source.Length)
+    {
+        if (source.IsEmpty) return;
+
+        _diff[0] = source[0];
+        for (int i = 1; i < source.Length; i++)
+        {
+            _diff[i] = source[i] - source[i - 1];
+        }
+    }
+    public void Add(int left, int right, T value)
+    {
+        _diff[left] += value;
+        _diff[right + 1] -= value;
+    }
+    public void Add(int index, T value) => Add(index, index, value);
+    public T[] Build()
+    {
+        T[] result = new T[_length];
+        Build(result);
+        return result;
+    }
+    public void Build(Span<T> destination)
+    {
+        T current = T.Zero;
+        for (int i = 0; i < _length; i++)
+        {
+            current += _diff[i];
+            destination[i] = current;
+        }
+    }
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>rup1d (RangeUpdate)</Title>
+            <Shortcut>RangeUpdate</Shortcut>
+            <Description>A 1D range update structure providing O(1) range additions and O(N) reconstruction.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public sealed class RangeUpdate<T> where T : INumber<T>
+{
+    private readonly T[] _diff;
+    private readonly int _length;
+    public int Length => _length;
+    public RangeUpdate(int length)
+    {
+        _length = length;
+        _diff = new T[length + 1];
+    }
+    public RangeUpdate(ReadOnlySpan<T> source) : this(source.Length)
+    {
+        if (source.IsEmpty) return;
+
+        _diff[0] = source[0];
+        for (int i = 1; i < source.Length; i++)
+        {
+            _diff[i] = source[i] - source[i - 1];
+        }
+    }
+    public void Add(int left, int right, T value)
+    {
+        _diff[left] += value;
+        _diff[right + 1] -= value;
+    }
+    public void Add(int index, T value) => Add(index, index, value);
+    public T[] Build()
+    {
+        T[] result = new T[_length];
+        Build(result);
+        return result;
+    }
+    public void Build(Span<T> destination)
+    {
+        T current = T.Zero;
+        for (int i = 0; i < _length; i++)
+        {
+            current += _diff[i];
+            destination[i] = current;
+        }
+    }
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>psum (cppsum)</Title>
+            <Shortcut>cppsum</Shortcut>
+            <Description>A 1D partial sum array providing O(1) range, prefix, and suffix queries with zero branches.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public sealed class PartialSum<T> where T : INumber<T>
+{
+    private readonly T[] _pref;
+    public int Length => _pref.Length - 1;
+    public T TotalSum => _pref[^1];
+    public PartialSum(ReadOnlySpan<T> source)
+    {
+        _pref = new T[source.Length + 1];
+        _pref[0] = T.Zero;
+        for (int i = 0; i < source.Length; i++)
+        {
+            _pref[i + 1] = _pref[i] + source[i];
+        }
+    }
+    public T Query(int left, int right)
+        => _pref[right + 1] - _pref[left];
+    public T Prefix(int right)
+        => _pref[right + 1];
+    public T Suffix(int left)
+        => _pref[^1] - _pref[left];
+    public T this[int left, int right] => Query(left, right);
+    
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>psum (cp_psum)</Title>
+            <Shortcut>cp_psum</Shortcut>
+            <Description>A 1D partial sum array providing O(1) range, prefix, and suffix queries with zero branches.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public sealed class PartialSum<T> where T : INumber<T>
+{
+    private readonly T[] _pref;
+    public int Length => _pref.Length - 1;
+    public T TotalSum => _pref[^1];
+    public PartialSum(ReadOnlySpan<T> source)
+    {
+        _pref = new T[source.Length + 1];
+        _pref[0] = T.Zero;
+        for (int i = 0; i < source.Length; i++)
+        {
+            _pref[i + 1] = _pref[i] + source[i];
+        }
+    }
+    public T Query(int left, int right)
+        => _pref[right + 1] - _pref[left];
+    public T Prefix(int right)
+        => _pref[right + 1];
+    public T Suffix(int left)
+        => _pref[^1] - _pref[left];
+    public T this[int left, int right] => Query(left, right);
+    
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>psum (psum)</Title>
+            <Shortcut>psum</Shortcut>
+            <Description>A 1D partial sum array providing O(1) range, prefix, and suffix queries with zero branches.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public sealed class PartialSum<T> where T : INumber<T>
+{
+    private readonly T[] _pref;
+    public int Length => _pref.Length - 1;
+    public T TotalSum => _pref[^1];
+    public PartialSum(ReadOnlySpan<T> source)
+    {
+        _pref = new T[source.Length + 1];
+        _pref[0] = T.Zero;
+        for (int i = 0; i < source.Length; i++)
+        {
+            _pref[i + 1] = _pref[i] + source[i];
+        }
+    }
+    public T Query(int left, int right)
+        => _pref[right + 1] - _pref[left];
+    public T Prefix(int right)
+        => _pref[right + 1];
+    public T Suffix(int left)
+        => _pref[^1] - _pref[left];
+    public T this[int left, int right] => Query(left, right);
+    
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>psum (PartialSum)</Title>
+            <Shortcut>PartialSum</Shortcut>
+            <Description>A 1D partial sum array providing O(1) range, prefix, and suffix queries with zero branches.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public sealed class PartialSum<T> where T : INumber<T>
+{
+    private readonly T[] _pref;
+    public int Length => _pref.Length - 1;
+    public T TotalSum => _pref[^1];
+    public PartialSum(ReadOnlySpan<T> source)
+    {
+        _pref = new T[source.Length + 1];
+        _pref[0] = T.Zero;
+        for (int i = 0; i < source.Length; i++)
+        {
+            _pref[i + 1] = _pref[i] + source[i];
+        }
+    }
+    public T Query(int left, int right)
+        => _pref[right + 1] - _pref[left];
+    public T Prefix(int right)
+        => _pref[right + 1];
+    public T Suffix(int left)
+        => _pref[^1] - _pref[left];
+    public T this[int left, int right] => Query(left, right);
+    
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>psum2d (cppsum2d)</Title>
+            <Shortcut>cppsum2d</Shortcut>
+            <Description>A 2D partial sum table providing O(1) subgrid, prefix, and suffix queries with zero branches.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public sealed class PartialSum2D<T> where T : INumber<T>
+{
+    private readonly T[,] _pref;
+    private readonly int _rows;
+    private readonly int _cols;
+    public int Rows => _rows;
+    public int Cols => _cols;
+    public T TotalSum => _pref[_rows, _cols];
+    public PartialSum2D(T[,] source)
+    {
+        _rows = source.GetLength(0);
+        _cols = source.GetLength(1);
+        _pref = new T[_rows + 1, _cols + 1];
+
+        for (int i = 0; i < _rows; i++)
+        {
+            for (int j = 0; j < _cols; j++)
+            {
+                _pref[i + 1, j + 1] = source[i, j]
+                    + _pref[i, j + 1]
+                    + _pref[i + 1, j]
+                    - _pref[i, j];
+            }
+        }
+    }
+    public T Query(int r1, int c1, int r2, int c2)
+        => _pref[r2 + 1, c2 + 1] - _pref[r1, c2 + 1] - _pref[r2 + 1, c1] + _pref[r1, c1];
+    public T Prefix(int r, int c)
+        => _pref[r + 1, c + 1];
+    public T Suffix(int r, int c)
+        => Query(r, c, _rows - 1, _cols - 1);
+    public T this[int r1, int c1, int r2, int c2] => Query(r1, c1, r2, c2);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>psum2d (cp_psum2d)</Title>
+            <Shortcut>cp_psum2d</Shortcut>
+            <Description>A 2D partial sum table providing O(1) subgrid, prefix, and suffix queries with zero branches.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public sealed class PartialSum2D<T> where T : INumber<T>
+{
+    private readonly T[,] _pref;
+    private readonly int _rows;
+    private readonly int _cols;
+    public int Rows => _rows;
+    public int Cols => _cols;
+    public T TotalSum => _pref[_rows, _cols];
+    public PartialSum2D(T[,] source)
+    {
+        _rows = source.GetLength(0);
+        _cols = source.GetLength(1);
+        _pref = new T[_rows + 1, _cols + 1];
+
+        for (int i = 0; i < _rows; i++)
+        {
+            for (int j = 0; j < _cols; j++)
+            {
+                _pref[i + 1, j + 1] = source[i, j]
+                    + _pref[i, j + 1]
+                    + _pref[i + 1, j]
+                    - _pref[i, j];
+            }
+        }
+    }
+    public T Query(int r1, int c1, int r2, int c2)
+        => _pref[r2 + 1, c2 + 1] - _pref[r1, c2 + 1] - _pref[r2 + 1, c1] + _pref[r1, c1];
+    public T Prefix(int r, int c)
+        => _pref[r + 1, c + 1];
+    public T Suffix(int r, int c)
+        => Query(r, c, _rows - 1, _cols - 1);
+    public T this[int r1, int c1, int r2, int c2] => Query(r1, c1, r2, c2);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>psum2d (psum2d)</Title>
+            <Shortcut>psum2d</Shortcut>
+            <Description>A 2D partial sum table providing O(1) subgrid, prefix, and suffix queries with zero branches.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public sealed class PartialSum2D<T> where T : INumber<T>
+{
+    private readonly T[,] _pref;
+    private readonly int _rows;
+    private readonly int _cols;
+    public int Rows => _rows;
+    public int Cols => _cols;
+    public T TotalSum => _pref[_rows, _cols];
+    public PartialSum2D(T[,] source)
+    {
+        _rows = source.GetLength(0);
+        _cols = source.GetLength(1);
+        _pref = new T[_rows + 1, _cols + 1];
+
+        for (int i = 0; i < _rows; i++)
+        {
+            for (int j = 0; j < _cols; j++)
+            {
+                _pref[i + 1, j + 1] = source[i, j]
+                    + _pref[i, j + 1]
+                    + _pref[i + 1, j]
+                    - _pref[i, j];
+            }
+        }
+    }
+    public T Query(int r1, int c1, int r2, int c2)
+        => _pref[r2 + 1, c2 + 1] - _pref[r1, c2 + 1] - _pref[r2 + 1, c1] + _pref[r1, c1];
+    public T Prefix(int r, int c)
+        => _pref[r + 1, c + 1];
+    public T Suffix(int r, int c)
+        => Query(r, c, _rows - 1, _cols - 1);
+    public T this[int r1, int c1, int r2, int c2] => Query(r1, c1, r2, c2);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>psum2d (PartialSum2D)</Title>
+            <Shortcut>PartialSum2D</Shortcut>
+            <Description>A 2D partial sum table providing O(1) subgrid, prefix, and suffix queries with zero branches.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public sealed class PartialSum2D<T> where T : INumber<T>
+{
+    private readonly T[,] _pref;
+    private readonly int _rows;
+    private readonly int _cols;
+    public int Rows => _rows;
+    public int Cols => _cols;
+    public T TotalSum => _pref[_rows, _cols];
+    public PartialSum2D(T[,] source)
+    {
+        _rows = source.GetLength(0);
+        _cols = source.GetLength(1);
+        _pref = new T[_rows + 1, _cols + 1];
+
+        for (int i = 0; i < _rows; i++)
+        {
+            for (int j = 0; j < _cols; j++)
+            {
+                _pref[i + 1, j + 1] = source[i, j]
+                    + _pref[i, j + 1]
+                    + _pref[i + 1, j]
+                    - _pref[i, j];
+            }
+        }
+    }
+    public T Query(int r1, int c1, int r2, int c2)
+        => _pref[r2 + 1, c2 + 1] - _pref[r1, c2 + 1] - _pref[r2 + 1, c1] + _pref[r1, c1];
+    public T Prefix(int r, int c)
+        => _pref[r + 1, c + 1];
+    public T Suffix(int r, int c)
+        => Query(r, c, _rows - 1, _cols - 1);
+    public T this[int r1, int c1, int r2, int c2] => Query(r1, c1, r2, c2);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>freq (cpfreq)</Title>
+            <Shortcut>cpfreq</Shortcut>
+            <Description>A fast array-backed frequency table with O(1) distinct tracking and sliding window support.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public sealed class FrequencyTable
+{
+    private readonly int[] _counts;
+    private readonly int _minVal;
+    private int _distinctCount;
+    private long _totalCount;
+    public int DistinctCount => _distinctCount;
+    public long TotalCount => _totalCount;
+    public int MinValue => _minVal;
+    public int MaxValue => _minVal + _counts.Length - 1;
+    public ReadOnlySpan<int> Counts => _counts;
+    public int this[int val] => GetCount(val);
+    public FrequencyTable(int maxVal) : this(0, maxVal) { }
+    public FrequencyTable(int minVal, int maxVal)
+    {
+        _minVal = minVal;
+        _counts = new int[maxVal - minVal + 1];
+    }
+    public FrequencyTable(ReadOnlySpan<char> text) : this(0, 255)
+    {
+        Add(text);
+    }
+    public void Add(int val, int count = 1)
+    {
+        if (count <= 0) return;
+        int idx = val - _minVal;
+        if (_counts[idx] == 0) _distinctCount++;
+        _counts[idx] += count;
+        _totalCount += count;
+    }
+    public void Add(ReadOnlySpan<char> text)
+    {
+        for (int i = 0; i < text.Length; i++)
+        {
+            Add(text[i]);
+        }
+    }
+    public void Add(ReadOnlySpan<int> values)
+    {
+        for (int i = 0; i < values.Length; i++)
+        {
+            Add(values[i]);
+        }
+    }
+    public bool Remove(int val, int count = 1)
+    {
+        if (count <= 0) return false;
+        int idx = val - _minVal;
+        if ((uint)idx >= (uint)_counts.Length || _counts[idx] == 0) return false;
+
+        int toRemove = Math.Min(_counts[idx], count);
+        _counts[idx] -= toRemove;
+        _totalCount -= toRemove;
+        if (_counts[idx] == 0) _distinctCount--;
+        return true;
+    }
+    public int GetCount(int val)
+    {
+        int idx = val - _minVal;
+        return (uint)idx < (uint)_counts.Length ? _counts[idx] : 0;
+    }
+    public bool Contains(int val) => GetCount(val) > 0;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>freq (cp_freq)</Title>
+            <Shortcut>cp_freq</Shortcut>
+            <Description>A fast array-backed frequency table with O(1) distinct tracking and sliding window support.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public sealed class FrequencyTable
+{
+    private readonly int[] _counts;
+    private readonly int _minVal;
+    private int _distinctCount;
+    private long _totalCount;
+    public int DistinctCount => _distinctCount;
+    public long TotalCount => _totalCount;
+    public int MinValue => _minVal;
+    public int MaxValue => _minVal + _counts.Length - 1;
+    public ReadOnlySpan<int> Counts => _counts;
+    public int this[int val] => GetCount(val);
+    public FrequencyTable(int maxVal) : this(0, maxVal) { }
+    public FrequencyTable(int minVal, int maxVal)
+    {
+        _minVal = minVal;
+        _counts = new int[maxVal - minVal + 1];
+    }
+    public FrequencyTable(ReadOnlySpan<char> text) : this(0, 255)
+    {
+        Add(text);
+    }
+    public void Add(int val, int count = 1)
+    {
+        if (count <= 0) return;
+        int idx = val - _minVal;
+        if (_counts[idx] == 0) _distinctCount++;
+        _counts[idx] += count;
+        _totalCount += count;
+    }
+    public void Add(ReadOnlySpan<char> text)
+    {
+        for (int i = 0; i < text.Length; i++)
+        {
+            Add(text[i]);
+        }
+    }
+    public void Add(ReadOnlySpan<int> values)
+    {
+        for (int i = 0; i < values.Length; i++)
+        {
+            Add(values[i]);
+        }
+    }
+    public bool Remove(int val, int count = 1)
+    {
+        if (count <= 0) return false;
+        int idx = val - _minVal;
+        if ((uint)idx >= (uint)_counts.Length || _counts[idx] == 0) return false;
+
+        int toRemove = Math.Min(_counts[idx], count);
+        _counts[idx] -= toRemove;
+        _totalCount -= toRemove;
+        if (_counts[idx] == 0) _distinctCount--;
+        return true;
+    }
+    public int GetCount(int val)
+    {
+        int idx = val - _minVal;
+        return (uint)idx < (uint)_counts.Length ? _counts[idx] : 0;
+    }
+    public bool Contains(int val) => GetCount(val) > 0;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>freq (freq)</Title>
+            <Shortcut>freq</Shortcut>
+            <Description>A fast array-backed frequency table with O(1) distinct tracking and sliding window support.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public sealed class FrequencyTable
+{
+    private readonly int[] _counts;
+    private readonly int _minVal;
+    private int _distinctCount;
+    private long _totalCount;
+    public int DistinctCount => _distinctCount;
+    public long TotalCount => _totalCount;
+    public int MinValue => _minVal;
+    public int MaxValue => _minVal + _counts.Length - 1;
+    public ReadOnlySpan<int> Counts => _counts;
+    public int this[int val] => GetCount(val);
+    public FrequencyTable(int maxVal) : this(0, maxVal) { }
+    public FrequencyTable(int minVal, int maxVal)
+    {
+        _minVal = minVal;
+        _counts = new int[maxVal - minVal + 1];
+    }
+    public FrequencyTable(ReadOnlySpan<char> text) : this(0, 255)
+    {
+        Add(text);
+    }
+    public void Add(int val, int count = 1)
+    {
+        if (count <= 0) return;
+        int idx = val - _minVal;
+        if (_counts[idx] == 0) _distinctCount++;
+        _counts[idx] += count;
+        _totalCount += count;
+    }
+    public void Add(ReadOnlySpan<char> text)
+    {
+        for (int i = 0; i < text.Length; i++)
+        {
+            Add(text[i]);
+        }
+    }
+    public void Add(ReadOnlySpan<int> values)
+    {
+        for (int i = 0; i < values.Length; i++)
+        {
+            Add(values[i]);
+        }
+    }
+    public bool Remove(int val, int count = 1)
+    {
+        if (count <= 0) return false;
+        int idx = val - _minVal;
+        if ((uint)idx >= (uint)_counts.Length || _counts[idx] == 0) return false;
+
+        int toRemove = Math.Min(_counts[idx], count);
+        _counts[idx] -= toRemove;
+        _totalCount -= toRemove;
+        if (_counts[idx] == 0) _distinctCount--;
+        return true;
+    }
+    public int GetCount(int val)
+    {
+        int idx = val - _minVal;
+        return (uint)idx < (uint)_counts.Length ? _counts[idx] : 0;
+    }
+    public bool Contains(int val) => GetCount(val) > 0;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>freq (FrequencyTable)</Title>
+            <Shortcut>FrequencyTable</Shortcut>
+            <Description>A fast array-backed frequency table with O(1) distinct tracking and sliding window support.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public sealed class FrequencyTable
+{
+    private readonly int[] _counts;
+    private readonly int _minVal;
+    private int _distinctCount;
+    private long _totalCount;
+    public int DistinctCount => _distinctCount;
+    public long TotalCount => _totalCount;
+    public int MinValue => _minVal;
+    public int MaxValue => _minVal + _counts.Length - 1;
+    public ReadOnlySpan<int> Counts => _counts;
+    public int this[int val] => GetCount(val);
+    public FrequencyTable(int maxVal) : this(0, maxVal) { }
+    public FrequencyTable(int minVal, int maxVal)
+    {
+        _minVal = minVal;
+        _counts = new int[maxVal - minVal + 1];
+    }
+    public FrequencyTable(ReadOnlySpan<char> text) : this(0, 255)
+    {
+        Add(text);
+    }
+    public void Add(int val, int count = 1)
+    {
+        if (count <= 0) return;
+        int idx = val - _minVal;
+        if (_counts[idx] == 0) _distinctCount++;
+        _counts[idx] += count;
+        _totalCount += count;
+    }
+    public void Add(ReadOnlySpan<char> text)
+    {
+        for (int i = 0; i < text.Length; i++)
+        {
+            Add(text[i]);
+        }
+    }
+    public void Add(ReadOnlySpan<int> values)
+    {
+        for (int i = 0; i < values.Length; i++)
+        {
+            Add(values[i]);
+        }
+    }
+    public bool Remove(int val, int count = 1)
+    {
+        if (count <= 0) return false;
+        int idx = val - _minVal;
+        if ((uint)idx >= (uint)_counts.Length || _counts[idx] == 0) return false;
+
+        int toRemove = Math.Min(_counts[idx], count);
+        _counts[idx] -= toRemove;
+        _totalCount -= toRemove;
+        if (_counts[idx] == 0) _distinctCount--;
+        return true;
+    }
+    public int GetCount(int val)
+    {
+        int idx = val - _minVal;
+        return (uint)idx < (uint)_counts.Length ? _counts[idx] : 0;
+    }
+    public bool Contains(int val) => GetCount(val) > 0;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>mstack (cpmstack)</Title>
+            <Shortcut>cpmstack</Shortcut>
+            <Description>Finds the index of the nearest element (next if next=true, previous if next=false) satisfying the predicate.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int[] FindNearest<T>(ReadOnlySpan<T> source, Func<T, T, bool> shouldPop, bool next = true, int emptyValue = -1)
+{
+    int n = source.Length;
+    var result = new int[n];
+    var stack = new int[n];
+    int top = 0;
+
+    for (int k = 0; k < n; k++)
+    {
+        int i = next ? n - 1 - k : k;
+        T curr = source[i];
+
+        while (top > 0 && shouldPop(source[stack[top - 1]], curr))
+            top--;
+
+        result[i] = top > 0 ? stack[top - 1] : emptyValue;
+        stack[top++] = i;
+    }
+
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>mstack (cp_mstack)</Title>
+            <Shortcut>cp_mstack</Shortcut>
+            <Description>Finds the index of the nearest element (next if next=true, previous if next=false) satisfying the predicate.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int[] FindNearest<T>(ReadOnlySpan<T> source, Func<T, T, bool> shouldPop, bool next = true, int emptyValue = -1)
+{
+    int n = source.Length;
+    var result = new int[n];
+    var stack = new int[n];
+    int top = 0;
+
+    for (int k = 0; k < n; k++)
+    {
+        int i = next ? n - 1 - k : k;
+        T curr = source[i];
+
+        while (top > 0 && shouldPop(source[stack[top - 1]], curr))
+            top--;
+
+        result[i] = top > 0 ? stack[top - 1] : emptyValue;
+        stack[top++] = i;
+    }
+
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>mstack (mstack)</Title>
+            <Shortcut>mstack</Shortcut>
+            <Description>Finds the index of the nearest element (next if next=true, previous if next=false) satisfying the predicate.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int[] FindNearest<T>(ReadOnlySpan<T> source, Func<T, T, bool> shouldPop, bool next = true, int emptyValue = -1)
+{
+    int n = source.Length;
+    var result = new int[n];
+    var stack = new int[n];
+    int top = 0;
+
+    for (int k = 0; k < n; k++)
+    {
+        int i = next ? n - 1 - k : k;
+        T curr = source[i];
+
+        while (top > 0 && shouldPop(source[stack[top - 1]], curr))
+            top--;
+
+        result[i] = top > 0 ? stack[top - 1] : emptyValue;
+        stack[top++] = i;
+    }
+
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>mstack (FindNearest)</Title>
+            <Shortcut>FindNearest</Shortcut>
+            <Description>Finds the index of the nearest element (next if next=true, previous if next=false) satisfying the predicate.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int[] FindNearest<T>(ReadOnlySpan<T> source, Func<T, T, bool> shouldPop, bool next = true, int emptyValue = -1)
+{
+    int n = source.Length;
+    var result = new int[n];
+    var stack = new int[n];
+    int top = 0;
+
+    for (int k = 0; k < n; k++)
+    {
+        int i = next ? n - 1 - k : k;
+        T curr = source[i];
+
+        while (top > 0 && shouldPop(source[stack[top - 1]], curr))
+            top--;
+
+        result[i] = top > 0 ? stack[top - 1] : emptyValue;
+        stack[top++] = i;
+    }
+
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
 </CodeSnippets>
