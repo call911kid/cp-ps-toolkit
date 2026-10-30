@@ -1,0 +1,51 @@
+name: Generate Distribution Snippets
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  generate-snippets:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Verify Snippets & Tests
+        run: dotnet test tests/tests.csproj
+
+      - name: Generate VS Code Snippets (C#)
+        run: dotnet run --project tools/generators/csharp -- --lang cs --target vscode --output .snippets/vscode
+
+      - name: Generate Visual Studio Snippets (C#)
+        run: dotnet run --project tools/generators/csharp -- --lang cs --target vs --output .snippets/vs
+
+      - name: Generate VS Code Snippets (C++)
+        run: dotnet run --project tools/generators/csharp -- --lang cpp --target vscode --output .snippets/vscode
+
+      - name: Generate Visual Studio Snippets (C++)
+        run: dotnet run --project tools/generators/csharp -- --lang cpp --target vs --output .snippets/vs
+
+      - name: Generate Rider Snippets (C#)
+        run: dotnet run --project tools/generators/csharp -- --lang cs --target rider --output .snippets/rider
+
+      - name: Generate Rider Snippets (C++)
+        run: dotnet run --project tools/generators/csharp -- --lang cpp --target rider --output .snippets/rider
+
+      - name: Copy Snippets for Web Extension
+        run: |
+          mkdir -p .snippets/web-extension
+          cp .snippets/vscode/cp-toolkit-csharp.code-snippets .snippets/web-extension/cp-toolkit-csharp.json
+          cp .snippets/vscode/cp-toolkit-cpp.code-snippets .snippets/web-extension/cp-toolkit-cpp.json
+
+      - name: Commit Generated Snippets
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: auto-generate snippets [skip ci]"
+          file_pattern: ".snippets/**"
