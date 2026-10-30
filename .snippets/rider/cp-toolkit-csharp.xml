@@ -1,0 +1,802 @@
+﻿<templateSet group="cp-ps-toolkit">
+  <template name="cpparity" value="public static bool HasOddParity&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; (int.CreateTruncating(T.PopCount(n)) &amp; 1) == 1;$END$" description="Checks whether the count of set bits in n is odd." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_parity" value="public static bool HasOddParity&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; (int.CreateTruncating(T.PopCount(n)) &amp; 1) == 1;$END$" description="Checks whether the count of set bits in n is odd." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="parity" value="public static bool HasOddParity&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; (int.CreateTruncating(T.PopCount(n)) &amp; 1) == 1;$END$" description="Checks whether the count of set bits in n is odd." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="HasOddParity" value="public static bool HasOddParity&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; (int.CreateTruncating(T.PopCount(n)) &amp; 1) == 1;$END$" description="Checks whether the count of set bits in n is odd." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cplsbi" value="public static int GetLowestSetBitIndex&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n == T.Zero ? -1 : int.CreateTruncating(T.TrailingZeroCount(n));$END$" description="Returns the 0-based index of the lowest set bit, or -1 if n is 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_lsbi" value="public static int GetLowestSetBitIndex&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n == T.Zero ? -1 : int.CreateTruncating(T.TrailingZeroCount(n));$END$" description="Returns the 0-based index of the lowest set bit, or -1 if n is 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="lsbi" value="public static int GetLowestSetBitIndex&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n == T.Zero ? -1 : int.CreateTruncating(T.TrailingZeroCount(n));$END$" description="Returns the 0-based index of the lowest set bit, or -1 if n is 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="GetLowestSetBitIndex" value="public static int GetLowestSetBitIndex&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n == T.Zero ? -1 : int.CreateTruncating(T.TrailingZeroCount(n));$END$" description="Returns the 0-based index of the lowest set bit, or -1 if n is 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpsbit" value="public static T SetBit&lt;T&gt;(T n, int index, bool value = true) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; value ? n | (T.One &lt;&lt; index) : n &amp; ~(T.One &lt;&lt; index);$END$" description="Sets the bit at the given 0-based index to 1 (default), or to 0 if value is false." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_sbit" value="public static T SetBit&lt;T&gt;(T n, int index, bool value = true) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; value ? n | (T.One &lt;&lt; index) : n &amp; ~(T.One &lt;&lt; index);$END$" description="Sets the bit at the given 0-based index to 1 (default), or to 0 if value is false." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="sbit" value="public static T SetBit&lt;T&gt;(T n, int index, bool value = true) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; value ? n | (T.One &lt;&lt; index) : n &amp; ~(T.One &lt;&lt; index);$END$" description="Sets the bit at the given 0-based index to 1 (default), or to 0 if value is false." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="SetBit" value="public static T SetBit&lt;T&gt;(T n, int index, bool value = true) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; value ? n | (T.One &lt;&lt; index) : n &amp; ~(T.One &lt;&lt; index);$END$" description="Sets the bit at the given 0-based index to 1 (default), or to 0 if value is false." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cppopc" value="public static int CountSetBits&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; int.CreateTruncating(T.PopCount(n));$END$" description="Counts the total number of set bits (popcount)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_popc" value="public static int CountSetBits&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; int.CreateTruncating(T.PopCount(n));$END$" description="Counts the total number of set bits (popcount)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="popc" value="public static int CountSetBits&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; int.CreateTruncating(T.PopCount(n));$END$" description="Counts the total number of set bits (popcount)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="CountSetBits" value="public static int CountSetBits&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; int.CreateTruncating(T.PopCount(n));$END$" description="Counts the total number of set bits (popcount)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpcbit" value="public static T ClearBit&lt;T&gt;(T n, int index) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n &amp; ~(T.One &lt;&lt; index);$END$" description="Clears the bit at the given 0-based index to 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_cbit" value="public static T ClearBit&lt;T&gt;(T n, int index) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n &amp; ~(T.One &lt;&lt; index);$END$" description="Clears the bit at the given 0-based index to 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cbit" value="public static T ClearBit&lt;T&gt;(T n, int index) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n &amp; ~(T.One &lt;&lt; index);$END$" description="Clears the bit at the given 0-based index to 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="ClearBit" value="public static T ClearBit&lt;T&gt;(T n, int index) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n &amp; ~(T.One &lt;&lt; index);$END$" description="Clears the bit at the given 0-based index to 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cprbit" value="public static T ReverseBits&lt;T&gt;(T n, int bitCount) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T rev = T.Zero;&#10;    for (int i = 0; i &lt; bitCount; i++)&#10;    {&#10;        rev = (rev &lt;&lt; 1) | ((n &gt;&gt;&gt; i) &amp; T.One);&#10;    }&#10;&#10;    return rev;&#10;}$END$" description="Reverses the lowest bitCount bits of n." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_rbit" value="public static T ReverseBits&lt;T&gt;(T n, int bitCount) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T rev = T.Zero;&#10;    for (int i = 0; i &lt; bitCount; i++)&#10;    {&#10;        rev = (rev &lt;&lt; 1) | ((n &gt;&gt;&gt; i) &amp; T.One);&#10;    }&#10;&#10;    return rev;&#10;}$END$" description="Reverses the lowest bitCount bits of n." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="rbit" value="public static T ReverseBits&lt;T&gt;(T n, int bitCount) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T rev = T.Zero;&#10;    for (int i = 0; i &lt; bitCount; i++)&#10;    {&#10;        rev = (rev &lt;&lt; 1) | ((n &gt;&gt;&gt; i) &amp; T.One);&#10;    }&#10;&#10;    return rev;&#10;}$END$" description="Reverses the lowest bitCount bits of n." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="ReverseBits" value="public static T ReverseBits&lt;T&gt;(T n, int bitCount) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T rev = T.Zero;&#10;    for (int i = 0; i &lt; bitCount; i++)&#10;    {&#10;        rev = (rev &lt;&lt; 1) | ((n &gt;&gt;&gt; i) &amp; T.One);&#10;    }&#10;&#10;    return rev;&#10;}$END$" description="Reverses the lowest bitCount bits of n." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpm2s" value="public static string MaskToString(int mask)&#10;{&#10;    Span&lt;char&gt; buffer = stackalloc char[26];&#10;    int len = 0;&#10;    for (int i = 0; i &lt; 26; i++)&#10;    {&#10;        if (((mask &gt;&gt; i) &amp; 1) == 1)&#10;        {&#10;            buffer[len++] = (char)('a' + i);&#10;        }&#10;    }&#10;&#10;    return new string(buffer[..len]);&#10;}$END$" description="Reconstructs a sorted string of lowercase English letters from a 26-bit integer mask." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_m2s" value="public static string MaskToString(int mask)&#10;{&#10;    Span&lt;char&gt; buffer = stackalloc char[26];&#10;    int len = 0;&#10;    for (int i = 0; i &lt; 26; i++)&#10;    {&#10;        if (((mask &gt;&gt; i) &amp; 1) == 1)&#10;        {&#10;            buffer[len++] = (char)('a' + i);&#10;        }&#10;    }&#10;&#10;    return new string(buffer[..len]);&#10;}$END$" description="Reconstructs a sorted string of lowercase English letters from a 26-bit integer mask." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="m2s" value="public static string MaskToString(int mask)&#10;{&#10;    Span&lt;char&gt; buffer = stackalloc char[26];&#10;    int len = 0;&#10;    for (int i = 0; i &lt; 26; i++)&#10;    {&#10;        if (((mask &gt;&gt; i) &amp; 1) == 1)&#10;        {&#10;            buffer[len++] = (char)('a' + i);&#10;        }&#10;    }&#10;&#10;    return new string(buffer[..len]);&#10;}$END$" description="Reconstructs a sorted string of lowercase English letters from a 26-bit integer mask." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="MaskToString" value="public static string MaskToString(int mask)&#10;{&#10;    Span&lt;char&gt; buffer = stackalloc char[26];&#10;    int len = 0;&#10;    for (int i = 0; i &lt; 26; i++)&#10;    {&#10;        if (((mask &gt;&gt; i) &amp; 1) == 1)&#10;        {&#10;            buffer[len++] = (char)('a' + i);&#10;        }&#10;    }&#10;&#10;    return new string(buffer[..len]);&#10;}$END$" description="Reconstructs a sorted string of lowercase English letters from a 26-bit integer mask." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpisp2" value="public static bool IsPowerOfTwo&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n &gt; T.Zero &amp;&amp; (n &amp; (n - T.One)) == T.Zero;$END$" description="Checks whether n is a positive power of two (n &gt; 0 and (n &amp; (n - 1)) == 0)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_isp2" value="public static bool IsPowerOfTwo&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n &gt; T.Zero &amp;&amp; (n &amp; (n - T.One)) == T.Zero;$END$" description="Checks whether n is a positive power of two (n &gt; 0 and (n &amp; (n - 1)) == 0)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="isp2" value="public static bool IsPowerOfTwo&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n &gt; T.Zero &amp;&amp; (n &amp; (n - T.One)) == T.Zero;$END$" description="Checks whether n is a positive power of two (n &gt; 0 and (n &amp; (n - 1)) == 0)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="IsPowerOfTwo" value="public static bool IsPowerOfTwo&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n &gt; T.Zero &amp;&amp; (n &amp; (n - T.One)) == T.Zero;$END$" description="Checks whether n is a positive power of two (n &gt; 0 and (n &amp; (n - 1)) == 0)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cptbit" value="public static T ToggleBit&lt;T&gt;(T n, int index) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n ^ (T.One &lt;&lt; index);$END$" description="Inverts (flips) the bit at the given 0-based index." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_tbit" value="public static T ToggleBit&lt;T&gt;(T n, int index) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n ^ (T.One &lt;&lt; index);$END$" description="Inverts (flips) the bit at the given 0-based index." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="tbit" value="public static T ToggleBit&lt;T&gt;(T n, int index) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n ^ (T.One &lt;&lt; index);$END$" description="Inverts (flips) the bit at the given 0-based index." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="ToggleBit" value="public static T ToggleBit&lt;T&gt;(T n, int index) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n ^ (T.One &lt;&lt; index);$END$" description="Inverts (flips) the bit at the given 0-based index." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cplsb" value="public static T GetLowestSetBit&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n &amp; -n;$END$" description="Isolates the lowest set bit (LSB) value via two's complement (n &amp; -n)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_lsb" value="public static T GetLowestSetBit&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n &amp; -n;$END$" description="Isolates the lowest set bit (LSB) value via two's complement (n &amp; -n)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="lsb" value="public static T GetLowestSetBit&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n &amp; -n;$END$" description="Isolates the lowest set bit (LSB) value via two's complement (n &amp; -n)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="GetLowestSetBit" value="public static T GetLowestSetBit&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n &amp; -n;$END$" description="Isolates the lowest set bit (LSB) value via two's complement (n &amp; -n)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpclsb" value="public static T ClearLowestSetBit&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n &amp; (n - T.One);$END$" description="Clears the lowest set bit (LSB) of n (n &amp; (n - 1))." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_clsb" value="public static T ClearLowestSetBit&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n &amp; (n - T.One);$END$" description="Clears the lowest set bit (LSB) of n (n &amp; (n - 1))." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="clsb" value="public static T ClearLowestSetBit&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n &amp; (n - T.One);$END$" description="Clears the lowest set bit (LSB) of n (n &amp; (n - 1))." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="ClearLowestSetBit" value="public static T ClearLowestSetBit&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n &amp; (n - T.One);$END$" description="Clears the lowest set bit (LSB) of n (n &amp; (n - 1))." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpmsbi" value="public static int GetHighestSetBitIndex&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n == T.Zero ? -1 : n.GetByteCount() * 8 - 1 - int.CreateTruncating(T.LeadingZeroCount(n));$END$" description="Returns the 0-based index of the highest set bit, or -1 if n is 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_msbi" value="public static int GetHighestSetBitIndex&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n == T.Zero ? -1 : n.GetByteCount() * 8 - 1 - int.CreateTruncating(T.LeadingZeroCount(n));$END$" description="Returns the 0-based index of the highest set bit, or -1 if n is 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="msbi" value="public static int GetHighestSetBitIndex&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n == T.Zero ? -1 : n.GetByteCount() * 8 - 1 - int.CreateTruncating(T.LeadingZeroCount(n));$END$" description="Returns the 0-based index of the highest set bit, or -1 if n is 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="GetHighestSetBitIndex" value="public static int GetHighestSetBitIndex&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; n == T.Zero ? -1 : n.GetByteCount() * 8 - 1 - int.CreateTruncating(T.LeadingZeroCount(n));$END$" description="Returns the 0-based index of the highest set bit, or -1 if n is 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cps2m" value="public static int StringToMask(ReadOnlySpan&lt;char&gt; s)&#10;{&#10;    int mask = 0;&#10;    foreach (char c in s)&#10;    {&#10;        mask |= 1 &lt;&lt; (c - 'a');&#10;    }&#10;&#10;    return mask;&#10;}$END$" description="Converts a string of lowercase English letters ('a'-'z') into a 26-bit integer mask." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_s2m" value="public static int StringToMask(ReadOnlySpan&lt;char&gt; s)&#10;{&#10;    int mask = 0;&#10;    foreach (char c in s)&#10;    {&#10;        mask |= 1 &lt;&lt; (c - 'a');&#10;    }&#10;&#10;    return mask;&#10;}$END$" description="Converts a string of lowercase English letters ('a'-'z') into a 26-bit integer mask." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="s2m" value="public static int StringToMask(ReadOnlySpan&lt;char&gt; s)&#10;{&#10;    int mask = 0;&#10;    foreach (char c in s)&#10;    {&#10;        mask |= 1 &lt;&lt; (c - 'a');&#10;    }&#10;&#10;    return mask;&#10;}$END$" description="Converts a string of lowercase English letters ('a'-'z') into a 26-bit integer mask." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="StringToMask" value="public static int StringToMask(ReadOnlySpan&lt;char&gt; s)&#10;{&#10;    int mask = 0;&#10;    foreach (char c in s)&#10;    {&#10;        mask |= 1 &lt;&lt; (c - 'a');&#10;    }&#10;&#10;    return mask;&#10;}$END$" description="Converts a string of lowercase English letters ('a'-'z') into a 26-bit integer mask." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpnextp" value="public static T NextPermutation&lt;T&gt;(T mask) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T c = mask &amp; -mask;&#10;    T r = mask + c;&#10;    return (((r ^ mask) &gt;&gt;&gt; (int.CreateTruncating(T.TrailingZeroCount(c)) + 2))) | r;&#10;}$END$" description="Returns the lexicographically next integer with the same number of set bits in O(1)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_nextp" value="public static T NextPermutation&lt;T&gt;(T mask) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T c = mask &amp; -mask;&#10;    T r = mask + c;&#10;    return (((r ^ mask) &gt;&gt;&gt; (int.CreateTruncating(T.TrailingZeroCount(c)) + 2))) | r;&#10;}$END$" description="Returns the lexicographically next integer with the same number of set bits in O(1)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="nextp" value="public static T NextPermutation&lt;T&gt;(T mask) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T c = mask &amp; -mask;&#10;    T r = mask + c;&#10;    return (((r ^ mask) &gt;&gt;&gt; (int.CreateTruncating(T.TrailingZeroCount(c)) + 2))) | r;&#10;}$END$" description="Returns the lexicographically next integer with the same number of set bits in O(1)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="NextPermutation" value="public static T NextPermutation&lt;T&gt;(T mask) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T c = mask &amp; -mask;&#10;    T r = mask + c;&#10;    return (((r ^ mask) &gt;&gt;&gt; (int.CreateTruncating(T.TrailingZeroCount(c)) + 2))) | r;&#10;}$END$" description="Returns the lexicographically next integer with the same number of set bits in O(1)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpisbit" value="public static bool IsBitSet&lt;T&gt;(T n, int index) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; ((n &gt;&gt;&gt; index) &amp; T.One) == T.One;$END$" description="Checks if the bit at the given 0-based index is set to 1." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_isbit" value="public static bool IsBitSet&lt;T&gt;(T n, int index) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; ((n &gt;&gt;&gt; index) &amp; T.One) == T.One;$END$" description="Checks if the bit at the given 0-based index is set to 1." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="isbit" value="public static bool IsBitSet&lt;T&gt;(T n, int index) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; ((n &gt;&gt;&gt; index) &amp; T.One) == T.One;$END$" description="Checks if the bit at the given 0-based index is set to 1." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="IsBitSet" value="public static bool IsBitSet&lt;T&gt;(T n, int index) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; ((n &gt;&gt;&gt; index) &amp; T.One) == T.One;$END$" description="Checks if the bit at the given 0-based index is set to 1." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cplcm" value="public static T Gcd&lt;T&gt;(T a, T b) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; b == T.Zero ? T.Abs(a) : Gcd(b, a % b);&#10;&#10;public static T Lcm&lt;T&gt;(T a, T b) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (a == T.Zero || b == T.Zero) return T.Zero;&#10;    return T.Abs((a / Gcd(a, b)) * b);&#10;}$END$" description="Computes the least common multiple (LCM) of two integers." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_lcm" value="public static T Gcd&lt;T&gt;(T a, T b) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; b == T.Zero ? T.Abs(a) : Gcd(b, a % b);&#10;&#10;public static T Lcm&lt;T&gt;(T a, T b) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (a == T.Zero || b == T.Zero) return T.Zero;&#10;    return T.Abs((a / Gcd(a, b)) * b);&#10;}$END$" description="Computes the least common multiple (LCM) of two integers." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="lcm" value="public static T Gcd&lt;T&gt;(T a, T b) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; b == T.Zero ? T.Abs(a) : Gcd(b, a % b);&#10;&#10;public static T Lcm&lt;T&gt;(T a, T b) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (a == T.Zero || b == T.Zero) return T.Zero;&#10;    return T.Abs((a / Gcd(a, b)) * b);&#10;}$END$" description="Computes the least common multiple (LCM) of two integers." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="Lcm" value="public static T Gcd&lt;T&gt;(T a, T b) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; b == T.Zero ? T.Abs(a) : Gcd(b, a % b);&#10;&#10;public static T Lcm&lt;T&gt;(T a, T b) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (a == T.Zero || b == T.Zero) return T.Zero;&#10;    return T.Abs((a / Gcd(a, b)) * b);&#10;}$END$" description="Computes the least common multiple (LCM) of two integers." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cprsum" value="public static T RangeSum&lt;T&gt;(T x, T y) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (x &gt; y)&#10;        (x, y) = (y, x);&#10;&#10;    T two = T.CreateChecked(2);&#10;    T count = y - x + T.One;&#10;    T sum = x + y;&#10;&#10;    return (count % two == T.Zero)&#10;        ? (count / two) * sum&#10;        : count * (sum / two);&#10;}$END$" description="Computes the sum of integers from x to y inclusive." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_rsum" value="public static T RangeSum&lt;T&gt;(T x, T y) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (x &gt; y)&#10;        (x, y) = (y, x);&#10;&#10;    T two = T.CreateChecked(2);&#10;    T count = y - x + T.One;&#10;    T sum = x + y;&#10;&#10;    return (count % two == T.Zero)&#10;        ? (count / two) * sum&#10;        : count * (sum / two);&#10;}$END$" description="Computes the sum of integers from x to y inclusive." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="rsum" value="public static T RangeSum&lt;T&gt;(T x, T y) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (x &gt; y)&#10;        (x, y) = (y, x);&#10;&#10;    T two = T.CreateChecked(2);&#10;    T count = y - x + T.One;&#10;    T sum = x + y;&#10;&#10;    return (count % two == T.Zero)&#10;        ? (count / two) * sum&#10;        : count * (sum / two);&#10;}$END$" description="Computes the sum of integers from x to y inclusive." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="RangeSum" value="public static T RangeSum&lt;T&gt;(T x, T y) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (x &gt; y)&#10;        (x, y) = (y, x);&#10;&#10;    T two = T.CreateChecked(2);&#10;    T count = y - x + T.One;&#10;    T sum = x + y;&#10;&#10;    return (count % two == T.Zero)&#10;        ? (count / two) * sum&#10;        : count * (sum / two);&#10;}$END$" description="Computes the sum of integers from x to y inclusive." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpleg" value="public static T LegendreExponent&lt;T&gt;(T n, T prime) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T count = T.Zero;&#10;    while (n &gt; T.Zero)&#10;    {&#10;        count += n / prime;&#10;        n /= prime;&#10;    }&#10;&#10;    return count;&#10;}$END$" description="Computes the largest exponent k such that prime^k divides n!." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_leg" value="public static T LegendreExponent&lt;T&gt;(T n, T prime) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T count = T.Zero;&#10;    while (n &gt; T.Zero)&#10;    {&#10;        count += n / prime;&#10;        n /= prime;&#10;    }&#10;&#10;    return count;&#10;}$END$" description="Computes the largest exponent k such that prime^k divides n!." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="leg" value="public static T LegendreExponent&lt;T&gt;(T n, T prime) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T count = T.Zero;&#10;    while (n &gt; T.Zero)&#10;    {&#10;        count += n / prime;&#10;        n /= prime;&#10;    }&#10;&#10;    return count;&#10;}$END$" description="Computes the largest exponent k such that prime^k divides n!." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="LegendreExponent" value="public static T LegendreExponent&lt;T&gt;(T n, T prime) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T count = T.Zero;&#10;    while (n &gt; T.Zero)&#10;    {&#10;        count += n / prime;&#10;        n /= prime;&#10;    }&#10;&#10;    return count;&#10;}$END$" description="Computes the largest exponent k such that prime^k divides n!." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cppf" value="public static List&lt;(T Prime, int Exponent)&gt; PrimeFactorize&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    List&lt;(T Prime, int Exponent)&gt; factors = new();&#10;    T two = T.CreateChecked(2);&#10;&#10;    for (T d = two; d * d &lt;= n; d += (d == two ? T.One : two))&#10;    {&#10;        if ((n % d) != T.Zero) continue;&#10;&#10;        int count = 0;&#10;        while ((n % d) == T.Zero)&#10;        {&#10;            count++;&#10;            n /= d;&#10;        }&#10;&#10;        factors.Add((d, count));&#10;    }&#10;&#10;    if (n &gt; T.One)&#10;        factors.Add((n, 1));&#10;&#10;    return factors;&#10;}$END$" description="Computes prime factors of n along with their exponent counts." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_pf" value="public static List&lt;(T Prime, int Exponent)&gt; PrimeFactorize&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    List&lt;(T Prime, int Exponent)&gt; factors = new();&#10;    T two = T.CreateChecked(2);&#10;&#10;    for (T d = two; d * d &lt;= n; d += (d == two ? T.One : two))&#10;    {&#10;        if ((n % d) != T.Zero) continue;&#10;&#10;        int count = 0;&#10;        while ((n % d) == T.Zero)&#10;        {&#10;            count++;&#10;            n /= d;&#10;        }&#10;&#10;        factors.Add((d, count));&#10;    }&#10;&#10;    if (n &gt; T.One)&#10;        factors.Add((n, 1));&#10;&#10;    return factors;&#10;}$END$" description="Computes prime factors of n along with their exponent counts." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="pf" value="public static List&lt;(T Prime, int Exponent)&gt; PrimeFactorize&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    List&lt;(T Prime, int Exponent)&gt; factors = new();&#10;    T two = T.CreateChecked(2);&#10;&#10;    for (T d = two; d * d &lt;= n; d += (d == two ? T.One : two))&#10;    {&#10;        if ((n % d) != T.Zero) continue;&#10;&#10;        int count = 0;&#10;        while ((n % d) == T.Zero)&#10;        {&#10;            count++;&#10;            n /= d;&#10;        }&#10;&#10;        factors.Add((d, count));&#10;    }&#10;&#10;    if (n &gt; T.One)&#10;        factors.Add((n, 1));&#10;&#10;    return factors;&#10;}$END$" description="Computes prime factors of n along with their exponent counts." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="PrimeFactorize" value="public static List&lt;(T Prime, int Exponent)&gt; PrimeFactorize&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    List&lt;(T Prime, int Exponent)&gt; factors = new();&#10;    T two = T.CreateChecked(2);&#10;&#10;    for (T d = two; d * d &lt;= n; d += (d == two ? T.One : two))&#10;    {&#10;        if ((n % d) != T.Zero) continue;&#10;&#10;        int count = 0;&#10;        while ((n % d) == T.Zero)&#10;        {&#10;            count++;&#10;            n /= d;&#10;        }&#10;&#10;        factors.Add((d, count));&#10;    }&#10;&#10;    if (n &gt; T.One)&#10;        factors.Add((n, 1));&#10;&#10;    return factors;&#10;}$END$" description="Computes prime factors of n along with their exponent counts." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cppow" value="public static T Power&lt;T&gt;(T @base, T exp) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (exp &lt; T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(exp), &quot;Negative exponent not supported.&quot;);&#10;&#10;    T result = T.One;&#10;    T b = @base;&#10;&#10;    while (exp &gt; T.Zero)&#10;    {&#10;        if ((exp &amp; T.One) == T.One)&#10;            result *= b;&#10;&#10;        b *= b;&#10;        exp &gt;&gt;= 1;&#10;    }&#10;&#10;    return result;&#10;}$END$" description="Computes base raised to exp." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_pow" value="public static T Power&lt;T&gt;(T @base, T exp) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (exp &lt; T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(exp), &quot;Negative exponent not supported.&quot;);&#10;&#10;    T result = T.One;&#10;    T b = @base;&#10;&#10;    while (exp &gt; T.Zero)&#10;    {&#10;        if ((exp &amp; T.One) == T.One)&#10;            result *= b;&#10;&#10;        b *= b;&#10;        exp &gt;&gt;= 1;&#10;    }&#10;&#10;    return result;&#10;}$END$" description="Computes base raised to exp." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="pow" value="public static T Power&lt;T&gt;(T @base, T exp) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (exp &lt; T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(exp), &quot;Negative exponent not supported.&quot;);&#10;&#10;    T result = T.One;&#10;    T b = @base;&#10;&#10;    while (exp &gt; T.Zero)&#10;    {&#10;        if ((exp &amp; T.One) == T.One)&#10;            result *= b;&#10;&#10;        b *= b;&#10;        exp &gt;&gt;= 1;&#10;    }&#10;&#10;    return result;&#10;}$END$" description="Computes base raised to exp." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="Power" value="public static T Power&lt;T&gt;(T @base, T exp) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (exp &lt; T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(exp), &quot;Negative exponent not supported.&quot;);&#10;&#10;    T result = T.One;&#10;    T b = @base;&#10;&#10;    while (exp &gt; T.Zero)&#10;    {&#10;        if ((exp &amp; T.One) == T.One)&#10;            result *= b;&#10;&#10;        b *= b;&#10;        exp &gt;&gt;= 1;&#10;    }&#10;&#10;    return result;&#10;}$END$" description="Computes base raised to exp." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpphi" value="public static T EulerTotient&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T result = n;&#10;    T two = T.CreateChecked(2);&#10;&#10;    for (T p = two; p * p &lt;= n; p += (p == two ? T.One : two))&#10;    {&#10;        if ((n % p) != T.Zero) continue;&#10;&#10;        while ((n % p) == T.Zero)&#10;            n /= p;&#10;&#10;        result -= result / p;&#10;    }&#10;&#10;    if (n &gt; T.One)&#10;        result -= result / n;&#10;&#10;    return result;&#10;}$END$" description="Computes Euler's Totient, counting integers in [1, n] coprime to n." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_phi" value="public static T EulerTotient&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T result = n;&#10;    T two = T.CreateChecked(2);&#10;&#10;    for (T p = two; p * p &lt;= n; p += (p == two ? T.One : two))&#10;    {&#10;        if ((n % p) != T.Zero) continue;&#10;&#10;        while ((n % p) == T.Zero)&#10;            n /= p;&#10;&#10;        result -= result / p;&#10;    }&#10;&#10;    if (n &gt; T.One)&#10;        result -= result / n;&#10;&#10;    return result;&#10;}$END$" description="Computes Euler's Totient, counting integers in [1, n] coprime to n." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="phi" value="public static T EulerTotient&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T result = n;&#10;    T two = T.CreateChecked(2);&#10;&#10;    for (T p = two; p * p &lt;= n; p += (p == two ? T.One : two))&#10;    {&#10;        if ((n % p) != T.Zero) continue;&#10;&#10;        while ((n % p) == T.Zero)&#10;            n /= p;&#10;&#10;        result -= result / p;&#10;    }&#10;&#10;    if (n &gt; T.One)&#10;        result -= result / n;&#10;&#10;    return result;&#10;}$END$" description="Computes Euler's Totient, counting integers in [1, n] coprime to n." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="EulerTotient" value="public static T EulerTotient&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T result = n;&#10;    T two = T.CreateChecked(2);&#10;&#10;    for (T p = two; p * p &lt;= n; p += (p == two ? T.One : two))&#10;    {&#10;        if ((n % p) != T.Zero) continue;&#10;&#10;        while ((n % p) == T.Zero)&#10;            n /= p;&#10;&#10;        result -= result / p;&#10;    }&#10;&#10;    if (n &gt; T.One)&#10;        result -= result / n;&#10;&#10;    return result;&#10;}$END$" description="Computes Euler's Totient, counting integers in [1, n] coprime to n." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpmpow" value="public static T ModPower&lt;T&gt;(T @base, T exp, T mod) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (exp &lt; T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(exp), &quot;Negative exponent not supported.&quot;);&#10;    if (mod &lt;= T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(mod), &quot;Modulus must be positive.&quot;);&#10;&#10;    T result = T.One % mod;&#10;    T b = (@base % mod + mod) % mod;&#10;&#10;    while (exp &gt; T.Zero)&#10;    {&#10;        if ((exp &amp; T.One) == T.One)&#10;            result = (result * b) % mod;&#10;&#10;        b = (b * b) % mod;&#10;        exp &gt;&gt;= 1;&#10;    }&#10;&#10;    return result;&#10;}$END$" description="Computes (base^exp) % mod." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_mpow" value="public static T ModPower&lt;T&gt;(T @base, T exp, T mod) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (exp &lt; T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(exp), &quot;Negative exponent not supported.&quot;);&#10;    if (mod &lt;= T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(mod), &quot;Modulus must be positive.&quot;);&#10;&#10;    T result = T.One % mod;&#10;    T b = (@base % mod + mod) % mod;&#10;&#10;    while (exp &gt; T.Zero)&#10;    {&#10;        if ((exp &amp; T.One) == T.One)&#10;            result = (result * b) % mod;&#10;&#10;        b = (b * b) % mod;&#10;        exp &gt;&gt;= 1;&#10;    }&#10;&#10;    return result;&#10;}$END$" description="Computes (base^exp) % mod." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="mpow" value="public static T ModPower&lt;T&gt;(T @base, T exp, T mod) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (exp &lt; T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(exp), &quot;Negative exponent not supported.&quot;);&#10;    if (mod &lt;= T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(mod), &quot;Modulus must be positive.&quot;);&#10;&#10;    T result = T.One % mod;&#10;    T b = (@base % mod + mod) % mod;&#10;&#10;    while (exp &gt; T.Zero)&#10;    {&#10;        if ((exp &amp; T.One) == T.One)&#10;            result = (result * b) % mod;&#10;&#10;        b = (b * b) % mod;&#10;        exp &gt;&gt;= 1;&#10;    }&#10;&#10;    return result;&#10;}$END$" description="Computes (base^exp) % mod." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="ModPower" value="public static T ModPower&lt;T&gt;(T @base, T exp, T mod) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (exp &lt; T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(exp), &quot;Negative exponent not supported.&quot;);&#10;    if (mod &lt;= T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(mod), &quot;Modulus must be positive.&quot;);&#10;&#10;    T result = T.One % mod;&#10;    T b = (@base % mod + mod) % mod;&#10;&#10;    while (exp &gt; T.Zero)&#10;    {&#10;        if ((exp &amp; T.One) == T.One)&#10;            result = (result * b) % mod;&#10;&#10;        b = (b * b) % mod;&#10;        exp &gt;&gt;= 1;&#10;    }&#10;&#10;    return result;&#10;}$END$" description="Computes (base^exp) % mod." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpgcd" value="public static T Gcd&lt;T&gt;(T a, T b) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; b == T.Zero ? T.Abs(a) : Gcd(b, a % b);$END$" description="Computes the greatest common divisor (GCD) of two integers." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_gcd" value="public static T Gcd&lt;T&gt;(T a, T b) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; b == T.Zero ? T.Abs(a) : Gcd(b, a % b);$END$" description="Computes the greatest common divisor (GCD) of two integers." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="gcd" value="public static T Gcd&lt;T&gt;(T a, T b) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; b == T.Zero ? T.Abs(a) : Gcd(b, a % b);$END$" description="Computes the greatest common divisor (GCD) of two integers." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="Gcd" value="public static T Gcd&lt;T&gt;(T a, T b) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; b == T.Zero ? T.Abs(a) : Gcd(b, a % b);$END$" description="Computes the greatest common divisor (GCD) of two integers." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpmip" value="public static T ModPower&lt;T&gt;(T @base, T exp, T mod) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (exp &lt; T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(exp), &quot;Negative exponent not supported.&quot;);&#10;    if (mod &lt;= T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(mod), &quot;Modulus must be positive.&quot;);&#10;&#10;    T result = T.One % mod;&#10;    T b = (@base % mod + mod) % mod;&#10;&#10;    while (exp &gt; T.Zero)&#10;    {&#10;        if ((exp &amp; T.One) == T.One)&#10;            result = (result * b) % mod;&#10;&#10;        b = (b * b) % mod;&#10;        exp &gt;&gt;= 1;&#10;    }&#10;&#10;    return result;&#10;}&#10;&#10;public static T ModInversePrime&lt;T&gt;(T a, T mod) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; ModPower(a, mod - (T.One + T.One), mod);$END$" description="Computes the modular multiplicative inverse of a modulo a prime mod." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_mip" value="public static T ModPower&lt;T&gt;(T @base, T exp, T mod) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (exp &lt; T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(exp), &quot;Negative exponent not supported.&quot;);&#10;    if (mod &lt;= T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(mod), &quot;Modulus must be positive.&quot;);&#10;&#10;    T result = T.One % mod;&#10;    T b = (@base % mod + mod) % mod;&#10;&#10;    while (exp &gt; T.Zero)&#10;    {&#10;        if ((exp &amp; T.One) == T.One)&#10;            result = (result * b) % mod;&#10;&#10;        b = (b * b) % mod;&#10;        exp &gt;&gt;= 1;&#10;    }&#10;&#10;    return result;&#10;}&#10;&#10;public static T ModInversePrime&lt;T&gt;(T a, T mod) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; ModPower(a, mod - (T.One + T.One), mod);$END$" description="Computes the modular multiplicative inverse of a modulo a prime mod." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="mip" value="public static T ModPower&lt;T&gt;(T @base, T exp, T mod) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (exp &lt; T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(exp), &quot;Negative exponent not supported.&quot;);&#10;    if (mod &lt;= T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(mod), &quot;Modulus must be positive.&quot;);&#10;&#10;    T result = T.One % mod;&#10;    T b = (@base % mod + mod) % mod;&#10;&#10;    while (exp &gt; T.Zero)&#10;    {&#10;        if ((exp &amp; T.One) == T.One)&#10;            result = (result * b) % mod;&#10;&#10;        b = (b * b) % mod;&#10;        exp &gt;&gt;= 1;&#10;    }&#10;&#10;    return result;&#10;}&#10;&#10;public static T ModInversePrime&lt;T&gt;(T a, T mod) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; ModPower(a, mod - (T.One + T.One), mod);$END$" description="Computes the modular multiplicative inverse of a modulo a prime mod." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="ModInversePrime" value="public static T ModPower&lt;T&gt;(T @base, T exp, T mod) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (exp &lt; T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(exp), &quot;Negative exponent not supported.&quot;);&#10;    if (mod &lt;= T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(mod), &quot;Modulus must be positive.&quot;);&#10;&#10;    T result = T.One % mod;&#10;    T b = (@base % mod + mod) % mod;&#10;&#10;    while (exp &gt; T.Zero)&#10;    {&#10;        if ((exp &amp; T.One) == T.One)&#10;            result = (result * b) % mod;&#10;&#10;        b = (b * b) % mod;&#10;        exp &gt;&gt;= 1;&#10;    }&#10;&#10;    return result;&#10;}&#10;&#10;public static T ModInversePrime&lt;T&gt;(T a, T mod) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; ModPower(a, mod - (T.One + T.One), mod);$END$" description="Computes the modular multiplicative inverse of a modulo a prime mod." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpminv" value="public static (T Gcd, T X, T Y) ExtendedGcd&lt;T&gt;(T a, T b) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (b == T.Zero)&#10;        return (T.Abs(a), a &lt; T.Zero ? -T.One : T.One, T.Zero);&#10;&#10;    var (g, x1, y1) = ExtendedGcd(b, a % b);&#10;    return (g, y1, x1 - (a / b) * y1);&#10;}&#10;&#10;public static T ModInverse&lt;T&gt;(T a, T mod) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    var (gcd, x, _) = ExtendedGcd(a, mod);&#10;    if (gcd != T.One)&#10;        throw new InvalidOperationException($$&quot;Modular inverse does not exist: {a} and {mod} are not coprime.&quot;);&#10;&#10;    return (x % mod + mod) % mod;&#10;}$END$" description="Computes the modular multiplicative inverse of a modulo mod." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_minv" value="public static (T Gcd, T X, T Y) ExtendedGcd&lt;T&gt;(T a, T b) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (b == T.Zero)&#10;        return (T.Abs(a), a &lt; T.Zero ? -T.One : T.One, T.Zero);&#10;&#10;    var (g, x1, y1) = ExtendedGcd(b, a % b);&#10;    return (g, y1, x1 - (a / b) * y1);&#10;}&#10;&#10;public static T ModInverse&lt;T&gt;(T a, T mod) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    var (gcd, x, _) = ExtendedGcd(a, mod);&#10;    if (gcd != T.One)&#10;        throw new InvalidOperationException($$&quot;Modular inverse does not exist: {a} and {mod} are not coprime.&quot;);&#10;&#10;    return (x % mod + mod) % mod;&#10;}$END$" description="Computes the modular multiplicative inverse of a modulo mod." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="minv" value="public static (T Gcd, T X, T Y) ExtendedGcd&lt;T&gt;(T a, T b) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (b == T.Zero)&#10;        return (T.Abs(a), a &lt; T.Zero ? -T.One : T.One, T.Zero);&#10;&#10;    var (g, x1, y1) = ExtendedGcd(b, a % b);&#10;    return (g, y1, x1 - (a / b) * y1);&#10;}&#10;&#10;public static T ModInverse&lt;T&gt;(T a, T mod) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    var (gcd, x, _) = ExtendedGcd(a, mod);&#10;    if (gcd != T.One)&#10;        throw new InvalidOperationException($$&quot;Modular inverse does not exist: {a} and {mod} are not coprime.&quot;);&#10;&#10;    return (x % mod + mod) % mod;&#10;}$END$" description="Computes the modular multiplicative inverse of a modulo mod." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="ModInverse" value="public static (T Gcd, T X, T Y) ExtendedGcd&lt;T&gt;(T a, T b) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (b == T.Zero)&#10;        return (T.Abs(a), a &lt; T.Zero ? -T.One : T.One, T.Zero);&#10;&#10;    var (g, x1, y1) = ExtendedGcd(b, a % b);&#10;    return (g, y1, x1 - (a / b) * y1);&#10;}&#10;&#10;public static T ModInverse&lt;T&gt;(T a, T mod) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    var (gcd, x, _) = ExtendedGcd(a, mod);&#10;    if (gcd != T.One)&#10;        throw new InvalidOperationException($$&quot;Modular inverse does not exist: {a} and {mod} are not coprime.&quot;);&#10;&#10;    return (x % mod + mod) % mod;&#10;}$END$" description="Computes the modular multiplicative inverse of a modulo mod." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpdiv" value="public static List&lt;T&gt; GetDivisors&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    List&lt;T&gt; small = new();&#10;    List&lt;T&gt; large = new();&#10;&#10;    for (T i = T.One; i * i &lt;= n; i++)&#10;    {&#10;        if ((n % i) != T.Zero) continue;&#10;&#10;        small.Add(i);&#10;        T paired = n / i;&#10;        if (paired != i)&#10;            large.Add(paired);&#10;    }&#10;&#10;    large.Reverse();&#10;    small.AddRange(large);&#10;    return small;&#10;}$END$" description="Extracts all divisors of n in sorted order." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_div" value="public static List&lt;T&gt; GetDivisors&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    List&lt;T&gt; small = new();&#10;    List&lt;T&gt; large = new();&#10;&#10;    for (T i = T.One; i * i &lt;= n; i++)&#10;    {&#10;        if ((n % i) != T.Zero) continue;&#10;&#10;        small.Add(i);&#10;        T paired = n / i;&#10;        if (paired != i)&#10;            large.Add(paired);&#10;    }&#10;&#10;    large.Reverse();&#10;    small.AddRange(large);&#10;    return small;&#10;}$END$" description="Extracts all divisors of n in sorted order." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="div" value="public static List&lt;T&gt; GetDivisors&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    List&lt;T&gt; small = new();&#10;    List&lt;T&gt; large = new();&#10;&#10;    for (T i = T.One; i * i &lt;= n; i++)&#10;    {&#10;        if ((n % i) != T.Zero) continue;&#10;&#10;        small.Add(i);&#10;        T paired = n / i;&#10;        if (paired != i)&#10;            large.Add(paired);&#10;    }&#10;&#10;    large.Reverse();&#10;    small.AddRange(large);&#10;    return small;&#10;}$END$" description="Extracts all divisors of n in sorted order." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="GetDivisors" value="public static List&lt;T&gt; GetDivisors&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    List&lt;T&gt; small = new();&#10;    List&lt;T&gt; large = new();&#10;&#10;    for (T i = T.One; i * i &lt;= n; i++)&#10;    {&#10;        if ((n % i) != T.Zero) continue;&#10;&#10;        small.Add(i);&#10;        T paired = n / i;&#10;        if (paired != i)&#10;            large.Add(paired);&#10;    }&#10;&#10;    large.Reverse();&#10;    small.AddRange(large);&#10;    return small;&#10;}$END$" description="Extracts all divisors of n in sorted order." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpcomb" value="public static T ModPower&lt;T&gt;(T @base, T exp, T mod) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (exp &lt; T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(exp), &quot;Negative exponent not supported.&quot;);&#10;    if (mod &lt;= T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(mod), &quot;Modulus must be positive.&quot;);&#10;&#10;    T result = T.One % mod;&#10;    T b = (@base % mod + mod) % mod;&#10;&#10;    while (exp &gt; T.Zero)&#10;    {&#10;        if ((exp &amp; T.One) == T.One)&#10;            result = (result * b) % mod;&#10;&#10;        b = (b * b) % mod;&#10;        exp &gt;&gt;= 1;&#10;    }&#10;&#10;    return result;&#10;}&#10;&#10;public static T ModInversePrime&lt;T&gt;(T a, T mod) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; ModPower(a, mod - (T.One + T.One), mod);&#10;&#10;public sealed class ModularCombinatorics&lt;T&gt; where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    private readonly T[] _fact;&#10;    private readonly T[] _invFact;&#10;    private readonly T _mod;&#10;    public ModularCombinatorics(int maxN, T mod)&#10;    {&#10;        _mod = mod;&#10;        _fact = new T[maxN + 1];&#10;        _invFact = new T[maxN + 1];&#10;&#10;        _fact[0] = T.One;&#10;        _invFact[0] = T.One;&#10;&#10;        for (int i = 1; i &lt;= maxN; i++)&#10;        {&#10;            _fact[i] = (_fact[i - 1] * T.CreateChecked(i)) % _mod;&#10;        }&#10;&#10;        _invFact[maxN] = NumberTheoryToolkit.ModInversePrime(_fact[maxN], _mod);&#10;&#10;        for (int i = maxN - 1; i &gt;= 1; i--)&#10;        {&#10;            _invFact[i] = (_invFact[i + 1] * T.CreateChecked(i + 1)) % _mod;&#10;        }&#10;    }&#10;    public T NCr(int n, int r)&#10;    {&#10;        if (r &lt; 0 || r &gt; n) return T.Zero;&#10;        return (_fact[n] * _invFact[r] % _mod) * _invFact[n - r] % _mod;&#10;    }&#10;    public T NPr(int n, int r)&#10;    {&#10;        if (r &lt; 0 || r &gt; n) return T.Zero;&#10;        return _fact[n] * _invFact[n - r] % _mod;&#10;    }&#10;}$END$" description="Precomputes factorials and inverse factorials for modular combinatorics queries under a prime modulus." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_comb" value="public static T ModPower&lt;T&gt;(T @base, T exp, T mod) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (exp &lt; T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(exp), &quot;Negative exponent not supported.&quot;);&#10;    if (mod &lt;= T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(mod), &quot;Modulus must be positive.&quot;);&#10;&#10;    T result = T.One % mod;&#10;    T b = (@base % mod + mod) % mod;&#10;&#10;    while (exp &gt; T.Zero)&#10;    {&#10;        if ((exp &amp; T.One) == T.One)&#10;            result = (result * b) % mod;&#10;&#10;        b = (b * b) % mod;&#10;        exp &gt;&gt;= 1;&#10;    }&#10;&#10;    return result;&#10;}&#10;&#10;public static T ModInversePrime&lt;T&gt;(T a, T mod) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; ModPower(a, mod - (T.One + T.One), mod);&#10;&#10;public sealed class ModularCombinatorics&lt;T&gt; where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    private readonly T[] _fact;&#10;    private readonly T[] _invFact;&#10;    private readonly T _mod;&#10;    public ModularCombinatorics(int maxN, T mod)&#10;    {&#10;        _mod = mod;&#10;        _fact = new T[maxN + 1];&#10;        _invFact = new T[maxN + 1];&#10;&#10;        _fact[0] = T.One;&#10;        _invFact[0] = T.One;&#10;&#10;        for (int i = 1; i &lt;= maxN; i++)&#10;        {&#10;            _fact[i] = (_fact[i - 1] * T.CreateChecked(i)) % _mod;&#10;        }&#10;&#10;        _invFact[maxN] = NumberTheoryToolkit.ModInversePrime(_fact[maxN], _mod);&#10;&#10;        for (int i = maxN - 1; i &gt;= 1; i--)&#10;        {&#10;            _invFact[i] = (_invFact[i + 1] * T.CreateChecked(i + 1)) % _mod;&#10;        }&#10;    }&#10;    public T NCr(int n, int r)&#10;    {&#10;        if (r &lt; 0 || r &gt; n) return T.Zero;&#10;        return (_fact[n] * _invFact[r] % _mod) * _invFact[n - r] % _mod;&#10;    }&#10;    public T NPr(int n, int r)&#10;    {&#10;        if (r &lt; 0 || r &gt; n) return T.Zero;&#10;        return _fact[n] * _invFact[n - r] % _mod;&#10;    }&#10;}$END$" description="Precomputes factorials and inverse factorials for modular combinatorics queries under a prime modulus." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="comb" value="public static T ModPower&lt;T&gt;(T @base, T exp, T mod) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (exp &lt; T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(exp), &quot;Negative exponent not supported.&quot;);&#10;    if (mod &lt;= T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(mod), &quot;Modulus must be positive.&quot;);&#10;&#10;    T result = T.One % mod;&#10;    T b = (@base % mod + mod) % mod;&#10;&#10;    while (exp &gt; T.Zero)&#10;    {&#10;        if ((exp &amp; T.One) == T.One)&#10;            result = (result * b) % mod;&#10;&#10;        b = (b * b) % mod;&#10;        exp &gt;&gt;= 1;&#10;    }&#10;&#10;    return result;&#10;}&#10;&#10;public static T ModInversePrime&lt;T&gt;(T a, T mod) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; ModPower(a, mod - (T.One + T.One), mod);&#10;&#10;public sealed class ModularCombinatorics&lt;T&gt; where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    private readonly T[] _fact;&#10;    private readonly T[] _invFact;&#10;    private readonly T _mod;&#10;    public ModularCombinatorics(int maxN, T mod)&#10;    {&#10;        _mod = mod;&#10;        _fact = new T[maxN + 1];&#10;        _invFact = new T[maxN + 1];&#10;&#10;        _fact[0] = T.One;&#10;        _invFact[0] = T.One;&#10;&#10;        for (int i = 1; i &lt;= maxN; i++)&#10;        {&#10;            _fact[i] = (_fact[i - 1] * T.CreateChecked(i)) % _mod;&#10;        }&#10;&#10;        _invFact[maxN] = NumberTheoryToolkit.ModInversePrime(_fact[maxN], _mod);&#10;&#10;        for (int i = maxN - 1; i &gt;= 1; i--)&#10;        {&#10;            _invFact[i] = (_invFact[i + 1] * T.CreateChecked(i + 1)) % _mod;&#10;        }&#10;    }&#10;    public T NCr(int n, int r)&#10;    {&#10;        if (r &lt; 0 || r &gt; n) return T.Zero;&#10;        return (_fact[n] * _invFact[r] % _mod) * _invFact[n - r] % _mod;&#10;    }&#10;    public T NPr(int n, int r)&#10;    {&#10;        if (r &lt; 0 || r &gt; n) return T.Zero;&#10;        return _fact[n] * _invFact[n - r] % _mod;&#10;    }&#10;}$END$" description="Precomputes factorials and inverse factorials for modular combinatorics queries under a prime modulus." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="ModularCombinatorics" value="public static T ModPower&lt;T&gt;(T @base, T exp, T mod) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (exp &lt; T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(exp), &quot;Negative exponent not supported.&quot;);&#10;    if (mod &lt;= T.Zero)&#10;        throw new ArgumentOutOfRangeException(nameof(mod), &quot;Modulus must be positive.&quot;);&#10;&#10;    T result = T.One % mod;&#10;    T b = (@base % mod + mod) % mod;&#10;&#10;    while (exp &gt; T.Zero)&#10;    {&#10;        if ((exp &amp; T.One) == T.One)&#10;            result = (result * b) % mod;&#10;&#10;        b = (b * b) % mod;&#10;        exp &gt;&gt;= 1;&#10;    }&#10;&#10;    return result;&#10;}&#10;&#10;public static T ModInversePrime&lt;T&gt;(T a, T mod) where T : IBinaryInteger&lt;T&gt;&#10;    =&gt; ModPower(a, mod - (T.One + T.One), mod);&#10;&#10;public sealed class ModularCombinatorics&lt;T&gt; where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    private readonly T[] _fact;&#10;    private readonly T[] _invFact;&#10;    private readonly T _mod;&#10;    public ModularCombinatorics(int maxN, T mod)&#10;    {&#10;        _mod = mod;&#10;        _fact = new T[maxN + 1];&#10;        _invFact = new T[maxN + 1];&#10;&#10;        _fact[0] = T.One;&#10;        _invFact[0] = T.One;&#10;&#10;        for (int i = 1; i &lt;= maxN; i++)&#10;        {&#10;            _fact[i] = (_fact[i - 1] * T.CreateChecked(i)) % _mod;&#10;        }&#10;&#10;        _invFact[maxN] = NumberTheoryToolkit.ModInversePrime(_fact[maxN], _mod);&#10;&#10;        for (int i = maxN - 1; i &gt;= 1; i--)&#10;        {&#10;            _invFact[i] = (_invFact[i + 1] * T.CreateChecked(i + 1)) % _mod;&#10;        }&#10;    }&#10;    public T NCr(int n, int r)&#10;    {&#10;        if (r &lt; 0 || r &gt; n) return T.Zero;&#10;        return (_fact[n] * _invFact[r] % _mod) * _invFact[n - r] % _mod;&#10;    }&#10;    public T NPr(int n, int r)&#10;    {&#10;        if (r &lt; 0 || r &gt; n) return T.Zero;&#10;        return _fact[n] * _invFact[n - r] % _mod;&#10;    }&#10;}$END$" description="Precomputes factorials and inverse factorials for modular combinatorics queries under a prime modulus." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpsiv" value="public static bool[] SieveOfEratosthenes(int n)&#10;{&#10;    if (n &lt; 2) return new bool[Math.Max(n + 1, 0)];&#10;&#10;    bool[] isPrime = new bool[n + 1];&#10;    Array.Fill(isPrime, true, 2, n - 1);&#10;&#10;    for (int i = 2; (long)i * i &lt;= n; i++)&#10;    {&#10;        if (!isPrime[i]) continue;&#10;&#10;        for (int j = i * i; j &lt;= n; j += i)&#10;            isPrime[j] = false;&#10;    }&#10;&#10;    return isPrime;&#10;}$END$" description="Generates a boolean array of size n + 1 where isPrime[i] indicates if i is prime." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_siv" value="public static bool[] SieveOfEratosthenes(int n)&#10;{&#10;    if (n &lt; 2) return new bool[Math.Max(n + 1, 0)];&#10;&#10;    bool[] isPrime = new bool[n + 1];&#10;    Array.Fill(isPrime, true, 2, n - 1);&#10;&#10;    for (int i = 2; (long)i * i &lt;= n; i++)&#10;    {&#10;        if (!isPrime[i]) continue;&#10;&#10;        for (int j = i * i; j &lt;= n; j += i)&#10;            isPrime[j] = false;&#10;    }&#10;&#10;    return isPrime;&#10;}$END$" description="Generates a boolean array of size n + 1 where isPrime[i] indicates if i is prime." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="siv" value="public static bool[] SieveOfEratosthenes(int n)&#10;{&#10;    if (n &lt; 2) return new bool[Math.Max(n + 1, 0)];&#10;&#10;    bool[] isPrime = new bool[n + 1];&#10;    Array.Fill(isPrime, true, 2, n - 1);&#10;&#10;    for (int i = 2; (long)i * i &lt;= n; i++)&#10;    {&#10;        if (!isPrime[i]) continue;&#10;&#10;        for (int j = i * i; j &lt;= n; j += i)&#10;            isPrime[j] = false;&#10;    }&#10;&#10;    return isPrime;&#10;}$END$" description="Generates a boolean array of size n + 1 where isPrime[i] indicates if i is prime." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="SieveOfEratosthenes" value="public static bool[] SieveOfEratosthenes(int n)&#10;{&#10;    if (n &lt; 2) return new bool[Math.Max(n + 1, 0)];&#10;&#10;    bool[] isPrime = new bool[n + 1];&#10;    Array.Fill(isPrime, true, 2, n - 1);&#10;&#10;    for (int i = 2; (long)i * i &lt;= n; i++)&#10;    {&#10;        if (!isPrime[i]) continue;&#10;&#10;        for (int j = i * i; j &lt;= n; j += i)&#10;            isPrime[j] = false;&#10;    }&#10;&#10;    return isPrime;&#10;}$END$" description="Generates a boolean array of size n + 1 where isPrime[i] indicates if i is prime." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cplsiv" value="public static (int[] Primes, int[] Spf) LinearSieve(int n)&#10;{&#10;    int[] spf = new int[n + 1];&#10;    List&lt;int&gt; primes = new();&#10;&#10;    for (int i = 2; i &lt;= n; i++)&#10;    {&#10;        if (spf[i] == 0)&#10;        {&#10;            spf[i] = i;&#10;            primes.Add(i);&#10;        }&#10;&#10;        for (int j = 0; j &lt; primes.Count &amp;&amp; primes[j] &lt;= spf[i] &amp;&amp; (long)i * primes[j] &lt;= n; j++)&#10;        {&#10;            spf[i * primes[j]] = primes[j];&#10;        }&#10;    }&#10;&#10;    return (primes.ToArray(), spf);&#10;}$END$" description="Computes all primes up to n and each number's Smallest Prime Factor (SPF)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_lsiv" value="public static (int[] Primes, int[] Spf) LinearSieve(int n)&#10;{&#10;    int[] spf = new int[n + 1];&#10;    List&lt;int&gt; primes = new();&#10;&#10;    for (int i = 2; i &lt;= n; i++)&#10;    {&#10;        if (spf[i] == 0)&#10;        {&#10;            spf[i] = i;&#10;            primes.Add(i);&#10;        }&#10;&#10;        for (int j = 0; j &lt; primes.Count &amp;&amp; primes[j] &lt;= spf[i] &amp;&amp; (long)i * primes[j] &lt;= n; j++)&#10;        {&#10;            spf[i * primes[j]] = primes[j];&#10;        }&#10;    }&#10;&#10;    return (primes.ToArray(), spf);&#10;}$END$" description="Computes all primes up to n and each number's Smallest Prime Factor (SPF)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="lsiv" value="public static (int[] Primes, int[] Spf) LinearSieve(int n)&#10;{&#10;    int[] spf = new int[n + 1];&#10;    List&lt;int&gt; primes = new();&#10;&#10;    for (int i = 2; i &lt;= n; i++)&#10;    {&#10;        if (spf[i] == 0)&#10;        {&#10;            spf[i] = i;&#10;            primes.Add(i);&#10;        }&#10;&#10;        for (int j = 0; j &lt; primes.Count &amp;&amp; primes[j] &lt;= spf[i] &amp;&amp; (long)i * primes[j] &lt;= n; j++)&#10;        {&#10;            spf[i * primes[j]] = primes[j];&#10;        }&#10;    }&#10;&#10;    return (primes.ToArray(), spf);&#10;}$END$" description="Computes all primes up to n and each number's Smallest Prime Factor (SPF)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="LinearSieve" value="public static (int[] Primes, int[] Spf) LinearSieve(int n)&#10;{&#10;    int[] spf = new int[n + 1];&#10;    List&lt;int&gt; primes = new();&#10;&#10;    for (int i = 2; i &lt;= n; i++)&#10;    {&#10;        if (spf[i] == 0)&#10;        {&#10;            spf[i] = i;&#10;            primes.Add(i);&#10;        }&#10;&#10;        for (int j = 0; j &lt; primes.Count &amp;&amp; primes[j] &lt;= spf[i] &amp;&amp; (long)i * primes[j] &lt;= n; j++)&#10;        {&#10;            spf[i * primes[j]] = primes[j];&#10;        }&#10;    }&#10;&#10;    return (primes.ToArray(), spf);&#10;}$END$" description="Computes all primes up to n and each number's Smallest Prime Factor (SPF)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpegcd" value="public static (T Gcd, T X, T Y) ExtendedGcd&lt;T&gt;(T a, T b) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (b == T.Zero)&#10;        return (T.Abs(a), a &lt; T.Zero ? -T.One : T.One, T.Zero);&#10;&#10;    var (g, x1, y1) = ExtendedGcd(b, a % b);&#10;    return (g, y1, x1 - (a / b) * y1);&#10;}$END$" description="Computes gcd(a, b) and Bézout coefficients x and y such that a*x + b*y = gcd(a, b)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_egcd" value="public static (T Gcd, T X, T Y) ExtendedGcd&lt;T&gt;(T a, T b) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (b == T.Zero)&#10;        return (T.Abs(a), a &lt; T.Zero ? -T.One : T.One, T.Zero);&#10;&#10;    var (g, x1, y1) = ExtendedGcd(b, a % b);&#10;    return (g, y1, x1 - (a / b) * y1);&#10;}$END$" description="Computes gcd(a, b) and Bézout coefficients x and y such that a*x + b*y = gcd(a, b)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="egcd" value="public static (T Gcd, T X, T Y) ExtendedGcd&lt;T&gt;(T a, T b) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (b == T.Zero)&#10;        return (T.Abs(a), a &lt; T.Zero ? -T.One : T.One, T.Zero);&#10;&#10;    var (g, x1, y1) = ExtendedGcd(b, a % b);&#10;    return (g, y1, x1 - (a / b) * y1);&#10;}$END$" description="Computes gcd(a, b) and Bézout coefficients x and y such that a*x + b*y = gcd(a, b)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="ExtendedGcd" value="public static (T Gcd, T X, T Y) ExtendedGcd&lt;T&gt;(T a, T b) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (b == T.Zero)&#10;        return (T.Abs(a), a &lt; T.Zero ? -T.One : T.One, T.Zero);&#10;&#10;    var (g, x1, y1) = ExtendedGcd(b, a % b);&#10;    return (g, y1, x1 - (a / b) * y1);&#10;}$END$" description="Computes gcd(a, b) and Bézout coefficients x and y such that a*x + b*y = gcd(a, b)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpistp" value="public static bool IsPrime&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T two = T.CreateChecked(2);&#10;    T three = T.CreateChecked(3);&#10;&#10;    if (n &lt;= T.One) return false;&#10;    if (n &lt;= three) return true;&#10;    if ((n % two) == T.Zero || (n % three) == T.Zero) return false;&#10;&#10;    T step = T.CreateChecked(6);&#10;    for (T i = T.CreateChecked(5); i * i &lt;= n; i += step)&#10;    {&#10;        if ((n % i) == T.Zero || (n % (i + two)) == T.Zero)&#10;            return false;&#10;    }&#10;&#10;    return true;&#10;}&#10;&#10;public static bool IsTPrime&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (n &lt; T.CreateChecked(4)) return false;&#10;&#10;    double sqrtVal = Math.Round(Math.Sqrt(double.CreateChecked(n)));&#10;    T root = T.CreateChecked(sqrtVal);&#10;&#10;    return (root * root == n) &amp;&amp; IsPrime(root);&#10;}$END$" description="Checks whether n has exactly 3 positive divisors." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_istp" value="public static bool IsPrime&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T two = T.CreateChecked(2);&#10;    T three = T.CreateChecked(3);&#10;&#10;    if (n &lt;= T.One) return false;&#10;    if (n &lt;= three) return true;&#10;    if ((n % two) == T.Zero || (n % three) == T.Zero) return false;&#10;&#10;    T step = T.CreateChecked(6);&#10;    for (T i = T.CreateChecked(5); i * i &lt;= n; i += step)&#10;    {&#10;        if ((n % i) == T.Zero || (n % (i + two)) == T.Zero)&#10;            return false;&#10;    }&#10;&#10;    return true;&#10;}&#10;&#10;public static bool IsTPrime&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (n &lt; T.CreateChecked(4)) return false;&#10;&#10;    double sqrtVal = Math.Round(Math.Sqrt(double.CreateChecked(n)));&#10;    T root = T.CreateChecked(sqrtVal);&#10;&#10;    return (root * root == n) &amp;&amp; IsPrime(root);&#10;}$END$" description="Checks whether n has exactly 3 positive divisors." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="istp" value="public static bool IsPrime&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T two = T.CreateChecked(2);&#10;    T three = T.CreateChecked(3);&#10;&#10;    if (n &lt;= T.One) return false;&#10;    if (n &lt;= three) return true;&#10;    if ((n % two) == T.Zero || (n % three) == T.Zero) return false;&#10;&#10;    T step = T.CreateChecked(6);&#10;    for (T i = T.CreateChecked(5); i * i &lt;= n; i += step)&#10;    {&#10;        if ((n % i) == T.Zero || (n % (i + two)) == T.Zero)&#10;            return false;&#10;    }&#10;&#10;    return true;&#10;}&#10;&#10;public static bool IsTPrime&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (n &lt; T.CreateChecked(4)) return false;&#10;&#10;    double sqrtVal = Math.Round(Math.Sqrt(double.CreateChecked(n)));&#10;    T root = T.CreateChecked(sqrtVal);&#10;&#10;    return (root * root == n) &amp;&amp; IsPrime(root);&#10;}$END$" description="Checks whether n has exactly 3 positive divisors." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="IsTPrime" value="public static bool IsPrime&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T two = T.CreateChecked(2);&#10;    T three = T.CreateChecked(3);&#10;&#10;    if (n &lt;= T.One) return false;&#10;    if (n &lt;= three) return true;&#10;    if ((n % two) == T.Zero || (n % three) == T.Zero) return false;&#10;&#10;    T step = T.CreateChecked(6);&#10;    for (T i = T.CreateChecked(5); i * i &lt;= n; i += step)&#10;    {&#10;        if ((n % i) == T.Zero || (n % (i + two)) == T.Zero)&#10;            return false;&#10;    }&#10;&#10;    return true;&#10;}&#10;&#10;public static bool IsTPrime&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (n &lt; T.CreateChecked(4)) return false;&#10;&#10;    double sqrtVal = Math.Round(Math.Sqrt(double.CreateChecked(n)));&#10;    T root = T.CreateChecked(sqrtVal);&#10;&#10;    return (root * root == n) &amp;&amp; IsPrime(root);&#10;}$END$" description="Checks whether n has exactly 3 positive divisors." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpisp" value="public static bool IsPrime&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T two = T.CreateChecked(2);&#10;    T three = T.CreateChecked(3);&#10;&#10;    if (n &lt;= T.One) return false;&#10;    if (n &lt;= three) return true;&#10;    if ((n % two) == T.Zero || (n % three) == T.Zero) return false;&#10;&#10;    T step = T.CreateChecked(6);&#10;    for (T i = T.CreateChecked(5); i * i &lt;= n; i += step)&#10;    {&#10;        if ((n % i) == T.Zero || (n % (i + two)) == T.Zero)&#10;            return false;&#10;    }&#10;&#10;    return true;&#10;}$END$" description="Determines whether a number is prime." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_isp" value="public static bool IsPrime&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T two = T.CreateChecked(2);&#10;    T three = T.CreateChecked(3);&#10;&#10;    if (n &lt;= T.One) return false;&#10;    if (n &lt;= three) return true;&#10;    if ((n % two) == T.Zero || (n % three) == T.Zero) return false;&#10;&#10;    T step = T.CreateChecked(6);&#10;    for (T i = T.CreateChecked(5); i * i &lt;= n; i += step)&#10;    {&#10;        if ((n % i) == T.Zero || (n % (i + two)) == T.Zero)&#10;            return false;&#10;    }&#10;&#10;    return true;&#10;}$END$" description="Determines whether a number is prime." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="isp" value="public static bool IsPrime&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T two = T.CreateChecked(2);&#10;    T three = T.CreateChecked(3);&#10;&#10;    if (n &lt;= T.One) return false;&#10;    if (n &lt;= three) return true;&#10;    if ((n % two) == T.Zero || (n % three) == T.Zero) return false;&#10;&#10;    T step = T.CreateChecked(6);&#10;    for (T i = T.CreateChecked(5); i * i &lt;= n; i += step)&#10;    {&#10;        if ((n % i) == T.Zero || (n % (i + two)) == T.Zero)&#10;            return false;&#10;    }&#10;&#10;    return true;&#10;}$END$" description="Determines whether a number is prime." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="IsPrime" value="public static bool IsPrime&lt;T&gt;(T n) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    T two = T.CreateChecked(2);&#10;    T three = T.CreateChecked(3);&#10;&#10;    if (n &lt;= T.One) return false;&#10;    if (n &lt;= three) return true;&#10;    if ((n % two) == T.Zero || (n % three) == T.Zero) return false;&#10;&#10;    T step = T.CreateChecked(6);&#10;    for (T i = T.CreateChecked(5); i * i &lt;= n; i += step)&#10;    {&#10;        if ((n % i) == T.Zero || (n % (i + two)) == T.Zero)&#10;            return false;&#10;    }&#10;&#10;    return true;&#10;}$END$" description="Determines whether a number is prime." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpncr" value="public static T NCr&lt;T&gt;(T n, T r) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (r &lt; T.Zero || r &gt; n) return T.Zero;&#10;    if (r == T.Zero || r == n) return T.One;&#10;&#10;    if (r &gt; n - r)&#10;        r = n - r;&#10;&#10;    T result = T.One;&#10;    for (T i = T.One; i &lt;= r; i++)&#10;    {&#10;        result = (result * (n - r + i)) / i;&#10;    }&#10;&#10;    return result;&#10;}$END$" description="Computes nCr." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_ncr" value="public static T NCr&lt;T&gt;(T n, T r) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (r &lt; T.Zero || r &gt; n) return T.Zero;&#10;    if (r == T.Zero || r == n) return T.One;&#10;&#10;    if (r &gt; n - r)&#10;        r = n - r;&#10;&#10;    T result = T.One;&#10;    for (T i = T.One; i &lt;= r; i++)&#10;    {&#10;        result = (result * (n - r + i)) / i;&#10;    }&#10;&#10;    return result;&#10;}$END$" description="Computes nCr." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="ncr" value="public static T NCr&lt;T&gt;(T n, T r) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (r &lt; T.Zero || r &gt; n) return T.Zero;&#10;    if (r == T.Zero || r == n) return T.One;&#10;&#10;    if (r &gt; n - r)&#10;        r = n - r;&#10;&#10;    T result = T.One;&#10;    for (T i = T.One; i &lt;= r; i++)&#10;    {&#10;        result = (result * (n - r + i)) / i;&#10;    }&#10;&#10;    return result;&#10;}$END$" description="Computes nCr." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="NCr" value="public static T NCr&lt;T&gt;(T n, T r) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    if (r &lt; T.Zero || r &gt; n) return T.Zero;&#10;    if (r == T.Zero || r == n) return T.One;&#10;&#10;    if (r &gt; n - r)&#10;        r = n - r;&#10;&#10;    T result = T.One;&#10;    for (T i = T.One; i &lt;= r; i++)&#10;    {&#10;        result = (result * (n - r + i)) / i;&#10;    }&#10;&#10;    return result;&#10;}$END$" description="Computes nCr." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpfastio" value="public static class IO&#10;{&#10;    private static StreamReader _reader = new(Console.OpenStandardInput(), bufferSize: 65536);&#10;    private static StreamWriter _writer = new(Console.OpenStandardOutput(), bufferSize: 65536);&#10;    private static readonly Queue&lt;string&gt; _tokens = new();&#10;    public static void SetFileIO(string inputPath = &quot;input.txt&quot;, string outputPath = &quot;output.txt&quot;)&#10;    {&#10;        if (File.Exists(inputPath))&#10;            _reader = new StreamReader(new FileStream(inputPath, FileMode.Open, FileAccess.Read), bufferSize: 65536);&#10;        if (!string.IsNullOrEmpty(outputPath))&#10;            _writer = new StreamWriter(new FileStream(outputPath, FileMode.Create, FileAccess.Write), bufferSize: 65536);&#10;    }&#10;    public static string? Next()&#10;    {&#10;        while (_tokens.Count == 0)&#10;        {&#10;            string? line = _reader.ReadLine();&#10;            if (line == null) return null;&#10;            foreach (var t in line.Split((char[])null!, StringSplitOptions.RemoveEmptyEntries))&#10;                _tokens.Enqueue(t);&#10;        }&#10;        return _tokens.Dequeue();&#10;    }&#10;    public static int NextInt() =&gt; int.Parse(Next()!);&#10;    public static long NextLong() =&gt; long.Parse(Next()!);&#10;    public static double NextDouble() =&gt; double.Parse(Next()!, CultureInfo.InvariantCulture);&#10;    public static string? NextLine()&#10;    {&#10;        _tokens.Clear();&#10;        return _reader.ReadLine();&#10;    }&#10;    public static void Print&lt;T&gt;(T val) =&gt; _writer.Write(val);&#10;    public static void Println() =&gt; _writer.WriteLine();&#10;    public static void Println&lt;T&gt;(T val) =&gt; _writer.WriteLine(val);&#10;    public static void Print&lt;T&gt;(IEnumerable&lt;T&gt; col, string sep = &quot; &quot;) =&gt;&#10;        _writer.Write(string.Join(sep, col));&#10;    public static void Println&lt;T&gt;(IEnumerable&lt;T&gt; col, string sep = &quot; &quot;) =&gt;&#10;        _writer.WriteLine(string.Join(sep, col));&#10;    public static void Flush() =&gt; _writer.Flush();&#10;}$END$" description="Lightweight fast I/O helper using built-in StreamReader and token queuing." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_fastio" value="public static class IO&#10;{&#10;    private static StreamReader _reader = new(Console.OpenStandardInput(), bufferSize: 65536);&#10;    private static StreamWriter _writer = new(Console.OpenStandardOutput(), bufferSize: 65536);&#10;    private static readonly Queue&lt;string&gt; _tokens = new();&#10;    public static void SetFileIO(string inputPath = &quot;input.txt&quot;, string outputPath = &quot;output.txt&quot;)&#10;    {&#10;        if (File.Exists(inputPath))&#10;            _reader = new StreamReader(new FileStream(inputPath, FileMode.Open, FileAccess.Read), bufferSize: 65536);&#10;        if (!string.IsNullOrEmpty(outputPath))&#10;            _writer = new StreamWriter(new FileStream(outputPath, FileMode.Create, FileAccess.Write), bufferSize: 65536);&#10;    }&#10;    public static string? Next()&#10;    {&#10;        while (_tokens.Count == 0)&#10;        {&#10;            string? line = _reader.ReadLine();&#10;            if (line == null) return null;&#10;            foreach (var t in line.Split((char[])null!, StringSplitOptions.RemoveEmptyEntries))&#10;                _tokens.Enqueue(t);&#10;        }&#10;        return _tokens.Dequeue();&#10;    }&#10;    public static int NextInt() =&gt; int.Parse(Next()!);&#10;    public static long NextLong() =&gt; long.Parse(Next()!);&#10;    public static double NextDouble() =&gt; double.Parse(Next()!, CultureInfo.InvariantCulture);&#10;    public static string? NextLine()&#10;    {&#10;        _tokens.Clear();&#10;        return _reader.ReadLine();&#10;    }&#10;    public static void Print&lt;T&gt;(T val) =&gt; _writer.Write(val);&#10;    public static void Println() =&gt; _writer.WriteLine();&#10;    public static void Println&lt;T&gt;(T val) =&gt; _writer.WriteLine(val);&#10;    public static void Print&lt;T&gt;(IEnumerable&lt;T&gt; col, string sep = &quot; &quot;) =&gt;&#10;        _writer.Write(string.Join(sep, col));&#10;    public static void Println&lt;T&gt;(IEnumerable&lt;T&gt; col, string sep = &quot; &quot;) =&gt;&#10;        _writer.WriteLine(string.Join(sep, col));&#10;    public static void Flush() =&gt; _writer.Flush();&#10;}$END$" description="Lightweight fast I/O helper using built-in StreamReader and token queuing." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="fastio" value="public static class IO&#10;{&#10;    private static StreamReader _reader = new(Console.OpenStandardInput(), bufferSize: 65536);&#10;    private static StreamWriter _writer = new(Console.OpenStandardOutput(), bufferSize: 65536);&#10;    private static readonly Queue&lt;string&gt; _tokens = new();&#10;    public static void SetFileIO(string inputPath = &quot;input.txt&quot;, string outputPath = &quot;output.txt&quot;)&#10;    {&#10;        if (File.Exists(inputPath))&#10;            _reader = new StreamReader(new FileStream(inputPath, FileMode.Open, FileAccess.Read), bufferSize: 65536);&#10;        if (!string.IsNullOrEmpty(outputPath))&#10;            _writer = new StreamWriter(new FileStream(outputPath, FileMode.Create, FileAccess.Write), bufferSize: 65536);&#10;    }&#10;    public static string? Next()&#10;    {&#10;        while (_tokens.Count == 0)&#10;        {&#10;            string? line = _reader.ReadLine();&#10;            if (line == null) return null;&#10;            foreach (var t in line.Split((char[])null!, StringSplitOptions.RemoveEmptyEntries))&#10;                _tokens.Enqueue(t);&#10;        }&#10;        return _tokens.Dequeue();&#10;    }&#10;    public static int NextInt() =&gt; int.Parse(Next()!);&#10;    public static long NextLong() =&gt; long.Parse(Next()!);&#10;    public static double NextDouble() =&gt; double.Parse(Next()!, CultureInfo.InvariantCulture);&#10;    public static string? NextLine()&#10;    {&#10;        _tokens.Clear();&#10;        return _reader.ReadLine();&#10;    }&#10;    public static void Print&lt;T&gt;(T val) =&gt; _writer.Write(val);&#10;    public static void Println() =&gt; _writer.WriteLine();&#10;    public static void Println&lt;T&gt;(T val) =&gt; _writer.WriteLine(val);&#10;    public static void Print&lt;T&gt;(IEnumerable&lt;T&gt; col, string sep = &quot; &quot;) =&gt;&#10;        _writer.Write(string.Join(sep, col));&#10;    public static void Println&lt;T&gt;(IEnumerable&lt;T&gt; col, string sep = &quot; &quot;) =&gt;&#10;        _writer.WriteLine(string.Join(sep, col));&#10;    public static void Flush() =&gt; _writer.Flush();&#10;}$END$" description="Lightweight fast I/O helper using built-in StreamReader and token queuing." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="IO" value="public static class IO&#10;{&#10;    private static StreamReader _reader = new(Console.OpenStandardInput(), bufferSize: 65536);&#10;    private static StreamWriter _writer = new(Console.OpenStandardOutput(), bufferSize: 65536);&#10;    private static readonly Queue&lt;string&gt; _tokens = new();&#10;    public static void SetFileIO(string inputPath = &quot;input.txt&quot;, string outputPath = &quot;output.txt&quot;)&#10;    {&#10;        if (File.Exists(inputPath))&#10;            _reader = new StreamReader(new FileStream(inputPath, FileMode.Open, FileAccess.Read), bufferSize: 65536);&#10;        if (!string.IsNullOrEmpty(outputPath))&#10;            _writer = new StreamWriter(new FileStream(outputPath, FileMode.Create, FileAccess.Write), bufferSize: 65536);&#10;    }&#10;    public static string? Next()&#10;    {&#10;        while (_tokens.Count == 0)&#10;        {&#10;            string? line = _reader.ReadLine();&#10;            if (line == null) return null;&#10;            foreach (var t in line.Split((char[])null!, StringSplitOptions.RemoveEmptyEntries))&#10;                _tokens.Enqueue(t);&#10;        }&#10;        return _tokens.Dequeue();&#10;    }&#10;    public static int NextInt() =&gt; int.Parse(Next()!);&#10;    public static long NextLong() =&gt; long.Parse(Next()!);&#10;    public static double NextDouble() =&gt; double.Parse(Next()!, CultureInfo.InvariantCulture);&#10;    public static string? NextLine()&#10;    {&#10;        _tokens.Clear();&#10;        return _reader.ReadLine();&#10;    }&#10;    public static void Print&lt;T&gt;(T val) =&gt; _writer.Write(val);&#10;    public static void Println() =&gt; _writer.WriteLine();&#10;    public static void Println&lt;T&gt;(T val) =&gt; _writer.WriteLine(val);&#10;    public static void Print&lt;T&gt;(IEnumerable&lt;T&gt; col, string sep = &quot; &quot;) =&gt;&#10;        _writer.Write(string.Join(sep, col));&#10;    public static void Println&lt;T&gt;(IEnumerable&lt;T&gt; col, string sep = &quot; &quot;) =&gt;&#10;        _writer.WriteLine(string.Join(sep, col));&#10;    public static void Flush() =&gt; _writer.Flush();&#10;}$END$" description="Lightweight fast I/O helper using built-in StreamReader and token queuing." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cptsreal" value="public static double TernarySearch(double lo, double hi, Func&lt;double, double&gt; f, Func&lt;double, double, bool&gt; predicate, int iterations = 100)&#10;{&#10;    for (int i = 0; i &lt; iterations; i++)&#10;    {&#10;        double m1 = lo + (hi - lo) / 3.0;&#10;        double m2 = hi - (hi - lo) / 3.0;&#10;&#10;        if (predicate(f(m1), f(m2)))&#10;            hi = m2;&#10;        else&#10;            lo = m1;&#10;    }&#10;&#10;    return (lo + hi) / 2.0;&#10;}$END$" description="Finds the real number x in [lo, hi] that optimizes f according to the predicate." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_tsreal" value="public static double TernarySearch(double lo, double hi, Func&lt;double, double&gt; f, Func&lt;double, double, bool&gt; predicate, int iterations = 100)&#10;{&#10;    for (int i = 0; i &lt; iterations; i++)&#10;    {&#10;        double m1 = lo + (hi - lo) / 3.0;&#10;        double m2 = hi - (hi - lo) / 3.0;&#10;&#10;        if (predicate(f(m1), f(m2)))&#10;            hi = m2;&#10;        else&#10;            lo = m1;&#10;    }&#10;&#10;    return (lo + hi) / 2.0;&#10;}$END$" description="Finds the real number x in [lo, hi] that optimizes f according to the predicate." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="tsreal" value="public static double TernarySearch(double lo, double hi, Func&lt;double, double&gt; f, Func&lt;double, double, bool&gt; predicate, int iterations = 100)&#10;{&#10;    for (int i = 0; i &lt; iterations; i++)&#10;    {&#10;        double m1 = lo + (hi - lo) / 3.0;&#10;        double m2 = hi - (hi - lo) / 3.0;&#10;&#10;        if (predicate(f(m1), f(m2)))&#10;            hi = m2;&#10;        else&#10;            lo = m1;&#10;    }&#10;&#10;    return (lo + hi) / 2.0;&#10;}$END$" description="Finds the real number x in [lo, hi] that optimizes f according to the predicate." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="TernarySearch" value="public static double TernarySearch(double lo, double hi, Func&lt;double, double&gt; f, Func&lt;double, double, bool&gt; predicate, int iterations = 100)&#10;{&#10;    for (int i = 0; i &lt; iterations; i++)&#10;    {&#10;        double m1 = lo + (hi - lo) / 3.0;&#10;        double m2 = hi - (hi - lo) / 3.0;&#10;&#10;        if (predicate(f(m1), f(m2)))&#10;            hi = m2;&#10;        else&#10;            lo = m1;&#10;    }&#10;&#10;    return (lo + hi) / 2.0;&#10;}$END$" description="Finds the real number x in [lo, hi] that optimizes f according to the predicate." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpbsreal" value="public static double BinarySearch(double lo, double hi, Func&lt;double, bool&gt; predicate, int iterations = 100)&#10;{&#10;    for (int i = 0; i &lt; iterations; i++)&#10;    {&#10;        double mid = lo + (hi - lo) / 2.0;&#10;&#10;        if (predicate(mid))&#10;            hi = mid;&#10;        else&#10;            lo = mid;&#10;    }&#10;&#10;    return (lo + hi) / 2.0;&#10;}$END$" description="Finds the real number in [lo, hi] where predicate(val) becomes true using fixed iterations." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_bsreal" value="public static double BinarySearch(double lo, double hi, Func&lt;double, bool&gt; predicate, int iterations = 100)&#10;{&#10;    for (int i = 0; i &lt; iterations; i++)&#10;    {&#10;        double mid = lo + (hi - lo) / 2.0;&#10;&#10;        if (predicate(mid))&#10;            hi = mid;&#10;        else&#10;            lo = mid;&#10;    }&#10;&#10;    return (lo + hi) / 2.0;&#10;}$END$" description="Finds the real number in [lo, hi] where predicate(val) becomes true using fixed iterations." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="bsreal" value="public static double BinarySearch(double lo, double hi, Func&lt;double, bool&gt; predicate, int iterations = 100)&#10;{&#10;    for (int i = 0; i &lt; iterations; i++)&#10;    {&#10;        double mid = lo + (hi - lo) / 2.0;&#10;&#10;        if (predicate(mid))&#10;            hi = mid;&#10;        else&#10;            lo = mid;&#10;    }&#10;&#10;    return (lo + hi) / 2.0;&#10;}$END$" description="Finds the real number in [lo, hi] where predicate(val) becomes true using fixed iterations." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="BinarySearch" value="public static double BinarySearch(double lo, double hi, Func&lt;double, bool&gt; predicate, int iterations = 100)&#10;{&#10;    for (int i = 0; i &lt; iterations; i++)&#10;    {&#10;        double mid = lo + (hi - lo) / 2.0;&#10;&#10;        if (predicate(mid))&#10;            hi = mid;&#10;        else&#10;            lo = mid;&#10;    }&#10;&#10;    return (lo + hi) / 2.0;&#10;}$END$" description="Finds the real number in [lo, hi] where predicate(val) becomes true using fixed iterations." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpbs" value="public static T BinarySearch&lt;T&gt;(T lo, T hi, Func&lt;T, bool&gt; predicate) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    while (lo &lt;= hi)&#10;    {&#10;        T mid = lo + ((hi - lo) &gt;&gt; 1);&#10;&#10;        if (predicate(mid))&#10;            hi = mid - T.One;&#10;        else&#10;            lo = mid + T.One;&#10;    }&#10;&#10;    return lo;&#10;}$END$" description="Finds the first value in [lo, hi] where predicate(val) is true, or hi + 1 if not found." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_bs" value="public static T BinarySearch&lt;T&gt;(T lo, T hi, Func&lt;T, bool&gt; predicate) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    while (lo &lt;= hi)&#10;    {&#10;        T mid = lo + ((hi - lo) &gt;&gt; 1);&#10;&#10;        if (predicate(mid))&#10;            hi = mid - T.One;&#10;        else&#10;            lo = mid + T.One;&#10;    }&#10;&#10;    return lo;&#10;}$END$" description="Finds the first value in [lo, hi] where predicate(val) is true, or hi + 1 if not found." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="bs" value="public static T BinarySearch&lt;T&gt;(T lo, T hi, Func&lt;T, bool&gt; predicate) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    while (lo &lt;= hi)&#10;    {&#10;        T mid = lo + ((hi - lo) &gt;&gt; 1);&#10;&#10;        if (predicate(mid))&#10;            hi = mid - T.One;&#10;        else&#10;            lo = mid + T.One;&#10;    }&#10;&#10;    return lo;&#10;}$END$" description="Finds the first value in [lo, hi] where predicate(val) is true, or hi + 1 if not found." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="BinarySearch" value="public static T BinarySearch&lt;T&gt;(T lo, T hi, Func&lt;T, bool&gt; predicate) where T : IBinaryInteger&lt;T&gt;&#10;{&#10;    while (lo &lt;= hi)&#10;    {&#10;        T mid = lo + ((hi - lo) &gt;&gt; 1);&#10;&#10;        if (predicate(mid))&#10;            hi = mid - T.One;&#10;        else&#10;            lo = mid + T.One;&#10;    }&#10;&#10;    return lo;&#10;}$END$" description="Finds the first value in [lo, hi] where predicate(val) is true, or hi + 1 if not found." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpub" value="public static int UpperBound&lt;T&gt;(IReadOnlyList&lt;T&gt; source, int lo, int hi, T target, IComparer&lt;T&gt; comparer)&#10;{&#10;    while (lo &lt;= hi)&#10;    {&#10;        int mid = lo + ((hi - lo) &gt;&gt; 1);&#10;&#10;        if (comparer.Compare(source[mid], target) &gt; 0)&#10;            hi = mid - 1;&#10;        else&#10;            lo = mid + 1;&#10;    }&#10;&#10;    return lo;&#10;}$END$" description="Finds the first index in [lo, hi] where source[i] &gt; target according to the comparer, or hi + 1 if not found." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_ub" value="public static int UpperBound&lt;T&gt;(IReadOnlyList&lt;T&gt; source, int lo, int hi, T target, IComparer&lt;T&gt; comparer)&#10;{&#10;    while (lo &lt;= hi)&#10;    {&#10;        int mid = lo + ((hi - lo) &gt;&gt; 1);&#10;&#10;        if (comparer.Compare(source[mid], target) &gt; 0)&#10;            hi = mid - 1;&#10;        else&#10;            lo = mid + 1;&#10;    }&#10;&#10;    return lo;&#10;}$END$" description="Finds the first index in [lo, hi] where source[i] &gt; target according to the comparer, or hi + 1 if not found." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="ub" value="public static int UpperBound&lt;T&gt;(IReadOnlyList&lt;T&gt; source, int lo, int hi, T target, IComparer&lt;T&gt; comparer)&#10;{&#10;    while (lo &lt;= hi)&#10;    {&#10;        int mid = lo + ((hi - lo) &gt;&gt; 1);&#10;&#10;        if (comparer.Compare(source[mid], target) &gt; 0)&#10;            hi = mid - 1;&#10;        else&#10;            lo = mid + 1;&#10;    }&#10;&#10;    return lo;&#10;}$END$" description="Finds the first index in [lo, hi] where source[i] &gt; target according to the comparer, or hi + 1 if not found." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="UpperBound" value="public static int UpperBound&lt;T&gt;(IReadOnlyList&lt;T&gt; source, int lo, int hi, T target, IComparer&lt;T&gt; comparer)&#10;{&#10;    while (lo &lt;= hi)&#10;    {&#10;        int mid = lo + ((hi - lo) &gt;&gt; 1);&#10;&#10;        if (comparer.Compare(source[mid], target) &gt; 0)&#10;            hi = mid - 1;&#10;        else&#10;            lo = mid + 1;&#10;    }&#10;&#10;    return lo;&#10;}$END$" description="Finds the first index in [lo, hi] where source[i] &gt; target according to the comparer, or hi + 1 if not found." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cpts" value="public static long TernarySearch(long lo, long hi, Func&lt;long, long&gt; f, Func&lt;long, long, bool&gt; predicate)&#10;{&#10;    while (hi - lo &gt; 2)&#10;    {&#10;        long m1 = lo + (hi - lo) / 3;&#10;        long m2 = hi - (hi - lo) / 3;&#10;&#10;        if (predicate(f(m1), f(m2)))&#10;            hi = m2 - 1;&#10;        else&#10;            lo = m1 + 1;&#10;    }&#10;&#10;    long best = lo;&#10;    for (long i = lo + 1; i &lt;= hi; i++)&#10;    {&#10;        if (predicate(f(i), f(best)))&#10;            best = i;&#10;    }&#10;&#10;    return best;&#10;}$END$" description="Finds the integer x in [lo, hi] that optimizes f according to the predicate." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_ts" value="public static long TernarySearch(long lo, long hi, Func&lt;long, long&gt; f, Func&lt;long, long, bool&gt; predicate)&#10;{&#10;    while (hi - lo &gt; 2)&#10;    {&#10;        long m1 = lo + (hi - lo) / 3;&#10;        long m2 = hi - (hi - lo) / 3;&#10;&#10;        if (predicate(f(m1), f(m2)))&#10;            hi = m2 - 1;&#10;        else&#10;            lo = m1 + 1;&#10;    }&#10;&#10;    long best = lo;&#10;    for (long i = lo + 1; i &lt;= hi; i++)&#10;    {&#10;        if (predicate(f(i), f(best)))&#10;            best = i;&#10;    }&#10;&#10;    return best;&#10;}$END$" description="Finds the integer x in [lo, hi] that optimizes f according to the predicate." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="ts" value="public static long TernarySearch(long lo, long hi, Func&lt;long, long&gt; f, Func&lt;long, long, bool&gt; predicate)&#10;{&#10;    while (hi - lo &gt; 2)&#10;    {&#10;        long m1 = lo + (hi - lo) / 3;&#10;        long m2 = hi - (hi - lo) / 3;&#10;&#10;        if (predicate(f(m1), f(m2)))&#10;            hi = m2 - 1;&#10;        else&#10;            lo = m1 + 1;&#10;    }&#10;&#10;    long best = lo;&#10;    for (long i = lo + 1; i &lt;= hi; i++)&#10;    {&#10;        if (predicate(f(i), f(best)))&#10;            best = i;&#10;    }&#10;&#10;    return best;&#10;}$END$" description="Finds the integer x in [lo, hi] that optimizes f according to the predicate." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="TernarySearch" value="public static long TernarySearch(long lo, long hi, Func&lt;long, long&gt; f, Func&lt;long, long, bool&gt; predicate)&#10;{&#10;    while (hi - lo &gt; 2)&#10;    {&#10;        long m1 = lo + (hi - lo) / 3;&#10;        long m2 = hi - (hi - lo) / 3;&#10;&#10;        if (predicate(f(m1), f(m2)))&#10;            hi = m2 - 1;&#10;        else&#10;            lo = m1 + 1;&#10;    }&#10;&#10;    long best = lo;&#10;    for (long i = lo + 1; i &lt;= hi; i++)&#10;    {&#10;        if (predicate(f(i), f(best)))&#10;            best = i;&#10;    }&#10;&#10;    return best;&#10;}$END$" description="Finds the integer x in [lo, hi] that optimizes f according to the predicate." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cplb" value="public static int LowerBound&lt;T&gt;(IReadOnlyList&lt;T&gt; source, int lo, int hi, T target, IComparer&lt;T&gt; comparer)&#10;{&#10;    while (lo &lt;= hi)&#10;    {&#10;        int mid = lo + ((hi - lo) &gt;&gt; 1);&#10;&#10;        if (comparer.Compare(source[mid], target) &gt;= 0)&#10;            hi = mid - 1;&#10;        else&#10;            lo = mid + 1;&#10;    }&#10;&#10;    return lo;&#10;}$END$" description="Finds the first index in [lo, hi] where source[i] &gt;= target according to the comparer, or hi + 1 if not found." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="cp_lb" value="public static int LowerBound&lt;T&gt;(IReadOnlyList&lt;T&gt; source, int lo, int hi, T target, IComparer&lt;T&gt; comparer)&#10;{&#10;    while (lo &lt;= hi)&#10;    {&#10;        int mid = lo + ((hi - lo) &gt;&gt; 1);&#10;&#10;        if (comparer.Compare(source[mid], target) &gt;= 0)&#10;            hi = mid - 1;&#10;        else&#10;            lo = mid + 1;&#10;    }&#10;&#10;    return lo;&#10;}$END$" description="Finds the first index in [lo, hi] where source[i] &gt;= target according to the comparer, or hi + 1 if not found." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="lb" value="public static int LowerBound&lt;T&gt;(IReadOnlyList&lt;T&gt; source, int lo, int hi, T target, IComparer&lt;T&gt; comparer)&#10;{&#10;    while (lo &lt;= hi)&#10;    {&#10;        int mid = lo + ((hi - lo) &gt;&gt; 1);&#10;&#10;        if (comparer.Compare(source[mid], target) &gt;= 0)&#10;            hi = mid - 1;&#10;        else&#10;            lo = mid + 1;&#10;    }&#10;&#10;    return lo;&#10;}$END$" description="Finds the first index in [lo, hi] where source[i] &gt;= target according to the comparer, or hi + 1 if not found." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+  <template name="LowerBound" value="public static int LowerBound&lt;T&gt;(IReadOnlyList&lt;T&gt; source, int lo, int hi, T target, IComparer&lt;T&gt; comparer)&#10;{&#10;    while (lo &lt;= hi)&#10;    {&#10;        int mid = lo + ((hi - lo) &gt;&gt; 1);&#10;&#10;        if (comparer.Compare(source[mid], target) &gt;= 0)&#10;            hi = mid - 1;&#10;        else&#10;            lo = mid + 1;&#10;    }&#10;&#10;    return lo;&#10;}$END$" description="Finds the first index in [lo, hi] where source[i] &gt;= target according to the comparer, or hi + 1 if not found." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="csharp" value="true" />
+    </context>
+  </template>
+</templateSet>

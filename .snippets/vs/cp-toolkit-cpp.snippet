@@ -1,0 +1,1461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>sbit (cpsbit)</Title>
+            <Shortcut>cpsbit</Shortcut>
+            <Description>Sets the bit at the given 0-based index to 1 (default), or to 0 if value is false.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long SetBit(long long n, int index, bool value = true)
+{
+    return value ? (n | (1LL << index)) : (n & ~(1LL << index));
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>sbit (cp_sbit)</Title>
+            <Shortcut>cp_sbit</Shortcut>
+            <Description>Sets the bit at the given 0-based index to 1 (default), or to 0 if value is false.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long SetBit(long long n, int index, bool value = true)
+{
+    return value ? (n | (1LL << index)) : (n & ~(1LL << index));
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>sbit (sbit)</Title>
+            <Shortcut>sbit</Shortcut>
+            <Description>Sets the bit at the given 0-based index to 1 (default), or to 0 if value is false.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long SetBit(long long n, int index, bool value = true)
+{
+    return value ? (n | (1LL << index)) : (n & ~(1LL << index));
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>sbit (SetBit)</Title>
+            <Shortcut>SetBit</Shortcut>
+            <Description>Sets the bit at the given 0-based index to 1 (default), or to 0 if value is false.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long SetBit(long long n, int index, bool value = true)
+{
+    return value ? (n | (1LL << index)) : (n & ~(1LL << index));
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>popc (cppopc)</Title>
+            <Shortcut>cppopc</Shortcut>
+            <Description>Counts the total number of set bits (popcount).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[int CountSetBits(long long n)
+{
+    return popcount((unsigned long long)n);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>popc (cp_popc)</Title>
+            <Shortcut>cp_popc</Shortcut>
+            <Description>Counts the total number of set bits (popcount).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[int CountSetBits(long long n)
+{
+    return popcount((unsigned long long)n);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>popc (popc)</Title>
+            <Shortcut>popc</Shortcut>
+            <Description>Counts the total number of set bits (popcount).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[int CountSetBits(long long n)
+{
+    return popcount((unsigned long long)n);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>popc (CountSetBits)</Title>
+            <Shortcut>CountSetBits</Shortcut>
+            <Description>Counts the total number of set bits (popcount).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[int CountSetBits(long long n)
+{
+    return popcount((unsigned long long)n);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>isp2 (cpisp2)</Title>
+            <Shortcut>cpisp2</Shortcut>
+            <Description>Checks whether n is a positive power of two (n &gt; 0 and (n &amp; (n - 1)) == 0).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[bool IsPowerOfTwo(long long n)
+{
+    return n > 0 && has_single_bit((unsigned long long)n);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>isp2 (cp_isp2)</Title>
+            <Shortcut>cp_isp2</Shortcut>
+            <Description>Checks whether n is a positive power of two (n &gt; 0 and (n &amp; (n - 1)) == 0).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[bool IsPowerOfTwo(long long n)
+{
+    return n > 0 && has_single_bit((unsigned long long)n);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>isp2 (isp2)</Title>
+            <Shortcut>isp2</Shortcut>
+            <Description>Checks whether n is a positive power of two (n &gt; 0 and (n &amp; (n - 1)) == 0).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[bool IsPowerOfTwo(long long n)
+{
+    return n > 0 && has_single_bit((unsigned long long)n);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>isp2 (IsPowerOfTwo)</Title>
+            <Shortcut>IsPowerOfTwo</Shortcut>
+            <Description>Checks whether n is a positive power of two (n &gt; 0 and (n &amp; (n - 1)) == 0).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[bool IsPowerOfTwo(long long n)
+{
+    return n > 0 && has_single_bit((unsigned long long)n);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>clsb (cpclsb)</Title>
+            <Shortcut>cpclsb</Shortcut>
+            <Description>Clears the lowest set bit (LSB) of n (n &amp; (n - 1)).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long ClearLowestSetBit(long long n)
+{
+    return n & (n - 1LL);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>clsb (cp_clsb)</Title>
+            <Shortcut>cp_clsb</Shortcut>
+            <Description>Clears the lowest set bit (LSB) of n (n &amp; (n - 1)).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long ClearLowestSetBit(long long n)
+{
+    return n & (n - 1LL);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>clsb (clsb)</Title>
+            <Shortcut>clsb</Shortcut>
+            <Description>Clears the lowest set bit (LSB) of n (n &amp; (n - 1)).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long ClearLowestSetBit(long long n)
+{
+    return n & (n - 1LL);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>clsb (ClearLowestSetBit)</Title>
+            <Shortcut>ClearLowestSetBit</Shortcut>
+            <Description>Clears the lowest set bit (LSB) of n (n &amp; (n - 1)).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long ClearLowestSetBit(long long n)
+{
+    return n & (n - 1LL);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>msbi (cpmsbi)</Title>
+            <Shortcut>cpmsbi</Shortcut>
+            <Description>Returns the 0-based index of the highest set bit, or -1 if n is 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[int GetHighestSetBitIndex(long long n)
+{
+    return n == 0 ? -1 : bit_width((unsigned long long)n) - 1;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>msbi (cp_msbi)</Title>
+            <Shortcut>cp_msbi</Shortcut>
+            <Description>Returns the 0-based index of the highest set bit, or -1 if n is 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[int GetHighestSetBitIndex(long long n)
+{
+    return n == 0 ? -1 : bit_width((unsigned long long)n) - 1;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>msbi (msbi)</Title>
+            <Shortcut>msbi</Shortcut>
+            <Description>Returns the 0-based index of the highest set bit, or -1 if n is 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[int GetHighestSetBitIndex(long long n)
+{
+    return n == 0 ? -1 : bit_width((unsigned long long)n) - 1;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>msbi (GetHighestSetBitIndex)</Title>
+            <Shortcut>GetHighestSetBitIndex</Shortcut>
+            <Description>Returns the 0-based index of the highest set bit, or -1 if n is 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[int GetHighestSetBitIndex(long long n)
+{
+    return n == 0 ? -1 : bit_width((unsigned long long)n) - 1;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>m2s (cpm2s)</Title>
+            <Shortcut>cpm2s</Shortcut>
+            <Description>Reconstructs a sorted string of lowercase English letters from a 26-bit integer mask.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[string MaskToString(int mask)
+{
+    string result;
+    result.reserve(26);
+    for (int i = 0; i < 26; ++i)
+    {
+        if ((mask >> i) & 1)
+        {
+            result += static_cast<char>('a' + i);
+        }
+    }
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>m2s (cp_m2s)</Title>
+            <Shortcut>cp_m2s</Shortcut>
+            <Description>Reconstructs a sorted string of lowercase English letters from a 26-bit integer mask.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[string MaskToString(int mask)
+{
+    string result;
+    result.reserve(26);
+    for (int i = 0; i < 26; ++i)
+    {
+        if ((mask >> i) & 1)
+        {
+            result += static_cast<char>('a' + i);
+        }
+    }
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>m2s (m2s)</Title>
+            <Shortcut>m2s</Shortcut>
+            <Description>Reconstructs a sorted string of lowercase English letters from a 26-bit integer mask.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[string MaskToString(int mask)
+{
+    string result;
+    result.reserve(26);
+    for (int i = 0; i < 26; ++i)
+    {
+        if ((mask >> i) & 1)
+        {
+            result += static_cast<char>('a' + i);
+        }
+    }
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>m2s (MaskToString)</Title>
+            <Shortcut>MaskToString</Shortcut>
+            <Description>Reconstructs a sorted string of lowercase English letters from a 26-bit integer mask.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[string MaskToString(int mask)
+{
+    string result;
+    result.reserve(26);
+    for (int i = 0; i < 26; ++i)
+    {
+        if ((mask >> i) & 1)
+        {
+            result += static_cast<char>('a' + i);
+        }
+    }
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lsbi (cplsbi)</Title>
+            <Shortcut>cplsbi</Shortcut>
+            <Description>Returns the 0-based index of the lowest set bit, or -1 if n is 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[int GetLowestSetBitIndex(long long n)
+{
+    return n == 0 ? -1 : countr_zero((unsigned long long)n);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lsbi (cp_lsbi)</Title>
+            <Shortcut>cp_lsbi</Shortcut>
+            <Description>Returns the 0-based index of the lowest set bit, or -1 if n is 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[int GetLowestSetBitIndex(long long n)
+{
+    return n == 0 ? -1 : countr_zero((unsigned long long)n);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lsbi (lsbi)</Title>
+            <Shortcut>lsbi</Shortcut>
+            <Description>Returns the 0-based index of the lowest set bit, or -1 if n is 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[int GetLowestSetBitIndex(long long n)
+{
+    return n == 0 ? -1 : countr_zero((unsigned long long)n);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lsbi (GetLowestSetBitIndex)</Title>
+            <Shortcut>GetLowestSetBitIndex</Shortcut>
+            <Description>Returns the 0-based index of the lowest set bit, or -1 if n is 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[int GetLowestSetBitIndex(long long n)
+{
+    return n == 0 ? -1 : countr_zero((unsigned long long)n);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>parity (cpparity)</Title>
+            <Shortcut>cpparity</Shortcut>
+            <Description>Checks whether the count of set bits in n is odd.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[bool HasOddParity(long long n)
+{
+    return (popcount((unsigned long long)n) & 1) == 1;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>parity (cp_parity)</Title>
+            <Shortcut>cp_parity</Shortcut>
+            <Description>Checks whether the count of set bits in n is odd.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[bool HasOddParity(long long n)
+{
+    return (popcount((unsigned long long)n) & 1) == 1;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>parity (parity)</Title>
+            <Shortcut>parity</Shortcut>
+            <Description>Checks whether the count of set bits in n is odd.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[bool HasOddParity(long long n)
+{
+    return (popcount((unsigned long long)n) & 1) == 1;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>parity (HasOddParity)</Title>
+            <Shortcut>HasOddParity</Shortcut>
+            <Description>Checks whether the count of set bits in n is odd.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[bool HasOddParity(long long n)
+{
+    return (popcount((unsigned long long)n) & 1) == 1;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>nextp (cpnextp)</Title>
+            <Shortcut>cpnextp</Shortcut>
+            <Description>Returns the lexicographically next integer with the same number of set bits in O(1).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long NextPermutation(long long mask)
+{
+    unsigned long long umask = mask;
+    unsigned long long c = umask & -umask;
+    unsigned long long r = umask + c;
+    return (((r ^ umask) >> (countr_zero(c) + 2)) | r);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>nextp (cp_nextp)</Title>
+            <Shortcut>cp_nextp</Shortcut>
+            <Description>Returns the lexicographically next integer with the same number of set bits in O(1).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long NextPermutation(long long mask)
+{
+    unsigned long long umask = mask;
+    unsigned long long c = umask & -umask;
+    unsigned long long r = umask + c;
+    return (((r ^ umask) >> (countr_zero(c) + 2)) | r);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>nextp (nextp)</Title>
+            <Shortcut>nextp</Shortcut>
+            <Description>Returns the lexicographically next integer with the same number of set bits in O(1).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long NextPermutation(long long mask)
+{
+    unsigned long long umask = mask;
+    unsigned long long c = umask & -umask;
+    unsigned long long r = umask + c;
+    return (((r ^ umask) >> (countr_zero(c) + 2)) | r);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>nextp (NextPermutation)</Title>
+            <Shortcut>NextPermutation</Shortcut>
+            <Description>Returns the lexicographically next integer with the same number of set bits in O(1).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long NextPermutation(long long mask)
+{
+    unsigned long long umask = mask;
+    unsigned long long c = umask & -umask;
+    unsigned long long r = umask + c;
+    return (((r ^ umask) >> (countr_zero(c) + 2)) | r);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>cbit (cpcbit)</Title>
+            <Shortcut>cpcbit</Shortcut>
+            <Description>Clears the bit at the given 0-based index to 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long ClearBit(long long n, int index)
+{
+    return n & ~(1LL << index);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>cbit (cp_cbit)</Title>
+            <Shortcut>cp_cbit</Shortcut>
+            <Description>Clears the bit at the given 0-based index to 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long ClearBit(long long n, int index)
+{
+    return n & ~(1LL << index);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>cbit (cbit)</Title>
+            <Shortcut>cbit</Shortcut>
+            <Description>Clears the bit at the given 0-based index to 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long ClearBit(long long n, int index)
+{
+    return n & ~(1LL << index);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>cbit (ClearBit)</Title>
+            <Shortcut>ClearBit</Shortcut>
+            <Description>Clears the bit at the given 0-based index to 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long ClearBit(long long n, int index)
+{
+    return n & ~(1LL << index);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>tbit (cptbit)</Title>
+            <Shortcut>cptbit</Shortcut>
+            <Description>Inverts (flips) the bit at the given 0-based index.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long ToggleBit(long long n, int index)
+{
+    return n ^ (1LL << index);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>tbit (cp_tbit)</Title>
+            <Shortcut>cp_tbit</Shortcut>
+            <Description>Inverts (flips) the bit at the given 0-based index.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long ToggleBit(long long n, int index)
+{
+    return n ^ (1LL << index);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>tbit (tbit)</Title>
+            <Shortcut>tbit</Shortcut>
+            <Description>Inverts (flips) the bit at the given 0-based index.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long ToggleBit(long long n, int index)
+{
+    return n ^ (1LL << index);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>tbit (ToggleBit)</Title>
+            <Shortcut>ToggleBit</Shortcut>
+            <Description>Inverts (flips) the bit at the given 0-based index.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long ToggleBit(long long n, int index)
+{
+    return n ^ (1LL << index);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lsb (cplsb)</Title>
+            <Shortcut>cplsb</Shortcut>
+            <Description>Isolates the lowest set bit (LSB) value via two&apos;s complement (n &amp; -n).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long GetLowestSetBit(long long n)
+{
+    return n & -n;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lsb (cp_lsb)</Title>
+            <Shortcut>cp_lsb</Shortcut>
+            <Description>Isolates the lowest set bit (LSB) value via two&apos;s complement (n &amp; -n).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long GetLowestSetBit(long long n)
+{
+    return n & -n;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lsb (lsb)</Title>
+            <Shortcut>lsb</Shortcut>
+            <Description>Isolates the lowest set bit (LSB) value via two&apos;s complement (n &amp; -n).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long GetLowestSetBit(long long n)
+{
+    return n & -n;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lsb (GetLowestSetBit)</Title>
+            <Shortcut>GetLowestSetBit</Shortcut>
+            <Description>Isolates the lowest set bit (LSB) value via two&apos;s complement (n &amp; -n).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long GetLowestSetBit(long long n)
+{
+    return n & -n;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>isbit (cpisbit)</Title>
+            <Shortcut>cpisbit</Shortcut>
+            <Description>Checks if the bit at the given 0-based index is set to 1.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[bool IsBitSet(long long n, int index)
+{
+    return ((n >> index) & 1LL) == 1LL;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>isbit (cp_isbit)</Title>
+            <Shortcut>cp_isbit</Shortcut>
+            <Description>Checks if the bit at the given 0-based index is set to 1.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[bool IsBitSet(long long n, int index)
+{
+    return ((n >> index) & 1LL) == 1LL;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>isbit (isbit)</Title>
+            <Shortcut>isbit</Shortcut>
+            <Description>Checks if the bit at the given 0-based index is set to 1.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[bool IsBitSet(long long n, int index)
+{
+    return ((n >> index) & 1LL) == 1LL;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>isbit (IsBitSet)</Title>
+            <Shortcut>IsBitSet</Shortcut>
+            <Description>Checks if the bit at the given 0-based index is set to 1.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[bool IsBitSet(long long n, int index)
+{
+    return ((n >> index) & 1LL) == 1LL;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>s2m (cps2m)</Title>
+            <Shortcut>cps2m</Shortcut>
+            <Description>Converts a string of lowercase English letters (&apos;a&apos;-&apos;z&apos;) into a 26-bit integer mask.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[int StringToMask(string_view s)
+{
+    int mask = 0;
+    for (char c : s)
+    {
+        mask |= (1 << (c - 'a'));
+    }
+    return mask;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>s2m (cp_s2m)</Title>
+            <Shortcut>cp_s2m</Shortcut>
+            <Description>Converts a string of lowercase English letters (&apos;a&apos;-&apos;z&apos;) into a 26-bit integer mask.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[int StringToMask(string_view s)
+{
+    int mask = 0;
+    for (char c : s)
+    {
+        mask |= (1 << (c - 'a'));
+    }
+    return mask;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>s2m (s2m)</Title>
+            <Shortcut>s2m</Shortcut>
+            <Description>Converts a string of lowercase English letters (&apos;a&apos;-&apos;z&apos;) into a 26-bit integer mask.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[int StringToMask(string_view s)
+{
+    int mask = 0;
+    for (char c : s)
+    {
+        mask |= (1 << (c - 'a'));
+    }
+    return mask;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>s2m (StringToMask)</Title>
+            <Shortcut>StringToMask</Shortcut>
+            <Description>Converts a string of lowercase English letters (&apos;a&apos;-&apos;z&apos;) into a 26-bit integer mask.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[int StringToMask(string_view s)
+{
+    int mask = 0;
+    for (char c : s)
+    {
+        mask |= (1 << (c - 'a'));
+    }
+    return mask;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>rbit (cprbit)</Title>
+            <Shortcut>cprbit</Shortcut>
+            <Description>Reverses the lowest bitCount bits of n.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long ReverseBits(long long n, int bitCount)
+{
+    long long rev = 0;
+    for (int i = 0; i < bitCount; ++i)
+    {
+        rev = (rev << 1) | ((n >> i) & 1LL);
+    }
+    return rev;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>rbit (cp_rbit)</Title>
+            <Shortcut>cp_rbit</Shortcut>
+            <Description>Reverses the lowest bitCount bits of n.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long ReverseBits(long long n, int bitCount)
+{
+    long long rev = 0;
+    for (int i = 0; i < bitCount; ++i)
+    {
+        rev = (rev << 1) | ((n >> i) & 1LL);
+    }
+    return rev;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>rbit (rbit)</Title>
+            <Shortcut>rbit</Shortcut>
+            <Description>Reverses the lowest bitCount bits of n.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long ReverseBits(long long n, int bitCount)
+{
+    long long rev = 0;
+    for (int i = 0; i < bitCount; ++i)
+    {
+        rev = (rev << 1) | ((n >> i) & 1LL);
+    }
+    return rev;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>rbit (ReverseBits)</Title>
+            <Shortcut>ReverseBits</Shortcut>
+            <Description>Reverses the lowest bitCount bits of n.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[long long ReverseBits(long long n, int bitCount)
+{
+    long long rev = 0;
+    for (int i = 0; i < bitCount; ++i)
+    {
+        rev = (rev << 1) | ((n >> i) & 1LL);
+    }
+    return rev;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>fastio (cpfastio)</Title>
+            <Shortcut>cpfastio</Shortcut>
+            <Description>Desynchronizes C/C++ standard streams and unties cin for fast I/O.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[inline void FastIO()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>fastio (cp_fastio)</Title>
+            <Shortcut>cp_fastio</Shortcut>
+            <Description>Desynchronizes C/C++ standard streams and unties cin for fast I/O.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[inline void FastIO()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>fastio (fastio)</Title>
+            <Shortcut>fastio</Shortcut>
+            <Description>Desynchronizes C/C++ standard streams and unties cin for fast I/O.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[inline void FastIO()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>fastio (FastIO)</Title>
+            <Shortcut>FastIO</Shortcut>
+            <Description>Desynchronizes C/C++ standard streams and unties cin for fast I/O.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[inline void FastIO()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>fileio (cpfileio)</Title>
+            <Shortcut>cpfileio</Shortcut>
+            <Description>Redirects standard streams to local files for offline testing.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[inline void FileIO(const char* inputFile = "input.txt", const char* outputFile = "output.txt")
+{
+#ifndef ONLINE_JUDGE
+    freopen(inputFile, "r", stdin);
+    freopen(outputFile, "w", stdout);
+#endif
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>fileio (cp_fileio)</Title>
+            <Shortcut>cp_fileio</Shortcut>
+            <Description>Redirects standard streams to local files for offline testing.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[inline void FileIO(const char* inputFile = "input.txt", const char* outputFile = "output.txt")
+{
+#ifndef ONLINE_JUDGE
+    freopen(inputFile, "r", stdin);
+    freopen(outputFile, "w", stdout);
+#endif
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>fileio (fileio)</Title>
+            <Shortcut>fileio</Shortcut>
+            <Description>Redirects standard streams to local files for offline testing.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[inline void FileIO(const char* inputFile = "input.txt", const char* outputFile = "output.txt")
+{
+#ifndef ONLINE_JUDGE
+    freopen(inputFile, "r", stdin);
+    freopen(outputFile, "w", stdout);
+#endif
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>fileio (FileIO)</Title>
+            <Shortcut>FileIO</Shortcut>
+            <Description>Redirects standard streams to local files for offline testing.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[inline void FileIO(const char* inputFile = "input.txt", const char* outputFile = "output.txt")
+{
+#ifndef ONLINE_JUDGE
+    freopen(inputFile, "r", stdin);
+    freopen(outputFile, "w", stdout);
+#endif
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>println (cpprintln)</Title>
+            <Shortcut>cpprintln</Shortcut>
+            <Description>Shorthand macro to print a value followed by a newline.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[#define println(x) cout << (x) << '\n'$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>println (cp_println)</Title>
+            <Shortcut>cp_println</Shortcut>
+            <Description>Shorthand macro to print a value followed by a newline.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[#define println(x) cout << (x) << '\n'$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>println (println)</Title>
+            <Shortcut>println</Shortcut>
+            <Description>Shorthand macro to print a value followed by a newline.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[#define println(x) cout << (x) << '\n'$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>print (cpprint)</Title>
+            <Shortcut>cpprint</Shortcut>
+            <Description>Shorthand macro to print a value followed by a space.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[#define print(x) cout << (x) << ' '$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>print (cp_print)</Title>
+            <Shortcut>cp_print</Shortcut>
+            <Description>Shorthand macro to print a value followed by a space.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[#define print(x) cout << (x) << ' '$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>print (print)</Title>
+            <Shortcut>print</Shortcut>
+            <Description>Shorthand macro to print a value followed by a space.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[#define print(x) cout << (x) << ' '$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>printv (cpprintv)</Title>
+            <Shortcut>cpprintv</Shortcut>
+            <Description>Prints elements of a vector separated by a delimiter followed by a newline.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[template <typename T>
+inline void Println(const vector<T>& vec, const string& sep = " ")
+{
+    for (size_t i = 0; i < vec.size(); ++i)
+    {
+        if (i > 0) cout << sep;
+        cout << vec[i];
+    }
+    cout << '\n';
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>printv (cp_printv)</Title>
+            <Shortcut>cp_printv</Shortcut>
+            <Description>Prints elements of a vector separated by a delimiter followed by a newline.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[template <typename T>
+inline void Println(const vector<T>& vec, const string& sep = " ")
+{
+    for (size_t i = 0; i < vec.size(); ++i)
+    {
+        if (i > 0) cout << sep;
+        cout << vec[i];
+    }
+    cout << '\n';
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>printv (printv)</Title>
+            <Shortcut>printv</Shortcut>
+            <Description>Prints elements of a vector separated by a delimiter followed by a newline.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[template <typename T>
+inline void Println(const vector<T>& vec, const string& sep = " ")
+{
+    for (size_t i = 0; i < vec.size(); ++i)
+    {
+        if (i > 0) cout << sep;
+        cout << vec[i];
+    }
+    cout << '\n';
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>printv (Println)</Title>
+            <Shortcut>Println</Shortcut>
+            <Description>Prints elements of a vector separated by a delimiter followed by a newline.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[template <typename T>
+inline void Println(const vector<T>& vec, const string& sep = " ")
+{
+    for (size_t i = 0; i < vec.size(); ++i)
+    {
+        if (i > 0) cout << sep;
+        cout << vec[i];
+    }
+    cout << '\n';
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>printm (cpprintm)</Title>
+            <Shortcut>cpprintm</Shortcut>
+            <Description>Prints a 2D matrix row by row followed by newlines.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[template <typename T>
+inline void PrintMatrix(const vector<vector<T>>& matrix, const string& sep = " ")
+{
+    for (const auto& row : matrix)
+    {
+        for (size_t i = 0; i < row.size(); ++i)
+        {
+            if (i > 0) cout << sep;
+            cout << row[i];
+        }
+        cout << '\n';
+    }
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>printm (cp_printm)</Title>
+            <Shortcut>cp_printm</Shortcut>
+            <Description>Prints a 2D matrix row by row followed by newlines.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[template <typename T>
+inline void PrintMatrix(const vector<vector<T>>& matrix, const string& sep = " ")
+{
+    for (const auto& row : matrix)
+    {
+        for (size_t i = 0; i < row.size(); ++i)
+        {
+            if (i > 0) cout << sep;
+            cout << row[i];
+        }
+        cout << '\n';
+    }
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>printm (printm)</Title>
+            <Shortcut>printm</Shortcut>
+            <Description>Prints a 2D matrix row by row followed by newlines.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[template <typename T>
+inline void PrintMatrix(const vector<vector<T>>& matrix, const string& sep = " ")
+{
+    for (const auto& row : matrix)
+    {
+        for (size_t i = 0; i < row.size(); ++i)
+        {
+            if (i > 0) cout << sep;
+            cout << row[i];
+        }
+        cout << '\n';
+    }
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>printm (PrintMatrix)</Title>
+            <Shortcut>PrintMatrix</Shortcut>
+            <Description>Prints a 2D matrix row by row followed by newlines.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="cpp"><![CDATA[template <typename T>
+inline void PrintMatrix(const vector<vector<T>>& matrix, const string& sep = " ")
+{
+    for (const auto& row : matrix)
+    {
+        for (size_t i = 0; i < row.size(); ++i)
+        {
+            if (i > 0) cout << sep;
+            cout << row[i];
+        }
+        cout << '\n';
+    }
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

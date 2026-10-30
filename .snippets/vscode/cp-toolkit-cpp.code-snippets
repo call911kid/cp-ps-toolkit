@@ -1,0 +1,371 @@
+﻿{
+  "sbit": {
+    "scope": "cpp",
+    "prefix": [
+      "cpsbit",
+      "cp_sbit",
+      "sbit",
+      "SetBit"
+    ],
+    "body": [
+      "long long SetBit(long long n, int index, bool value = true)",
+      "{",
+      "    return value ? (n | (1LL << index)) : (n & ~(1LL << index));",
+      "}"
+    ],
+    "description": "Sets the bit at the given 0-based index to 1 (default), or to 0 if value is false."
+  },
+  "popc": {
+    "scope": "cpp",
+    "prefix": [
+      "cppopc",
+      "cp_popc",
+      "popc",
+      "CountSetBits"
+    ],
+    "body": [
+      "int CountSetBits(long long n)",
+      "{",
+      "    return popcount((unsigned long long)n);",
+      "}"
+    ],
+    "description": "Counts the total number of set bits (popcount)."
+  },
+  "isp2": {
+    "scope": "cpp",
+    "prefix": [
+      "cpisp2",
+      "cp_isp2",
+      "isp2",
+      "IsPowerOfTwo"
+    ],
+    "body": [
+      "bool IsPowerOfTwo(long long n)",
+      "{",
+      "    return n > 0 && has_single_bit((unsigned long long)n);",
+      "}"
+    ],
+    "description": "Checks whether n is a positive power of two (n > 0 and (n & (n - 1)) == 0)."
+  },
+  "clsb": {
+    "scope": "cpp",
+    "prefix": [
+      "cpclsb",
+      "cp_clsb",
+      "clsb",
+      "ClearLowestSetBit"
+    ],
+    "body": [
+      "long long ClearLowestSetBit(long long n)",
+      "{",
+      "    return n & (n - 1LL);",
+      "}"
+    ],
+    "description": "Clears the lowest set bit (LSB) of n (n & (n - 1))."
+  },
+  "msbi": {
+    "scope": "cpp",
+    "prefix": [
+      "cpmsbi",
+      "cp_msbi",
+      "msbi",
+      "GetHighestSetBitIndex"
+    ],
+    "body": [
+      "int GetHighestSetBitIndex(long long n)",
+      "{",
+      "    return n == 0 ? -1 : bit_width((unsigned long long)n) - 1;",
+      "}"
+    ],
+    "description": "Returns the 0-based index of the highest set bit, or -1 if n is 0."
+  },
+  "m2s": {
+    "scope": "cpp",
+    "prefix": [
+      "cpm2s",
+      "cp_m2s",
+      "m2s",
+      "MaskToString"
+    ],
+    "body": [
+      "string MaskToString(int mask)",
+      "{",
+      "    string result;",
+      "    result.reserve(26);",
+      "    for (int i = 0; i < 26; ++i)",
+      "    {",
+      "        if ((mask >> i) & 1)",
+      "        {",
+      "            result += static_cast<char>('a' + i);",
+      "        }",
+      "    }",
+      "    return result;",
+      "}"
+    ],
+    "description": "Reconstructs a sorted string of lowercase English letters from a 26-bit integer mask."
+  },
+  "lsbi": {
+    "scope": "cpp",
+    "prefix": [
+      "cplsbi",
+      "cp_lsbi",
+      "lsbi",
+      "GetLowestSetBitIndex"
+    ],
+    "body": [
+      "int GetLowestSetBitIndex(long long n)",
+      "{",
+      "    return n == 0 ? -1 : countr_zero((unsigned long long)n);",
+      "}"
+    ],
+    "description": "Returns the 0-based index of the lowest set bit, or -1 if n is 0."
+  },
+  "parity": {
+    "scope": "cpp",
+    "prefix": [
+      "cpparity",
+      "cp_parity",
+      "parity",
+      "HasOddParity"
+    ],
+    "body": [
+      "bool HasOddParity(long long n)",
+      "{",
+      "    return (popcount((unsigned long long)n) & 1) == 1;",
+      "}"
+    ],
+    "description": "Checks whether the count of set bits in n is odd."
+  },
+  "nextp": {
+    "scope": "cpp",
+    "prefix": [
+      "cpnextp",
+      "cp_nextp",
+      "nextp",
+      "NextPermutation"
+    ],
+    "body": [
+      "long long NextPermutation(long long mask)",
+      "{",
+      "    unsigned long long umask = mask;",
+      "    unsigned long long c = umask & -umask;",
+      "    unsigned long long r = umask + c;",
+      "    return (((r ^ umask) >> (countr_zero(c) + 2)) | r);",
+      "}"
+    ],
+    "description": "Returns the lexicographically next integer with the same number of set bits in O(1)."
+  },
+  "cbit": {
+    "scope": "cpp",
+    "prefix": [
+      "cpcbit",
+      "cp_cbit",
+      "cbit",
+      "ClearBit"
+    ],
+    "body": [
+      "long long ClearBit(long long n, int index)",
+      "{",
+      "    return n & ~(1LL << index);",
+      "}"
+    ],
+    "description": "Clears the bit at the given 0-based index to 0."
+  },
+  "tbit": {
+    "scope": "cpp",
+    "prefix": [
+      "cptbit",
+      "cp_tbit",
+      "tbit",
+      "ToggleBit"
+    ],
+    "body": [
+      "long long ToggleBit(long long n, int index)",
+      "{",
+      "    return n ^ (1LL << index);",
+      "}"
+    ],
+    "description": "Inverts (flips) the bit at the given 0-based index."
+  },
+  "lsb": {
+    "scope": "cpp",
+    "prefix": [
+      "cplsb",
+      "cp_lsb",
+      "lsb",
+      "GetLowestSetBit"
+    ],
+    "body": [
+      "long long GetLowestSetBit(long long n)",
+      "{",
+      "    return n & -n;",
+      "}"
+    ],
+    "description": "Isolates the lowest set bit (LSB) value via two's complement (n & -n)."
+  },
+  "isbit": {
+    "scope": "cpp",
+    "prefix": [
+      "cpisbit",
+      "cp_isbit",
+      "isbit",
+      "IsBitSet"
+    ],
+    "body": [
+      "bool IsBitSet(long long n, int index)",
+      "{",
+      "    return ((n >> index) & 1LL) == 1LL;",
+      "}"
+    ],
+    "description": "Checks if the bit at the given 0-based index is set to 1."
+  },
+  "s2m": {
+    "scope": "cpp",
+    "prefix": [
+      "cps2m",
+      "cp_s2m",
+      "s2m",
+      "StringToMask"
+    ],
+    "body": [
+      "int StringToMask(string_view s)",
+      "{",
+      "    int mask = 0;",
+      "    for (char c : s)",
+      "    {",
+      "        mask |= (1 << (c - 'a'));",
+      "    }",
+      "    return mask;",
+      "}"
+    ],
+    "description": "Converts a string of lowercase English letters ('a'-'z') into a 26-bit integer mask."
+  },
+  "rbit": {
+    "scope": "cpp",
+    "prefix": [
+      "cprbit",
+      "cp_rbit",
+      "rbit",
+      "ReverseBits"
+    ],
+    "body": [
+      "long long ReverseBits(long long n, int bitCount)",
+      "{",
+      "    long long rev = 0;",
+      "    for (int i = 0; i < bitCount; ++i)",
+      "    {",
+      "        rev = (rev << 1) | ((n >> i) & 1LL);",
+      "    }",
+      "    return rev;",
+      "}"
+    ],
+    "description": "Reverses the lowest bitCount bits of n."
+  },
+  "fastio": {
+    "scope": "cpp",
+    "prefix": [
+      "cpfastio",
+      "cp_fastio",
+      "fastio",
+      "FastIO"
+    ],
+    "body": [
+      "inline void FastIO()",
+      "{",
+      "    ios_base::sync_with_stdio(0);",
+      "    cin.tie(0);",
+      "}"
+    ],
+    "description": "Desynchronizes C/C++ standard streams and unties cin for fast I/O."
+  },
+  "fileio": {
+    "scope": "cpp",
+    "prefix": [
+      "cpfileio",
+      "cp_fileio",
+      "fileio",
+      "FileIO"
+    ],
+    "body": [
+      "inline void FileIO(const char* inputFile = \"input.txt\", const char* outputFile = \"output.txt\")",
+      "{",
+      "#ifndef ONLINE_JUDGE",
+      "    freopen(inputFile, \"r\", stdin);",
+      "    freopen(outputFile, \"w\", stdout);",
+      "#endif",
+      "}"
+    ],
+    "description": "Redirects standard streams to local files for offline testing."
+  },
+  "println": {
+    "scope": "cpp",
+    "prefix": [
+      "cpprintln",
+      "cp_println",
+      "println"
+    ],
+    "body": [
+      "#define println(x) cout << (x) << '\\n'"
+    ],
+    "description": "Shorthand macro to print a value followed by a newline."
+  },
+  "print": {
+    "scope": "cpp",
+    "prefix": [
+      "cpprint",
+      "cp_print",
+      "print"
+    ],
+    "body": [
+      "#define print(x) cout << (x) << ' '"
+    ],
+    "description": "Shorthand macro to print a value followed by a space."
+  },
+  "printv": {
+    "scope": "cpp",
+    "prefix": [
+      "cpprintv",
+      "cp_printv",
+      "printv",
+      "Println"
+    ],
+    "body": [
+      "template <typename T>",
+      "inline void Println(const vector<T>& vec, const string& sep = \" \")",
+      "{",
+      "    for (size_t i = 0; i < vec.size(); ++i)",
+      "    {",
+      "        if (i > 0) cout << sep;",
+      "        cout << vec[i];",
+      "    }",
+      "    cout << '\\n';",
+      "}"
+    ],
+    "description": "Prints elements of a vector separated by a delimiter followed by a newline."
+  },
+  "printm": {
+    "scope": "cpp",
+    "prefix": [
+      "cpprintm",
+      "cp_printm",
+      "printm",
+      "PrintMatrix"
+    ],
+    "body": [
+      "template <typename T>",
+      "inline void PrintMatrix(const vector<vector<T>>& matrix, const string& sep = \" \")",
+      "{",
+      "    for (const auto& row : matrix)",
+      "    {",
+      "        for (size_t i = 0; i < row.size(); ++i)",
+      "        {",
+      "            if (i > 0) cout << sep;",
+      "            cout << row[i];",
+      "        }",
+      "        cout << '\\n';",
+      "    }",
+      "}"
+    ],
+    "description": "Prints a 2D matrix row by row followed by newlines."
+  }
+}

@@ -1,0 +1,1025 @@
+﻿{
+  "parity": {
+    "scope": "csharp",
+    "prefix": [
+      "cpparity",
+      "cp_parity",
+      "parity",
+      "HasOddParity"
+    ],
+    "body": [
+      "public static bool HasOddParity<T>(T n) where T : IBinaryInteger<T>",
+      "    => (int.CreateTruncating(T.PopCount(n)) & 1) == 1;"
+    ],
+    "description": "Checks whether the count of set bits in n is odd."
+  },
+  "lsbi": {
+    "scope": "csharp",
+    "prefix": [
+      "cplsbi",
+      "cp_lsbi",
+      "lsbi",
+      "GetLowestSetBitIndex"
+    ],
+    "body": [
+      "public static int GetLowestSetBitIndex<T>(T n) where T : IBinaryInteger<T>",
+      "    => n == T.Zero ? -1 : int.CreateTruncating(T.TrailingZeroCount(n));"
+    ],
+    "description": "Returns the 0-based index of the lowest set bit, or -1 if n is 0."
+  },
+  "sbit": {
+    "scope": "csharp",
+    "prefix": [
+      "cpsbit",
+      "cp_sbit",
+      "sbit",
+      "SetBit"
+    ],
+    "body": [
+      "public static T SetBit<T>(T n, int index, bool value = true) where T : IBinaryInteger<T>",
+      "    => value ? n | (T.One << index) : n & ~(T.One << index);"
+    ],
+    "description": "Sets the bit at the given 0-based index to 1 (default), or to 0 if value is false."
+  },
+  "popc": {
+    "scope": "csharp",
+    "prefix": [
+      "cppopc",
+      "cp_popc",
+      "popc",
+      "CountSetBits"
+    ],
+    "body": [
+      "public static int CountSetBits<T>(T n) where T : IBinaryInteger<T>",
+      "    => int.CreateTruncating(T.PopCount(n));"
+    ],
+    "description": "Counts the total number of set bits (popcount)."
+  },
+  "cbit": {
+    "scope": "csharp",
+    "prefix": [
+      "cpcbit",
+      "cp_cbit",
+      "cbit",
+      "ClearBit"
+    ],
+    "body": [
+      "public static T ClearBit<T>(T n, int index) where T : IBinaryInteger<T>",
+      "    => n & ~(T.One << index);"
+    ],
+    "description": "Clears the bit at the given 0-based index to 0."
+  },
+  "rbit": {
+    "scope": "csharp",
+    "prefix": [
+      "cprbit",
+      "cp_rbit",
+      "rbit",
+      "ReverseBits"
+    ],
+    "body": [
+      "public static T ReverseBits<T>(T n, int bitCount) where T : IBinaryInteger<T>",
+      "{",
+      "    T rev = T.Zero;",
+      "    for (int i = 0; i < bitCount; i++)",
+      "    {",
+      "        rev = (rev << 1) | ((n >>> i) & T.One);",
+      "    }",
+      "",
+      "    return rev;",
+      "}"
+    ],
+    "description": "Reverses the lowest bitCount bits of n."
+  },
+  "m2s": {
+    "scope": "csharp",
+    "prefix": [
+      "cpm2s",
+      "cp_m2s",
+      "m2s",
+      "MaskToString"
+    ],
+    "body": [
+      "public static string MaskToString(int mask)",
+      "{",
+      "    Span<char> buffer = stackalloc char[26];",
+      "    int len = 0;",
+      "    for (int i = 0; i < 26; i++)",
+      "    {",
+      "        if (((mask >> i) & 1) == 1)",
+      "        {",
+      "            buffer[len++] = (char)('a' + i);",
+      "        }",
+      "    }",
+      "",
+      "    return new string(buffer[..len]);",
+      "}"
+    ],
+    "description": "Reconstructs a sorted string of lowercase English letters from a 26-bit integer mask."
+  },
+  "isp2": {
+    "scope": "csharp",
+    "prefix": [
+      "cpisp2",
+      "cp_isp2",
+      "isp2",
+      "IsPowerOfTwo"
+    ],
+    "body": [
+      "public static bool IsPowerOfTwo<T>(T n) where T : IBinaryInteger<T>",
+      "    => n > T.Zero && (n & (n - T.One)) == T.Zero;"
+    ],
+    "description": "Checks whether n is a positive power of two (n > 0 and (n & (n - 1)) == 0)."
+  },
+  "tbit": {
+    "scope": "csharp",
+    "prefix": [
+      "cptbit",
+      "cp_tbit",
+      "tbit",
+      "ToggleBit"
+    ],
+    "body": [
+      "public static T ToggleBit<T>(T n, int index) where T : IBinaryInteger<T>",
+      "    => n ^ (T.One << index);"
+    ],
+    "description": "Inverts (flips) the bit at the given 0-based index."
+  },
+  "lsb": {
+    "scope": "csharp",
+    "prefix": [
+      "cplsb",
+      "cp_lsb",
+      "lsb",
+      "GetLowestSetBit"
+    ],
+    "body": [
+      "public static T GetLowestSetBit<T>(T n) where T : IBinaryInteger<T>",
+      "    => n & -n;"
+    ],
+    "description": "Isolates the lowest set bit (LSB) value via two's complement (n & -n)."
+  },
+  "clsb": {
+    "scope": "csharp",
+    "prefix": [
+      "cpclsb",
+      "cp_clsb",
+      "clsb",
+      "ClearLowestSetBit"
+    ],
+    "body": [
+      "public static T ClearLowestSetBit<T>(T n) where T : IBinaryInteger<T>",
+      "    => n & (n - T.One);"
+    ],
+    "description": "Clears the lowest set bit (LSB) of n (n & (n - 1))."
+  },
+  "msbi": {
+    "scope": "csharp",
+    "prefix": [
+      "cpmsbi",
+      "cp_msbi",
+      "msbi",
+      "GetHighestSetBitIndex"
+    ],
+    "body": [
+      "public static int GetHighestSetBitIndex<T>(T n) where T : IBinaryInteger<T>",
+      "    => n == T.Zero ? -1 : n.GetByteCount() * 8 - 1 - int.CreateTruncating(T.LeadingZeroCount(n));"
+    ],
+    "description": "Returns the 0-based index of the highest set bit, or -1 if n is 0."
+  },
+  "s2m": {
+    "scope": "csharp",
+    "prefix": [
+      "cps2m",
+      "cp_s2m",
+      "s2m",
+      "StringToMask"
+    ],
+    "body": [
+      "public static int StringToMask(ReadOnlySpan<char> s)",
+      "{",
+      "    int mask = 0;",
+      "    foreach (char c in s)",
+      "    {",
+      "        mask |= 1 << (c - 'a');",
+      "    }",
+      "",
+      "    return mask;",
+      "}"
+    ],
+    "description": "Converts a string of lowercase English letters ('a'-'z') into a 26-bit integer mask."
+  },
+  "nextp": {
+    "scope": "csharp",
+    "prefix": [
+      "cpnextp",
+      "cp_nextp",
+      "nextp",
+      "NextPermutation"
+    ],
+    "body": [
+      "public static T NextPermutation<T>(T mask) where T : IBinaryInteger<T>",
+      "{",
+      "    T c = mask & -mask;",
+      "    T r = mask + c;",
+      "    return (((r ^ mask) >>> (int.CreateTruncating(T.TrailingZeroCount(c)) + 2))) | r;",
+      "}"
+    ],
+    "description": "Returns the lexicographically next integer with the same number of set bits in O(1)."
+  },
+  "isbit": {
+    "scope": "csharp",
+    "prefix": [
+      "cpisbit",
+      "cp_isbit",
+      "isbit",
+      "IsBitSet"
+    ],
+    "body": [
+      "public static bool IsBitSet<T>(T n, int index) where T : IBinaryInteger<T>",
+      "    => ((n >>> index) & T.One) == T.One;"
+    ],
+    "description": "Checks if the bit at the given 0-based index is set to 1."
+  },
+  "lcm": {
+    "scope": "csharp",
+    "prefix": [
+      "cplcm",
+      "cp_lcm",
+      "lcm",
+      "Lcm"
+    ],
+    "body": [
+      "public static T Gcd<T>(T a, T b) where T : IBinaryInteger<T>",
+      "    => b == T.Zero ? T.Abs(a) : Gcd(b, a % b);",
+      "",
+      "public static T Lcm<T>(T a, T b) where T : IBinaryInteger<T>",
+      "{",
+      "    if (a == T.Zero || b == T.Zero) return T.Zero;",
+      "    return T.Abs((a / Gcd(a, b)) * b);",
+      "}"
+    ],
+    "description": "Computes the least common multiple (LCM) of two integers."
+  },
+  "rsum": {
+    "scope": "csharp",
+    "prefix": [
+      "cprsum",
+      "cp_rsum",
+      "rsum",
+      "RangeSum"
+    ],
+    "body": [
+      "public static T RangeSum<T>(T x, T y) where T : IBinaryInteger<T>",
+      "{",
+      "    if (x > y)",
+      "        (x, y) = (y, x);",
+      "",
+      "    T two = T.CreateChecked(2);",
+      "    T count = y - x + T.One;",
+      "    T sum = x + y;",
+      "",
+      "    return (count % two == T.Zero)",
+      "        ? (count / two) * sum",
+      "        : count * (sum / two);",
+      "}"
+    ],
+    "description": "Computes the sum of integers from x to y inclusive."
+  },
+  "leg": {
+    "scope": "csharp",
+    "prefix": [
+      "cpleg",
+      "cp_leg",
+      "leg",
+      "LegendreExponent"
+    ],
+    "body": [
+      "public static T LegendreExponent<T>(T n, T prime) where T : IBinaryInteger<T>",
+      "{",
+      "    T count = T.Zero;",
+      "    while (n > T.Zero)",
+      "    {",
+      "        count += n / prime;",
+      "        n /= prime;",
+      "    }",
+      "",
+      "    return count;",
+      "}"
+    ],
+    "description": "Computes the largest exponent k such that prime^k divides n!."
+  },
+  "pf": {
+    "scope": "csharp",
+    "prefix": [
+      "cppf",
+      "cp_pf",
+      "pf",
+      "PrimeFactorize"
+    ],
+    "body": [
+      "public static List<(T Prime, int Exponent)> PrimeFactorize<T>(T n) where T : IBinaryInteger<T>",
+      "{",
+      "    List<(T Prime, int Exponent)> factors = new();",
+      "    T two = T.CreateChecked(2);",
+      "",
+      "    for (T d = two; d * d <= n; d += (d == two ? T.One : two))",
+      "    {",
+      "        if ((n % d) != T.Zero) continue;",
+      "",
+      "        int count = 0;",
+      "        while ((n % d) == T.Zero)",
+      "        {",
+      "            count++;",
+      "            n /= d;",
+      "        }",
+      "",
+      "        factors.Add((d, count));",
+      "    }",
+      "",
+      "    if (n > T.One)",
+      "        factors.Add((n, 1));",
+      "",
+      "    return factors;",
+      "}"
+    ],
+    "description": "Computes prime factors of n along with their exponent counts."
+  },
+  "pow": {
+    "scope": "csharp",
+    "prefix": [
+      "cppow",
+      "cp_pow",
+      "pow",
+      "Power"
+    ],
+    "body": [
+      "public static T Power<T>(T @base, T exp) where T : IBinaryInteger<T>",
+      "{",
+      "    if (exp < T.Zero)",
+      "        throw new ArgumentOutOfRangeException(nameof(exp), \"Negative exponent not supported.\");",
+      "",
+      "    T result = T.One;",
+      "    T b = @base;",
+      "",
+      "    while (exp > T.Zero)",
+      "    {",
+      "        if ((exp & T.One) == T.One)",
+      "            result *= b;",
+      "",
+      "        b *= b;",
+      "        exp >>= 1;",
+      "    }",
+      "",
+      "    return result;",
+      "}"
+    ],
+    "description": "Computes base raised to exp."
+  },
+  "phi": {
+    "scope": "csharp",
+    "prefix": [
+      "cpphi",
+      "cp_phi",
+      "phi",
+      "EulerTotient"
+    ],
+    "body": [
+      "public static T EulerTotient<T>(T n) where T : IBinaryInteger<T>",
+      "{",
+      "    T result = n;",
+      "    T two = T.CreateChecked(2);",
+      "",
+      "    for (T p = two; p * p <= n; p += (p == two ? T.One : two))",
+      "    {",
+      "        if ((n % p) != T.Zero) continue;",
+      "",
+      "        while ((n % p) == T.Zero)",
+      "            n /= p;",
+      "",
+      "        result -= result / p;",
+      "    }",
+      "",
+      "    if (n > T.One)",
+      "        result -= result / n;",
+      "",
+      "    return result;",
+      "}"
+    ],
+    "description": "Computes Euler's Totient, counting integers in [1, n] coprime to n."
+  },
+  "mpow": {
+    "scope": "csharp",
+    "prefix": [
+      "cpmpow",
+      "cp_mpow",
+      "mpow",
+      "ModPower"
+    ],
+    "body": [
+      "public static T ModPower<T>(T @base, T exp, T mod) where T : IBinaryInteger<T>",
+      "{",
+      "    if (exp < T.Zero)",
+      "        throw new ArgumentOutOfRangeException(nameof(exp), \"Negative exponent not supported.\");",
+      "    if (mod <= T.Zero)",
+      "        throw new ArgumentOutOfRangeException(nameof(mod), \"Modulus must be positive.\");",
+      "",
+      "    T result = T.One % mod;",
+      "    T b = (@base % mod + mod) % mod;",
+      "",
+      "    while (exp > T.Zero)",
+      "    {",
+      "        if ((exp & T.One) == T.One)",
+      "            result = (result * b) % mod;",
+      "",
+      "        b = (b * b) % mod;",
+      "        exp >>= 1;",
+      "    }",
+      "",
+      "    return result;",
+      "}"
+    ],
+    "description": "Computes (base^exp) % mod."
+  },
+  "gcd": {
+    "scope": "csharp",
+    "prefix": [
+      "cpgcd",
+      "cp_gcd",
+      "gcd",
+      "Gcd"
+    ],
+    "body": [
+      "public static T Gcd<T>(T a, T b) where T : IBinaryInteger<T>",
+      "    => b == T.Zero ? T.Abs(a) : Gcd(b, a % b);"
+    ],
+    "description": "Computes the greatest common divisor (GCD) of two integers."
+  },
+  "mip": {
+    "scope": "csharp",
+    "prefix": [
+      "cpmip",
+      "cp_mip",
+      "mip",
+      "ModInversePrime"
+    ],
+    "body": [
+      "public static T ModPower<T>(T @base, T exp, T mod) where T : IBinaryInteger<T>",
+      "{",
+      "    if (exp < T.Zero)",
+      "        throw new ArgumentOutOfRangeException(nameof(exp), \"Negative exponent not supported.\");",
+      "    if (mod <= T.Zero)",
+      "        throw new ArgumentOutOfRangeException(nameof(mod), \"Modulus must be positive.\");",
+      "",
+      "    T result = T.One % mod;",
+      "    T b = (@base % mod + mod) % mod;",
+      "",
+      "    while (exp > T.Zero)",
+      "    {",
+      "        if ((exp & T.One) == T.One)",
+      "            result = (result * b) % mod;",
+      "",
+      "        b = (b * b) % mod;",
+      "        exp >>= 1;",
+      "    }",
+      "",
+      "    return result;",
+      "}",
+      "",
+      "public static T ModInversePrime<T>(T a, T mod) where T : IBinaryInteger<T>",
+      "    => ModPower(a, mod - (T.One + T.One), mod);"
+    ],
+    "description": "Computes the modular multiplicative inverse of a modulo a prime mod."
+  },
+  "minv": {
+    "scope": "csharp",
+    "prefix": [
+      "cpminv",
+      "cp_minv",
+      "minv",
+      "ModInverse"
+    ],
+    "body": [
+      "public static (T Gcd, T X, T Y) ExtendedGcd<T>(T a, T b) where T : IBinaryInteger<T>",
+      "{",
+      "    if (b == T.Zero)",
+      "        return (T.Abs(a), a < T.Zero ? -T.One : T.One, T.Zero);",
+      "",
+      "    var (g, x1, y1) = ExtendedGcd(b, a % b);",
+      "    return (g, y1, x1 - (a / b) * y1);",
+      "}",
+      "",
+      "public static T ModInverse<T>(T a, T mod) where T : IBinaryInteger<T>",
+      "{",
+      "    var (gcd, x, _) = ExtendedGcd(a, mod);",
+      "    if (gcd != T.One)",
+      "        throw new InvalidOperationException($\"Modular inverse does not exist: {a} and {mod} are not coprime.\");",
+      "",
+      "    return (x % mod + mod) % mod;",
+      "}"
+    ],
+    "description": "Computes the modular multiplicative inverse of a modulo mod."
+  },
+  "div": {
+    "scope": "csharp",
+    "prefix": [
+      "cpdiv",
+      "cp_div",
+      "div",
+      "GetDivisors"
+    ],
+    "body": [
+      "public static List<T> GetDivisors<T>(T n) where T : IBinaryInteger<T>",
+      "{",
+      "    List<T> small = new();",
+      "    List<T> large = new();",
+      "",
+      "    for (T i = T.One; i * i <= n; i++)",
+      "    {",
+      "        if ((n % i) != T.Zero) continue;",
+      "",
+      "        small.Add(i);",
+      "        T paired = n / i;",
+      "        if (paired != i)",
+      "            large.Add(paired);",
+      "    }",
+      "",
+      "    large.Reverse();",
+      "    small.AddRange(large);",
+      "    return small;",
+      "}"
+    ],
+    "description": "Extracts all divisors of n in sorted order."
+  },
+  "comb": {
+    "scope": "csharp",
+    "prefix": [
+      "cpcomb",
+      "cp_comb",
+      "comb",
+      "ModularCombinatorics"
+    ],
+    "body": [
+      "public static T ModPower<T>(T @base, T exp, T mod) where T : IBinaryInteger<T>",
+      "{",
+      "    if (exp < T.Zero)",
+      "        throw new ArgumentOutOfRangeException(nameof(exp), \"Negative exponent not supported.\");",
+      "    if (mod <= T.Zero)",
+      "        throw new ArgumentOutOfRangeException(nameof(mod), \"Modulus must be positive.\");",
+      "",
+      "    T result = T.One % mod;",
+      "    T b = (@base % mod + mod) % mod;",
+      "",
+      "    while (exp > T.Zero)",
+      "    {",
+      "        if ((exp & T.One) == T.One)",
+      "            result = (result * b) % mod;",
+      "",
+      "        b = (b * b) % mod;",
+      "        exp >>= 1;",
+      "    }",
+      "",
+      "    return result;",
+      "}",
+      "",
+      "public static T ModInversePrime<T>(T a, T mod) where T : IBinaryInteger<T>",
+      "    => ModPower(a, mod - (T.One + T.One), mod);",
+      "",
+      "public sealed class ModularCombinatorics<T> where T : IBinaryInteger<T>",
+      "{",
+      "    private readonly T[] _fact;",
+      "    private readonly T[] _invFact;",
+      "    private readonly T _mod;",
+      "    public ModularCombinatorics(int maxN, T mod)",
+      "    {",
+      "        _mod = mod;",
+      "        _fact = new T[maxN + 1];",
+      "        _invFact = new T[maxN + 1];",
+      "",
+      "        _fact[0] = T.One;",
+      "        _invFact[0] = T.One;",
+      "",
+      "        for (int i = 1; i <= maxN; i++)",
+      "        {",
+      "            _fact[i] = (_fact[i - 1] * T.CreateChecked(i)) % _mod;",
+      "        }",
+      "",
+      "        _invFact[maxN] = NumberTheoryToolkit.ModInversePrime(_fact[maxN], _mod);",
+      "",
+      "        for (int i = maxN - 1; i >= 1; i--)",
+      "        {",
+      "            _invFact[i] = (_invFact[i + 1] * T.CreateChecked(i + 1)) % _mod;",
+      "        }",
+      "    }",
+      "    public T NCr(int n, int r)",
+      "    {",
+      "        if (r < 0 || r > n) return T.Zero;",
+      "        return (_fact[n] * _invFact[r] % _mod) * _invFact[n - r] % _mod;",
+      "    }",
+      "    public T NPr(int n, int r)",
+      "    {",
+      "        if (r < 0 || r > n) return T.Zero;",
+      "        return _fact[n] * _invFact[n - r] % _mod;",
+      "    }",
+      "}"
+    ],
+    "description": "Precomputes factorials and inverse factorials for modular combinatorics queries under a prime modulus."
+  },
+  "siv": {
+    "scope": "csharp",
+    "prefix": [
+      "cpsiv",
+      "cp_siv",
+      "siv",
+      "SieveOfEratosthenes"
+    ],
+    "body": [
+      "public static bool[] SieveOfEratosthenes(int n)",
+      "{",
+      "    if (n < 2) return new bool[Math.Max(n + 1, 0)];",
+      "",
+      "    bool[] isPrime = new bool[n + 1];",
+      "    Array.Fill(isPrime, true, 2, n - 1);",
+      "",
+      "    for (int i = 2; (long)i * i <= n; i++)",
+      "    {",
+      "        if (!isPrime[i]) continue;",
+      "",
+      "        for (int j = i * i; j <= n; j += i)",
+      "            isPrime[j] = false;",
+      "    }",
+      "",
+      "    return isPrime;",
+      "}"
+    ],
+    "description": "Generates a boolean array of size n + 1 where isPrime[i] indicates if i is prime."
+  },
+  "lsiv": {
+    "scope": "csharp",
+    "prefix": [
+      "cplsiv",
+      "cp_lsiv",
+      "lsiv",
+      "LinearSieve"
+    ],
+    "body": [
+      "public static (int[] Primes, int[] Spf) LinearSieve(int n)",
+      "{",
+      "    int[] spf = new int[n + 1];",
+      "    List<int> primes = new();",
+      "",
+      "    for (int i = 2; i <= n; i++)",
+      "    {",
+      "        if (spf[i] == 0)",
+      "        {",
+      "            spf[i] = i;",
+      "            primes.Add(i);",
+      "        }",
+      "",
+      "        for (int j = 0; j < primes.Count && primes[j] <= spf[i] && (long)i * primes[j] <= n; j++)",
+      "        {",
+      "            spf[i * primes[j]] = primes[j];",
+      "        }",
+      "    }",
+      "",
+      "    return (primes.ToArray(), spf);",
+      "}"
+    ],
+    "description": "Computes all primes up to n and each number's Smallest Prime Factor (SPF)."
+  },
+  "egcd": {
+    "scope": "csharp",
+    "prefix": [
+      "cpegcd",
+      "cp_egcd",
+      "egcd",
+      "ExtendedGcd"
+    ],
+    "body": [
+      "public static (T Gcd, T X, T Y) ExtendedGcd<T>(T a, T b) where T : IBinaryInteger<T>",
+      "{",
+      "    if (b == T.Zero)",
+      "        return (T.Abs(a), a < T.Zero ? -T.One : T.One, T.Zero);",
+      "",
+      "    var (g, x1, y1) = ExtendedGcd(b, a % b);",
+      "    return (g, y1, x1 - (a / b) * y1);",
+      "}"
+    ],
+    "description": "Computes gcd(a, b) and Bézout coefficients x and y such that a*x + b*y = gcd(a, b)."
+  },
+  "istp": {
+    "scope": "csharp",
+    "prefix": [
+      "cpistp",
+      "cp_istp",
+      "istp",
+      "IsTPrime"
+    ],
+    "body": [
+      "public static bool IsPrime<T>(T n) where T : IBinaryInteger<T>",
+      "{",
+      "    T two = T.CreateChecked(2);",
+      "    T three = T.CreateChecked(3);",
+      "",
+      "    if (n <= T.One) return false;",
+      "    if (n <= three) return true;",
+      "    if ((n % two) == T.Zero || (n % three) == T.Zero) return false;",
+      "",
+      "    T step = T.CreateChecked(6);",
+      "    for (T i = T.CreateChecked(5); i * i <= n; i += step)",
+      "    {",
+      "        if ((n % i) == T.Zero || (n % (i + two)) == T.Zero)",
+      "            return false;",
+      "    }",
+      "",
+      "    return true;",
+      "}",
+      "",
+      "public static bool IsTPrime<T>(T n) where T : IBinaryInteger<T>",
+      "{",
+      "    if (n < T.CreateChecked(4)) return false;",
+      "",
+      "    double sqrtVal = Math.Round(Math.Sqrt(double.CreateChecked(n)));",
+      "    T root = T.CreateChecked(sqrtVal);",
+      "",
+      "    return (root * root == n) && IsPrime(root);",
+      "}"
+    ],
+    "description": "Checks whether n has exactly 3 positive divisors."
+  },
+  "isp": {
+    "scope": "csharp",
+    "prefix": [
+      "cpisp",
+      "cp_isp",
+      "isp",
+      "IsPrime"
+    ],
+    "body": [
+      "public static bool IsPrime<T>(T n) where T : IBinaryInteger<T>",
+      "{",
+      "    T two = T.CreateChecked(2);",
+      "    T three = T.CreateChecked(3);",
+      "",
+      "    if (n <= T.One) return false;",
+      "    if (n <= three) return true;",
+      "    if ((n % two) == T.Zero || (n % three) == T.Zero) return false;",
+      "",
+      "    T step = T.CreateChecked(6);",
+      "    for (T i = T.CreateChecked(5); i * i <= n; i += step)",
+      "    {",
+      "        if ((n % i) == T.Zero || (n % (i + two)) == T.Zero)",
+      "            return false;",
+      "    }",
+      "",
+      "    return true;",
+      "}"
+    ],
+    "description": "Determines whether a number is prime."
+  },
+  "ncr": {
+    "scope": "csharp",
+    "prefix": [
+      "cpncr",
+      "cp_ncr",
+      "ncr",
+      "NCr"
+    ],
+    "body": [
+      "public static T NCr<T>(T n, T r) where T : IBinaryInteger<T>",
+      "{",
+      "    if (r < T.Zero || r > n) return T.Zero;",
+      "    if (r == T.Zero || r == n) return T.One;",
+      "",
+      "    if (r > n - r)",
+      "        r = n - r;",
+      "",
+      "    T result = T.One;",
+      "    for (T i = T.One; i <= r; i++)",
+      "    {",
+      "        result = (result * (n - r + i)) / i;",
+      "    }",
+      "",
+      "    return result;",
+      "}"
+    ],
+    "description": "Computes nCr."
+  },
+  "fastio": {
+    "scope": "csharp",
+    "prefix": [
+      "cpfastio",
+      "cp_fastio",
+      "fastio",
+      "IO"
+    ],
+    "body": [
+      "public static class IO",
+      "{",
+      "    private static StreamReader _reader = new(Console.OpenStandardInput(), bufferSize: 65536);",
+      "    private static StreamWriter _writer = new(Console.OpenStandardOutput(), bufferSize: 65536);",
+      "    private static readonly Queue<string> _tokens = new();",
+      "    public static void SetFileIO(string inputPath = \"input.txt\", string outputPath = \"output.txt\")",
+      "    {",
+      "        if (File.Exists(inputPath))",
+      "            _reader = new StreamReader(new FileStream(inputPath, FileMode.Open, FileAccess.Read), bufferSize: 65536);",
+      "        if (!string.IsNullOrEmpty(outputPath))",
+      "            _writer = new StreamWriter(new FileStream(outputPath, FileMode.Create, FileAccess.Write), bufferSize: 65536);",
+      "    }",
+      "    public static string? Next()",
+      "    {",
+      "        while (_tokens.Count == 0)",
+      "        {",
+      "            string? line = _reader.ReadLine();",
+      "            if (line == null) return null;",
+      "            foreach (var t in line.Split((char[])null!, StringSplitOptions.RemoveEmptyEntries))",
+      "                _tokens.Enqueue(t);",
+      "        }",
+      "        return _tokens.Dequeue();",
+      "    }",
+      "    public static int NextInt() => int.Parse(Next()!);",
+      "    public static long NextLong() => long.Parse(Next()!);",
+      "    public static double NextDouble() => double.Parse(Next()!, CultureInfo.InvariantCulture);",
+      "    public static string? NextLine()",
+      "    {",
+      "        _tokens.Clear();",
+      "        return _reader.ReadLine();",
+      "    }",
+      "    public static void Print<T>(T val) => _writer.Write(val);",
+      "    public static void Println() => _writer.WriteLine();",
+      "    public static void Println<T>(T val) => _writer.WriteLine(val);",
+      "    public static void Print<T>(IEnumerable<T> col, string sep = \" \") =>",
+      "        _writer.Write(string.Join(sep, col));",
+      "    public static void Println<T>(IEnumerable<T> col, string sep = \" \") =>",
+      "        _writer.WriteLine(string.Join(sep, col));",
+      "    public static void Flush() => _writer.Flush();",
+      "}"
+    ],
+    "description": "Lightweight fast I/O helper using built-in StreamReader and token queuing."
+  },
+  "tsreal": {
+    "scope": "csharp",
+    "prefix": [
+      "cptsreal",
+      "cp_tsreal",
+      "tsreal",
+      "TernarySearch"
+    ],
+    "body": [
+      "public static double TernarySearch(double lo, double hi, Func<double, double> f, Func<double, double, bool> predicate, int iterations = 100)",
+      "{",
+      "    for (int i = 0; i < iterations; i++)",
+      "    {",
+      "        double m1 = lo + (hi - lo) / 3.0;",
+      "        double m2 = hi - (hi - lo) / 3.0;",
+      "",
+      "        if (predicate(f(m1), f(m2)))",
+      "            hi = m2;",
+      "        else",
+      "            lo = m1;",
+      "    }",
+      "",
+      "    return (lo + hi) / 2.0;",
+      "}"
+    ],
+    "description": "Finds the real number x in [lo, hi] that optimizes f according to the predicate."
+  },
+  "bsreal": {
+    "scope": "csharp",
+    "prefix": [
+      "cpbsreal",
+      "cp_bsreal",
+      "bsreal",
+      "BinarySearch"
+    ],
+    "body": [
+      "public static double BinarySearch(double lo, double hi, Func<double, bool> predicate, int iterations = 100)",
+      "{",
+      "    for (int i = 0; i < iterations; i++)",
+      "    {",
+      "        double mid = lo + (hi - lo) / 2.0;",
+      "",
+      "        if (predicate(mid))",
+      "            hi = mid;",
+      "        else",
+      "            lo = mid;",
+      "    }",
+      "",
+      "    return (lo + hi) / 2.0;",
+      "}"
+    ],
+    "description": "Finds the real number in [lo, hi] where predicate(val) becomes true using fixed iterations."
+  },
+  "bs": {
+    "scope": "csharp",
+    "prefix": [
+      "cpbs",
+      "cp_bs",
+      "bs",
+      "BinarySearch"
+    ],
+    "body": [
+      "public static T BinarySearch<T>(T lo, T hi, Func<T, bool> predicate) where T : IBinaryInteger<T>",
+      "{",
+      "    while (lo <= hi)",
+      "    {",
+      "        T mid = lo + ((hi - lo) >> 1);",
+      "",
+      "        if (predicate(mid))",
+      "            hi = mid - T.One;",
+      "        else",
+      "            lo = mid + T.One;",
+      "    }",
+      "",
+      "    return lo;",
+      "}"
+    ],
+    "description": "Finds the first value in [lo, hi] where predicate(val) is true, or hi + 1 if not found."
+  },
+  "ub": {
+    "scope": "csharp",
+    "prefix": [
+      "cpub",
+      "cp_ub",
+      "ub",
+      "UpperBound"
+    ],
+    "body": [
+      "public static int UpperBound<T>(IReadOnlyList<T> source, int lo, int hi, T target, IComparer<T> comparer)",
+      "{",
+      "    while (lo <= hi)",
+      "    {",
+      "        int mid = lo + ((hi - lo) >> 1);",
+      "",
+      "        if (comparer.Compare(source[mid], target) > 0)",
+      "            hi = mid - 1;",
+      "        else",
+      "            lo = mid + 1;",
+      "    }",
+      "",
+      "    return lo;",
+      "}"
+    ],
+    "description": "Finds the first index in [lo, hi] where source[i] > target according to the comparer, or hi + 1 if not found."
+  },
+  "ts": {
+    "scope": "csharp",
+    "prefix": [
+      "cpts",
+      "cp_ts",
+      "ts",
+      "TernarySearch"
+    ],
+    "body": [
+      "public static long TernarySearch(long lo, long hi, Func<long, long> f, Func<long, long, bool> predicate)",
+      "{",
+      "    while (hi - lo > 2)",
+      "    {",
+      "        long m1 = lo + (hi - lo) / 3;",
+      "        long m2 = hi - (hi - lo) / 3;",
+      "",
+      "        if (predicate(f(m1), f(m2)))",
+      "            hi = m2 - 1;",
+      "        else",
+      "            lo = m1 + 1;",
+      "    }",
+      "",
+      "    long best = lo;",
+      "    for (long i = lo + 1; i <= hi; i++)",
+      "    {",
+      "        if (predicate(f(i), f(best)))",
+      "            best = i;",
+      "    }",
+      "",
+      "    return best;",
+      "}"
+    ],
+    "description": "Finds the integer x in [lo, hi] that optimizes f according to the predicate."
+  },
+  "lb": {
+    "scope": "csharp",
+    "prefix": [
+      "cplb",
+      "cp_lb",
+      "lb",
+      "LowerBound"
+    ],
+    "body": [
+      "public static int LowerBound<T>(IReadOnlyList<T> source, int lo, int hi, T target, IComparer<T> comparer)",
+      "{",
+      "    while (lo <= hi)",
+      "    {",
+      "        int mid = lo + ((hi - lo) >> 1);",
+      "",
+      "        if (comparer.Compare(source[mid], target) >= 0)",
+      "            hi = mid - 1;",
+      "        else",
+      "            lo = mid + 1;",
+      "    }",
+      "",
+      "    return lo;",
+      "}"
+    ],
+    "description": "Finds the first index in [lo, hi] where source[i] >= target according to the comparer, or hi + 1 if not found."
+  }
+}

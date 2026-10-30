@@ -1,0 +1,4095 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>parity (cpparity)</Title>
+            <Shortcut>cpparity</Shortcut>
+            <Description>Checks whether the count of set bits in n is odd.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool HasOddParity<T>(T n) where T : IBinaryInteger<T>
+    => (int.CreateTruncating(T.PopCount(n)) & 1) == 1;$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>parity (cp_parity)</Title>
+            <Shortcut>cp_parity</Shortcut>
+            <Description>Checks whether the count of set bits in n is odd.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool HasOddParity<T>(T n) where T : IBinaryInteger<T>
+    => (int.CreateTruncating(T.PopCount(n)) & 1) == 1;$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>parity (parity)</Title>
+            <Shortcut>parity</Shortcut>
+            <Description>Checks whether the count of set bits in n is odd.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool HasOddParity<T>(T n) where T : IBinaryInteger<T>
+    => (int.CreateTruncating(T.PopCount(n)) & 1) == 1;$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>parity (HasOddParity)</Title>
+            <Shortcut>HasOddParity</Shortcut>
+            <Description>Checks whether the count of set bits in n is odd.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool HasOddParity<T>(T n) where T : IBinaryInteger<T>
+    => (int.CreateTruncating(T.PopCount(n)) & 1) == 1;$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lsbi (cplsbi)</Title>
+            <Shortcut>cplsbi</Shortcut>
+            <Description>Returns the 0-based index of the lowest set bit, or -1 if n is 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int GetLowestSetBitIndex<T>(T n) where T : IBinaryInteger<T>
+    => n == T.Zero ? -1 : int.CreateTruncating(T.TrailingZeroCount(n));$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lsbi (cp_lsbi)</Title>
+            <Shortcut>cp_lsbi</Shortcut>
+            <Description>Returns the 0-based index of the lowest set bit, or -1 if n is 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int GetLowestSetBitIndex<T>(T n) where T : IBinaryInteger<T>
+    => n == T.Zero ? -1 : int.CreateTruncating(T.TrailingZeroCount(n));$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lsbi (lsbi)</Title>
+            <Shortcut>lsbi</Shortcut>
+            <Description>Returns the 0-based index of the lowest set bit, or -1 if n is 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int GetLowestSetBitIndex<T>(T n) where T : IBinaryInteger<T>
+    => n == T.Zero ? -1 : int.CreateTruncating(T.TrailingZeroCount(n));$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lsbi (GetLowestSetBitIndex)</Title>
+            <Shortcut>GetLowestSetBitIndex</Shortcut>
+            <Description>Returns the 0-based index of the lowest set bit, or -1 if n is 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int GetLowestSetBitIndex<T>(T n) where T : IBinaryInteger<T>
+    => n == T.Zero ? -1 : int.CreateTruncating(T.TrailingZeroCount(n));$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>sbit (cpsbit)</Title>
+            <Shortcut>cpsbit</Shortcut>
+            <Description>Sets the bit at the given 0-based index to 1 (default), or to 0 if value is false.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T SetBit<T>(T n, int index, bool value = true) where T : IBinaryInteger<T>
+    => value ? n | (T.One << index) : n & ~(T.One << index);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>sbit (cp_sbit)</Title>
+            <Shortcut>cp_sbit</Shortcut>
+            <Description>Sets the bit at the given 0-based index to 1 (default), or to 0 if value is false.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T SetBit<T>(T n, int index, bool value = true) where T : IBinaryInteger<T>
+    => value ? n | (T.One << index) : n & ~(T.One << index);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>sbit (sbit)</Title>
+            <Shortcut>sbit</Shortcut>
+            <Description>Sets the bit at the given 0-based index to 1 (default), or to 0 if value is false.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T SetBit<T>(T n, int index, bool value = true) where T : IBinaryInteger<T>
+    => value ? n | (T.One << index) : n & ~(T.One << index);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>sbit (SetBit)</Title>
+            <Shortcut>SetBit</Shortcut>
+            <Description>Sets the bit at the given 0-based index to 1 (default), or to 0 if value is false.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T SetBit<T>(T n, int index, bool value = true) where T : IBinaryInteger<T>
+    => value ? n | (T.One << index) : n & ~(T.One << index);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>popc (cppopc)</Title>
+            <Shortcut>cppopc</Shortcut>
+            <Description>Counts the total number of set bits (popcount).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int CountSetBits<T>(T n) where T : IBinaryInteger<T>
+    => int.CreateTruncating(T.PopCount(n));$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>popc (cp_popc)</Title>
+            <Shortcut>cp_popc</Shortcut>
+            <Description>Counts the total number of set bits (popcount).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int CountSetBits<T>(T n) where T : IBinaryInteger<T>
+    => int.CreateTruncating(T.PopCount(n));$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>popc (popc)</Title>
+            <Shortcut>popc</Shortcut>
+            <Description>Counts the total number of set bits (popcount).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int CountSetBits<T>(T n) where T : IBinaryInteger<T>
+    => int.CreateTruncating(T.PopCount(n));$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>popc (CountSetBits)</Title>
+            <Shortcut>CountSetBits</Shortcut>
+            <Description>Counts the total number of set bits (popcount).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int CountSetBits<T>(T n) where T : IBinaryInteger<T>
+    => int.CreateTruncating(T.PopCount(n));$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>cbit (cpcbit)</Title>
+            <Shortcut>cpcbit</Shortcut>
+            <Description>Clears the bit at the given 0-based index to 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ClearBit<T>(T n, int index) where T : IBinaryInteger<T>
+    => n & ~(T.One << index);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>cbit (cp_cbit)</Title>
+            <Shortcut>cp_cbit</Shortcut>
+            <Description>Clears the bit at the given 0-based index to 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ClearBit<T>(T n, int index) where T : IBinaryInteger<T>
+    => n & ~(T.One << index);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>cbit (cbit)</Title>
+            <Shortcut>cbit</Shortcut>
+            <Description>Clears the bit at the given 0-based index to 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ClearBit<T>(T n, int index) where T : IBinaryInteger<T>
+    => n & ~(T.One << index);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>cbit (ClearBit)</Title>
+            <Shortcut>ClearBit</Shortcut>
+            <Description>Clears the bit at the given 0-based index to 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ClearBit<T>(T n, int index) where T : IBinaryInteger<T>
+    => n & ~(T.One << index);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>rbit (cprbit)</Title>
+            <Shortcut>cprbit</Shortcut>
+            <Description>Reverses the lowest bitCount bits of n.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ReverseBits<T>(T n, int bitCount) where T : IBinaryInteger<T>
+{
+    T rev = T.Zero;
+    for (int i = 0; i < bitCount; i++)
+    {
+        rev = (rev << 1) | ((n >>> i) & T.One);
+    }
+
+    return rev;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>rbit (cp_rbit)</Title>
+            <Shortcut>cp_rbit</Shortcut>
+            <Description>Reverses the lowest bitCount bits of n.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ReverseBits<T>(T n, int bitCount) where T : IBinaryInteger<T>
+{
+    T rev = T.Zero;
+    for (int i = 0; i < bitCount; i++)
+    {
+        rev = (rev << 1) | ((n >>> i) & T.One);
+    }
+
+    return rev;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>rbit (rbit)</Title>
+            <Shortcut>rbit</Shortcut>
+            <Description>Reverses the lowest bitCount bits of n.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ReverseBits<T>(T n, int bitCount) where T : IBinaryInteger<T>
+{
+    T rev = T.Zero;
+    for (int i = 0; i < bitCount; i++)
+    {
+        rev = (rev << 1) | ((n >>> i) & T.One);
+    }
+
+    return rev;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>rbit (ReverseBits)</Title>
+            <Shortcut>ReverseBits</Shortcut>
+            <Description>Reverses the lowest bitCount bits of n.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ReverseBits<T>(T n, int bitCount) where T : IBinaryInteger<T>
+{
+    T rev = T.Zero;
+    for (int i = 0; i < bitCount; i++)
+    {
+        rev = (rev << 1) | ((n >>> i) & T.One);
+    }
+
+    return rev;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>m2s (cpm2s)</Title>
+            <Shortcut>cpm2s</Shortcut>
+            <Description>Reconstructs a sorted string of lowercase English letters from a 26-bit integer mask.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static string MaskToString(int mask)
+{
+    Span<char> buffer = stackalloc char[26];
+    int len = 0;
+    for (int i = 0; i < 26; i++)
+    {
+        if (((mask >> i) & 1) == 1)
+        {
+            buffer[len++] = (char)('a' + i);
+        }
+    }
+
+    return new string(buffer[..len]);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>m2s (cp_m2s)</Title>
+            <Shortcut>cp_m2s</Shortcut>
+            <Description>Reconstructs a sorted string of lowercase English letters from a 26-bit integer mask.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static string MaskToString(int mask)
+{
+    Span<char> buffer = stackalloc char[26];
+    int len = 0;
+    for (int i = 0; i < 26; i++)
+    {
+        if (((mask >> i) & 1) == 1)
+        {
+            buffer[len++] = (char)('a' + i);
+        }
+    }
+
+    return new string(buffer[..len]);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>m2s (m2s)</Title>
+            <Shortcut>m2s</Shortcut>
+            <Description>Reconstructs a sorted string of lowercase English letters from a 26-bit integer mask.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static string MaskToString(int mask)
+{
+    Span<char> buffer = stackalloc char[26];
+    int len = 0;
+    for (int i = 0; i < 26; i++)
+    {
+        if (((mask >> i) & 1) == 1)
+        {
+            buffer[len++] = (char)('a' + i);
+        }
+    }
+
+    return new string(buffer[..len]);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>m2s (MaskToString)</Title>
+            <Shortcut>MaskToString</Shortcut>
+            <Description>Reconstructs a sorted string of lowercase English letters from a 26-bit integer mask.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static string MaskToString(int mask)
+{
+    Span<char> buffer = stackalloc char[26];
+    int len = 0;
+    for (int i = 0; i < 26; i++)
+    {
+        if (((mask >> i) & 1) == 1)
+        {
+            buffer[len++] = (char)('a' + i);
+        }
+    }
+
+    return new string(buffer[..len]);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>isp2 (cpisp2)</Title>
+            <Shortcut>cpisp2</Shortcut>
+            <Description>Checks whether n is a positive power of two (n &gt; 0 and (n &amp; (n - 1)) == 0).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool IsPowerOfTwo<T>(T n) where T : IBinaryInteger<T>
+    => n > T.Zero && (n & (n - T.One)) == T.Zero;$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>isp2 (cp_isp2)</Title>
+            <Shortcut>cp_isp2</Shortcut>
+            <Description>Checks whether n is a positive power of two (n &gt; 0 and (n &amp; (n - 1)) == 0).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool IsPowerOfTwo<T>(T n) where T : IBinaryInteger<T>
+    => n > T.Zero && (n & (n - T.One)) == T.Zero;$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>isp2 (isp2)</Title>
+            <Shortcut>isp2</Shortcut>
+            <Description>Checks whether n is a positive power of two (n &gt; 0 and (n &amp; (n - 1)) == 0).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool IsPowerOfTwo<T>(T n) where T : IBinaryInteger<T>
+    => n > T.Zero && (n & (n - T.One)) == T.Zero;$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>isp2 (IsPowerOfTwo)</Title>
+            <Shortcut>IsPowerOfTwo</Shortcut>
+            <Description>Checks whether n is a positive power of two (n &gt; 0 and (n &amp; (n - 1)) == 0).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool IsPowerOfTwo<T>(T n) where T : IBinaryInteger<T>
+    => n > T.Zero && (n & (n - T.One)) == T.Zero;$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>tbit (cptbit)</Title>
+            <Shortcut>cptbit</Shortcut>
+            <Description>Inverts (flips) the bit at the given 0-based index.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ToggleBit<T>(T n, int index) where T : IBinaryInteger<T>
+    => n ^ (T.One << index);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>tbit (cp_tbit)</Title>
+            <Shortcut>cp_tbit</Shortcut>
+            <Description>Inverts (flips) the bit at the given 0-based index.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ToggleBit<T>(T n, int index) where T : IBinaryInteger<T>
+    => n ^ (T.One << index);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>tbit (tbit)</Title>
+            <Shortcut>tbit</Shortcut>
+            <Description>Inverts (flips) the bit at the given 0-based index.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ToggleBit<T>(T n, int index) where T : IBinaryInteger<T>
+    => n ^ (T.One << index);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>tbit (ToggleBit)</Title>
+            <Shortcut>ToggleBit</Shortcut>
+            <Description>Inverts (flips) the bit at the given 0-based index.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ToggleBit<T>(T n, int index) where T : IBinaryInteger<T>
+    => n ^ (T.One << index);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lsb (cplsb)</Title>
+            <Shortcut>cplsb</Shortcut>
+            <Description>Isolates the lowest set bit (LSB) value via two&apos;s complement (n &amp; -n).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T GetLowestSetBit<T>(T n) where T : IBinaryInteger<T>
+    => n & -n;$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lsb (cp_lsb)</Title>
+            <Shortcut>cp_lsb</Shortcut>
+            <Description>Isolates the lowest set bit (LSB) value via two&apos;s complement (n &amp; -n).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T GetLowestSetBit<T>(T n) where T : IBinaryInteger<T>
+    => n & -n;$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lsb (lsb)</Title>
+            <Shortcut>lsb</Shortcut>
+            <Description>Isolates the lowest set bit (LSB) value via two&apos;s complement (n &amp; -n).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T GetLowestSetBit<T>(T n) where T : IBinaryInteger<T>
+    => n & -n;$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lsb (GetLowestSetBit)</Title>
+            <Shortcut>GetLowestSetBit</Shortcut>
+            <Description>Isolates the lowest set bit (LSB) value via two&apos;s complement (n &amp; -n).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T GetLowestSetBit<T>(T n) where T : IBinaryInteger<T>
+    => n & -n;$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>clsb (cpclsb)</Title>
+            <Shortcut>cpclsb</Shortcut>
+            <Description>Clears the lowest set bit (LSB) of n (n &amp; (n - 1)).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ClearLowestSetBit<T>(T n) where T : IBinaryInteger<T>
+    => n & (n - T.One);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>clsb (cp_clsb)</Title>
+            <Shortcut>cp_clsb</Shortcut>
+            <Description>Clears the lowest set bit (LSB) of n (n &amp; (n - 1)).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ClearLowestSetBit<T>(T n) where T : IBinaryInteger<T>
+    => n & (n - T.One);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>clsb (clsb)</Title>
+            <Shortcut>clsb</Shortcut>
+            <Description>Clears the lowest set bit (LSB) of n (n &amp; (n - 1)).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ClearLowestSetBit<T>(T n) where T : IBinaryInteger<T>
+    => n & (n - T.One);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>clsb (ClearLowestSetBit)</Title>
+            <Shortcut>ClearLowestSetBit</Shortcut>
+            <Description>Clears the lowest set bit (LSB) of n (n &amp; (n - 1)).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ClearLowestSetBit<T>(T n) where T : IBinaryInteger<T>
+    => n & (n - T.One);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>msbi (cpmsbi)</Title>
+            <Shortcut>cpmsbi</Shortcut>
+            <Description>Returns the 0-based index of the highest set bit, or -1 if n is 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int GetHighestSetBitIndex<T>(T n) where T : IBinaryInteger<T>
+    => n == T.Zero ? -1 : n.GetByteCount() * 8 - 1 - int.CreateTruncating(T.LeadingZeroCount(n));$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>msbi (cp_msbi)</Title>
+            <Shortcut>cp_msbi</Shortcut>
+            <Description>Returns the 0-based index of the highest set bit, or -1 if n is 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int GetHighestSetBitIndex<T>(T n) where T : IBinaryInteger<T>
+    => n == T.Zero ? -1 : n.GetByteCount() * 8 - 1 - int.CreateTruncating(T.LeadingZeroCount(n));$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>msbi (msbi)</Title>
+            <Shortcut>msbi</Shortcut>
+            <Description>Returns the 0-based index of the highest set bit, or -1 if n is 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int GetHighestSetBitIndex<T>(T n) where T : IBinaryInteger<T>
+    => n == T.Zero ? -1 : n.GetByteCount() * 8 - 1 - int.CreateTruncating(T.LeadingZeroCount(n));$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>msbi (GetHighestSetBitIndex)</Title>
+            <Shortcut>GetHighestSetBitIndex</Shortcut>
+            <Description>Returns the 0-based index of the highest set bit, or -1 if n is 0.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int GetHighestSetBitIndex<T>(T n) where T : IBinaryInteger<T>
+    => n == T.Zero ? -1 : n.GetByteCount() * 8 - 1 - int.CreateTruncating(T.LeadingZeroCount(n));$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>s2m (cps2m)</Title>
+            <Shortcut>cps2m</Shortcut>
+            <Description>Converts a string of lowercase English letters (&apos;a&apos;-&apos;z&apos;) into a 26-bit integer mask.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int StringToMask(ReadOnlySpan<char> s)
+{
+    int mask = 0;
+    foreach (char c in s)
+    {
+        mask |= 1 << (c - 'a');
+    }
+
+    return mask;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>s2m (cp_s2m)</Title>
+            <Shortcut>cp_s2m</Shortcut>
+            <Description>Converts a string of lowercase English letters (&apos;a&apos;-&apos;z&apos;) into a 26-bit integer mask.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int StringToMask(ReadOnlySpan<char> s)
+{
+    int mask = 0;
+    foreach (char c in s)
+    {
+        mask |= 1 << (c - 'a');
+    }
+
+    return mask;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>s2m (s2m)</Title>
+            <Shortcut>s2m</Shortcut>
+            <Description>Converts a string of lowercase English letters (&apos;a&apos;-&apos;z&apos;) into a 26-bit integer mask.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int StringToMask(ReadOnlySpan<char> s)
+{
+    int mask = 0;
+    foreach (char c in s)
+    {
+        mask |= 1 << (c - 'a');
+    }
+
+    return mask;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>s2m (StringToMask)</Title>
+            <Shortcut>StringToMask</Shortcut>
+            <Description>Converts a string of lowercase English letters (&apos;a&apos;-&apos;z&apos;) into a 26-bit integer mask.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int StringToMask(ReadOnlySpan<char> s)
+{
+    int mask = 0;
+    foreach (char c in s)
+    {
+        mask |= 1 << (c - 'a');
+    }
+
+    return mask;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>nextp (cpnextp)</Title>
+            <Shortcut>cpnextp</Shortcut>
+            <Description>Returns the lexicographically next integer with the same number of set bits in O(1).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T NextPermutation<T>(T mask) where T : IBinaryInteger<T>
+{
+    T c = mask & -mask;
+    T r = mask + c;
+    return (((r ^ mask) >>> (int.CreateTruncating(T.TrailingZeroCount(c)) + 2))) | r;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>nextp (cp_nextp)</Title>
+            <Shortcut>cp_nextp</Shortcut>
+            <Description>Returns the lexicographically next integer with the same number of set bits in O(1).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T NextPermutation<T>(T mask) where T : IBinaryInteger<T>
+{
+    T c = mask & -mask;
+    T r = mask + c;
+    return (((r ^ mask) >>> (int.CreateTruncating(T.TrailingZeroCount(c)) + 2))) | r;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>nextp (nextp)</Title>
+            <Shortcut>nextp</Shortcut>
+            <Description>Returns the lexicographically next integer with the same number of set bits in O(1).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T NextPermutation<T>(T mask) where T : IBinaryInteger<T>
+{
+    T c = mask & -mask;
+    T r = mask + c;
+    return (((r ^ mask) >>> (int.CreateTruncating(T.TrailingZeroCount(c)) + 2))) | r;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>nextp (NextPermutation)</Title>
+            <Shortcut>NextPermutation</Shortcut>
+            <Description>Returns the lexicographically next integer with the same number of set bits in O(1).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T NextPermutation<T>(T mask) where T : IBinaryInteger<T>
+{
+    T c = mask & -mask;
+    T r = mask + c;
+    return (((r ^ mask) >>> (int.CreateTruncating(T.TrailingZeroCount(c)) + 2))) | r;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>isbit (cpisbit)</Title>
+            <Shortcut>cpisbit</Shortcut>
+            <Description>Checks if the bit at the given 0-based index is set to 1.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool IsBitSet<T>(T n, int index) where T : IBinaryInteger<T>
+    => ((n >>> index) & T.One) == T.One;$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>isbit (cp_isbit)</Title>
+            <Shortcut>cp_isbit</Shortcut>
+            <Description>Checks if the bit at the given 0-based index is set to 1.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool IsBitSet<T>(T n, int index) where T : IBinaryInteger<T>
+    => ((n >>> index) & T.One) == T.One;$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>isbit (isbit)</Title>
+            <Shortcut>isbit</Shortcut>
+            <Description>Checks if the bit at the given 0-based index is set to 1.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool IsBitSet<T>(T n, int index) where T : IBinaryInteger<T>
+    => ((n >>> index) & T.One) == T.One;$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>isbit (IsBitSet)</Title>
+            <Shortcut>IsBitSet</Shortcut>
+            <Description>Checks if the bit at the given 0-based index is set to 1.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool IsBitSet<T>(T n, int index) where T : IBinaryInteger<T>
+    => ((n >>> index) & T.One) == T.One;$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lcm (cplcm)</Title>
+            <Shortcut>cplcm</Shortcut>
+            <Description>Computes the least common multiple (LCM) of two integers.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T Gcd<T>(T a, T b) where T : IBinaryInteger<T>
+    => b == T.Zero ? T.Abs(a) : Gcd(b, a % b);
+
+public static T Lcm<T>(T a, T b) where T : IBinaryInteger<T>
+{
+    if (a == T.Zero || b == T.Zero) return T.Zero;
+    return T.Abs((a / Gcd(a, b)) * b);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lcm (cp_lcm)</Title>
+            <Shortcut>cp_lcm</Shortcut>
+            <Description>Computes the least common multiple (LCM) of two integers.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T Gcd<T>(T a, T b) where T : IBinaryInteger<T>
+    => b == T.Zero ? T.Abs(a) : Gcd(b, a % b);
+
+public static T Lcm<T>(T a, T b) where T : IBinaryInteger<T>
+{
+    if (a == T.Zero || b == T.Zero) return T.Zero;
+    return T.Abs((a / Gcd(a, b)) * b);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lcm (lcm)</Title>
+            <Shortcut>lcm</Shortcut>
+            <Description>Computes the least common multiple (LCM) of two integers.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T Gcd<T>(T a, T b) where T : IBinaryInteger<T>
+    => b == T.Zero ? T.Abs(a) : Gcd(b, a % b);
+
+public static T Lcm<T>(T a, T b) where T : IBinaryInteger<T>
+{
+    if (a == T.Zero || b == T.Zero) return T.Zero;
+    return T.Abs((a / Gcd(a, b)) * b);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lcm (Lcm)</Title>
+            <Shortcut>Lcm</Shortcut>
+            <Description>Computes the least common multiple (LCM) of two integers.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T Gcd<T>(T a, T b) where T : IBinaryInteger<T>
+    => b == T.Zero ? T.Abs(a) : Gcd(b, a % b);
+
+public static T Lcm<T>(T a, T b) where T : IBinaryInteger<T>
+{
+    if (a == T.Zero || b == T.Zero) return T.Zero;
+    return T.Abs((a / Gcd(a, b)) * b);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>rsum (cprsum)</Title>
+            <Shortcut>cprsum</Shortcut>
+            <Description>Computes the sum of integers from x to y inclusive.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T RangeSum<T>(T x, T y) where T : IBinaryInteger<T>
+{
+    if (x > y)
+        (x, y) = (y, x);
+
+    T two = T.CreateChecked(2);
+    T count = y - x + T.One;
+    T sum = x + y;
+
+    return (count % two == T.Zero)
+        ? (count / two) * sum
+        : count * (sum / two);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>rsum (cp_rsum)</Title>
+            <Shortcut>cp_rsum</Shortcut>
+            <Description>Computes the sum of integers from x to y inclusive.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T RangeSum<T>(T x, T y) where T : IBinaryInteger<T>
+{
+    if (x > y)
+        (x, y) = (y, x);
+
+    T two = T.CreateChecked(2);
+    T count = y - x + T.One;
+    T sum = x + y;
+
+    return (count % two == T.Zero)
+        ? (count / two) * sum
+        : count * (sum / two);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>rsum (rsum)</Title>
+            <Shortcut>rsum</Shortcut>
+            <Description>Computes the sum of integers from x to y inclusive.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T RangeSum<T>(T x, T y) where T : IBinaryInteger<T>
+{
+    if (x > y)
+        (x, y) = (y, x);
+
+    T two = T.CreateChecked(2);
+    T count = y - x + T.One;
+    T sum = x + y;
+
+    return (count % two == T.Zero)
+        ? (count / two) * sum
+        : count * (sum / two);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>rsum (RangeSum)</Title>
+            <Shortcut>RangeSum</Shortcut>
+            <Description>Computes the sum of integers from x to y inclusive.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T RangeSum<T>(T x, T y) where T : IBinaryInteger<T>
+{
+    if (x > y)
+        (x, y) = (y, x);
+
+    T two = T.CreateChecked(2);
+    T count = y - x + T.One;
+    T sum = x + y;
+
+    return (count % two == T.Zero)
+        ? (count / two) * sum
+        : count * (sum / two);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>leg (cpleg)</Title>
+            <Shortcut>cpleg</Shortcut>
+            <Description>Computes the largest exponent k such that prime^k divides n!.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T LegendreExponent<T>(T n, T prime) where T : IBinaryInteger<T>
+{
+    T count = T.Zero;
+    while (n > T.Zero)
+    {
+        count += n / prime;
+        n /= prime;
+    }
+
+    return count;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>leg (cp_leg)</Title>
+            <Shortcut>cp_leg</Shortcut>
+            <Description>Computes the largest exponent k such that prime^k divides n!.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T LegendreExponent<T>(T n, T prime) where T : IBinaryInteger<T>
+{
+    T count = T.Zero;
+    while (n > T.Zero)
+    {
+        count += n / prime;
+        n /= prime;
+    }
+
+    return count;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>leg (leg)</Title>
+            <Shortcut>leg</Shortcut>
+            <Description>Computes the largest exponent k such that prime^k divides n!.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T LegendreExponent<T>(T n, T prime) where T : IBinaryInteger<T>
+{
+    T count = T.Zero;
+    while (n > T.Zero)
+    {
+        count += n / prime;
+        n /= prime;
+    }
+
+    return count;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>leg (LegendreExponent)</Title>
+            <Shortcut>LegendreExponent</Shortcut>
+            <Description>Computes the largest exponent k such that prime^k divides n!.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T LegendreExponent<T>(T n, T prime) where T : IBinaryInteger<T>
+{
+    T count = T.Zero;
+    while (n > T.Zero)
+    {
+        count += n / prime;
+        n /= prime;
+    }
+
+    return count;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>pf (cppf)</Title>
+            <Shortcut>cppf</Shortcut>
+            <Description>Computes prime factors of n along with their exponent counts.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static List<(T Prime, int Exponent)> PrimeFactorize<T>(T n) where T : IBinaryInteger<T>
+{
+    List<(T Prime, int Exponent)> factors = new();
+    T two = T.CreateChecked(2);
+
+    for (T d = two; d * d <= n; d += (d == two ? T.One : two))
+    {
+        if ((n % d) != T.Zero) continue;
+
+        int count = 0;
+        while ((n % d) == T.Zero)
+        {
+            count++;
+            n /= d;
+        }
+
+        factors.Add((d, count));
+    }
+
+    if (n > T.One)
+        factors.Add((n, 1));
+
+    return factors;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>pf (cp_pf)</Title>
+            <Shortcut>cp_pf</Shortcut>
+            <Description>Computes prime factors of n along with their exponent counts.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static List<(T Prime, int Exponent)> PrimeFactorize<T>(T n) where T : IBinaryInteger<T>
+{
+    List<(T Prime, int Exponent)> factors = new();
+    T two = T.CreateChecked(2);
+
+    for (T d = two; d * d <= n; d += (d == two ? T.One : two))
+    {
+        if ((n % d) != T.Zero) continue;
+
+        int count = 0;
+        while ((n % d) == T.Zero)
+        {
+            count++;
+            n /= d;
+        }
+
+        factors.Add((d, count));
+    }
+
+    if (n > T.One)
+        factors.Add((n, 1));
+
+    return factors;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>pf (pf)</Title>
+            <Shortcut>pf</Shortcut>
+            <Description>Computes prime factors of n along with their exponent counts.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static List<(T Prime, int Exponent)> PrimeFactorize<T>(T n) where T : IBinaryInteger<T>
+{
+    List<(T Prime, int Exponent)> factors = new();
+    T two = T.CreateChecked(2);
+
+    for (T d = two; d * d <= n; d += (d == two ? T.One : two))
+    {
+        if ((n % d) != T.Zero) continue;
+
+        int count = 0;
+        while ((n % d) == T.Zero)
+        {
+            count++;
+            n /= d;
+        }
+
+        factors.Add((d, count));
+    }
+
+    if (n > T.One)
+        factors.Add((n, 1));
+
+    return factors;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>pf (PrimeFactorize)</Title>
+            <Shortcut>PrimeFactorize</Shortcut>
+            <Description>Computes prime factors of n along with their exponent counts.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static List<(T Prime, int Exponent)> PrimeFactorize<T>(T n) where T : IBinaryInteger<T>
+{
+    List<(T Prime, int Exponent)> factors = new();
+    T two = T.CreateChecked(2);
+
+    for (T d = two; d * d <= n; d += (d == two ? T.One : two))
+    {
+        if ((n % d) != T.Zero) continue;
+
+        int count = 0;
+        while ((n % d) == T.Zero)
+        {
+            count++;
+            n /= d;
+        }
+
+        factors.Add((d, count));
+    }
+
+    if (n > T.One)
+        factors.Add((n, 1));
+
+    return factors;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>pow (cppow)</Title>
+            <Shortcut>cppow</Shortcut>
+            <Description>Computes base raised to exp.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T Power<T>(T @base, T exp) where T : IBinaryInteger<T>
+{
+    if (exp < T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(exp), "Negative exponent not supported.");
+
+    T result = T.One;
+    T b = @base;
+
+    while (exp > T.Zero)
+    {
+        if ((exp & T.One) == T.One)
+            result *= b;
+
+        b *= b;
+        exp >>= 1;
+    }
+
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>pow (cp_pow)</Title>
+            <Shortcut>cp_pow</Shortcut>
+            <Description>Computes base raised to exp.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T Power<T>(T @base, T exp) where T : IBinaryInteger<T>
+{
+    if (exp < T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(exp), "Negative exponent not supported.");
+
+    T result = T.One;
+    T b = @base;
+
+    while (exp > T.Zero)
+    {
+        if ((exp & T.One) == T.One)
+            result *= b;
+
+        b *= b;
+        exp >>= 1;
+    }
+
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>pow (pow)</Title>
+            <Shortcut>pow</Shortcut>
+            <Description>Computes base raised to exp.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T Power<T>(T @base, T exp) where T : IBinaryInteger<T>
+{
+    if (exp < T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(exp), "Negative exponent not supported.");
+
+    T result = T.One;
+    T b = @base;
+
+    while (exp > T.Zero)
+    {
+        if ((exp & T.One) == T.One)
+            result *= b;
+
+        b *= b;
+        exp >>= 1;
+    }
+
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>pow (Power)</Title>
+            <Shortcut>Power</Shortcut>
+            <Description>Computes base raised to exp.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T Power<T>(T @base, T exp) where T : IBinaryInteger<T>
+{
+    if (exp < T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(exp), "Negative exponent not supported.");
+
+    T result = T.One;
+    T b = @base;
+
+    while (exp > T.Zero)
+    {
+        if ((exp & T.One) == T.One)
+            result *= b;
+
+        b *= b;
+        exp >>= 1;
+    }
+
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>phi (cpphi)</Title>
+            <Shortcut>cpphi</Shortcut>
+            <Description>Computes Euler&apos;s Totient, counting integers in [1, n] coprime to n.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T EulerTotient<T>(T n) where T : IBinaryInteger<T>
+{
+    T result = n;
+    T two = T.CreateChecked(2);
+
+    for (T p = two; p * p <= n; p += (p == two ? T.One : two))
+    {
+        if ((n % p) != T.Zero) continue;
+
+        while ((n % p) == T.Zero)
+            n /= p;
+
+        result -= result / p;
+    }
+
+    if (n > T.One)
+        result -= result / n;
+
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>phi (cp_phi)</Title>
+            <Shortcut>cp_phi</Shortcut>
+            <Description>Computes Euler&apos;s Totient, counting integers in [1, n] coprime to n.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T EulerTotient<T>(T n) where T : IBinaryInteger<T>
+{
+    T result = n;
+    T two = T.CreateChecked(2);
+
+    for (T p = two; p * p <= n; p += (p == two ? T.One : two))
+    {
+        if ((n % p) != T.Zero) continue;
+
+        while ((n % p) == T.Zero)
+            n /= p;
+
+        result -= result / p;
+    }
+
+    if (n > T.One)
+        result -= result / n;
+
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>phi (phi)</Title>
+            <Shortcut>phi</Shortcut>
+            <Description>Computes Euler&apos;s Totient, counting integers in [1, n] coprime to n.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T EulerTotient<T>(T n) where T : IBinaryInteger<T>
+{
+    T result = n;
+    T two = T.CreateChecked(2);
+
+    for (T p = two; p * p <= n; p += (p == two ? T.One : two))
+    {
+        if ((n % p) != T.Zero) continue;
+
+        while ((n % p) == T.Zero)
+            n /= p;
+
+        result -= result / p;
+    }
+
+    if (n > T.One)
+        result -= result / n;
+
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>phi (EulerTotient)</Title>
+            <Shortcut>EulerTotient</Shortcut>
+            <Description>Computes Euler&apos;s Totient, counting integers in [1, n] coprime to n.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T EulerTotient<T>(T n) where T : IBinaryInteger<T>
+{
+    T result = n;
+    T two = T.CreateChecked(2);
+
+    for (T p = two; p * p <= n; p += (p == two ? T.One : two))
+    {
+        if ((n % p) != T.Zero) continue;
+
+        while ((n % p) == T.Zero)
+            n /= p;
+
+        result -= result / p;
+    }
+
+    if (n > T.One)
+        result -= result / n;
+
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>mpow (cpmpow)</Title>
+            <Shortcut>cpmpow</Shortcut>
+            <Description>Computes (base^exp) % mod.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ModPower<T>(T @base, T exp, T mod) where T : IBinaryInteger<T>
+{
+    if (exp < T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(exp), "Negative exponent not supported.");
+    if (mod <= T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(mod), "Modulus must be positive.");
+
+    T result = T.One % mod;
+    T b = (@base % mod + mod) % mod;
+
+    while (exp > T.Zero)
+    {
+        if ((exp & T.One) == T.One)
+            result = (result * b) % mod;
+
+        b = (b * b) % mod;
+        exp >>= 1;
+    }
+
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>mpow (cp_mpow)</Title>
+            <Shortcut>cp_mpow</Shortcut>
+            <Description>Computes (base^exp) % mod.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ModPower<T>(T @base, T exp, T mod) where T : IBinaryInteger<T>
+{
+    if (exp < T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(exp), "Negative exponent not supported.");
+    if (mod <= T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(mod), "Modulus must be positive.");
+
+    T result = T.One % mod;
+    T b = (@base % mod + mod) % mod;
+
+    while (exp > T.Zero)
+    {
+        if ((exp & T.One) == T.One)
+            result = (result * b) % mod;
+
+        b = (b * b) % mod;
+        exp >>= 1;
+    }
+
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>mpow (mpow)</Title>
+            <Shortcut>mpow</Shortcut>
+            <Description>Computes (base^exp) % mod.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ModPower<T>(T @base, T exp, T mod) where T : IBinaryInteger<T>
+{
+    if (exp < T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(exp), "Negative exponent not supported.");
+    if (mod <= T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(mod), "Modulus must be positive.");
+
+    T result = T.One % mod;
+    T b = (@base % mod + mod) % mod;
+
+    while (exp > T.Zero)
+    {
+        if ((exp & T.One) == T.One)
+            result = (result * b) % mod;
+
+        b = (b * b) % mod;
+        exp >>= 1;
+    }
+
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>mpow (ModPower)</Title>
+            <Shortcut>ModPower</Shortcut>
+            <Description>Computes (base^exp) % mod.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ModPower<T>(T @base, T exp, T mod) where T : IBinaryInteger<T>
+{
+    if (exp < T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(exp), "Negative exponent not supported.");
+    if (mod <= T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(mod), "Modulus must be positive.");
+
+    T result = T.One % mod;
+    T b = (@base % mod + mod) % mod;
+
+    while (exp > T.Zero)
+    {
+        if ((exp & T.One) == T.One)
+            result = (result * b) % mod;
+
+        b = (b * b) % mod;
+        exp >>= 1;
+    }
+
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>gcd (cpgcd)</Title>
+            <Shortcut>cpgcd</Shortcut>
+            <Description>Computes the greatest common divisor (GCD) of two integers.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T Gcd<T>(T a, T b) where T : IBinaryInteger<T>
+    => b == T.Zero ? T.Abs(a) : Gcd(b, a % b);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>gcd (cp_gcd)</Title>
+            <Shortcut>cp_gcd</Shortcut>
+            <Description>Computes the greatest common divisor (GCD) of two integers.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T Gcd<T>(T a, T b) where T : IBinaryInteger<T>
+    => b == T.Zero ? T.Abs(a) : Gcd(b, a % b);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>gcd (gcd)</Title>
+            <Shortcut>gcd</Shortcut>
+            <Description>Computes the greatest common divisor (GCD) of two integers.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T Gcd<T>(T a, T b) where T : IBinaryInteger<T>
+    => b == T.Zero ? T.Abs(a) : Gcd(b, a % b);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>gcd (Gcd)</Title>
+            <Shortcut>Gcd</Shortcut>
+            <Description>Computes the greatest common divisor (GCD) of two integers.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T Gcd<T>(T a, T b) where T : IBinaryInteger<T>
+    => b == T.Zero ? T.Abs(a) : Gcd(b, a % b);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>mip (cpmip)</Title>
+            <Shortcut>cpmip</Shortcut>
+            <Description>Computes the modular multiplicative inverse of a modulo a prime mod.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ModPower<T>(T @base, T exp, T mod) where T : IBinaryInteger<T>
+{
+    if (exp < T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(exp), "Negative exponent not supported.");
+    if (mod <= T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(mod), "Modulus must be positive.");
+
+    T result = T.One % mod;
+    T b = (@base % mod + mod) % mod;
+
+    while (exp > T.Zero)
+    {
+        if ((exp & T.One) == T.One)
+            result = (result * b) % mod;
+
+        b = (b * b) % mod;
+        exp >>= 1;
+    }
+
+    return result;
+}
+
+public static T ModInversePrime<T>(T a, T mod) where T : IBinaryInteger<T>
+    => ModPower(a, mod - (T.One + T.One), mod);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>mip (cp_mip)</Title>
+            <Shortcut>cp_mip</Shortcut>
+            <Description>Computes the modular multiplicative inverse of a modulo a prime mod.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ModPower<T>(T @base, T exp, T mod) where T : IBinaryInteger<T>
+{
+    if (exp < T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(exp), "Negative exponent not supported.");
+    if (mod <= T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(mod), "Modulus must be positive.");
+
+    T result = T.One % mod;
+    T b = (@base % mod + mod) % mod;
+
+    while (exp > T.Zero)
+    {
+        if ((exp & T.One) == T.One)
+            result = (result * b) % mod;
+
+        b = (b * b) % mod;
+        exp >>= 1;
+    }
+
+    return result;
+}
+
+public static T ModInversePrime<T>(T a, T mod) where T : IBinaryInteger<T>
+    => ModPower(a, mod - (T.One + T.One), mod);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>mip (mip)</Title>
+            <Shortcut>mip</Shortcut>
+            <Description>Computes the modular multiplicative inverse of a modulo a prime mod.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ModPower<T>(T @base, T exp, T mod) where T : IBinaryInteger<T>
+{
+    if (exp < T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(exp), "Negative exponent not supported.");
+    if (mod <= T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(mod), "Modulus must be positive.");
+
+    T result = T.One % mod;
+    T b = (@base % mod + mod) % mod;
+
+    while (exp > T.Zero)
+    {
+        if ((exp & T.One) == T.One)
+            result = (result * b) % mod;
+
+        b = (b * b) % mod;
+        exp >>= 1;
+    }
+
+    return result;
+}
+
+public static T ModInversePrime<T>(T a, T mod) where T : IBinaryInteger<T>
+    => ModPower(a, mod - (T.One + T.One), mod);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>mip (ModInversePrime)</Title>
+            <Shortcut>ModInversePrime</Shortcut>
+            <Description>Computes the modular multiplicative inverse of a modulo a prime mod.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ModPower<T>(T @base, T exp, T mod) where T : IBinaryInteger<T>
+{
+    if (exp < T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(exp), "Negative exponent not supported.");
+    if (mod <= T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(mod), "Modulus must be positive.");
+
+    T result = T.One % mod;
+    T b = (@base % mod + mod) % mod;
+
+    while (exp > T.Zero)
+    {
+        if ((exp & T.One) == T.One)
+            result = (result * b) % mod;
+
+        b = (b * b) % mod;
+        exp >>= 1;
+    }
+
+    return result;
+}
+
+public static T ModInversePrime<T>(T a, T mod) where T : IBinaryInteger<T>
+    => ModPower(a, mod - (T.One + T.One), mod);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>minv (cpminv)</Title>
+            <Shortcut>cpminv</Shortcut>
+            <Description>Computes the modular multiplicative inverse of a modulo mod.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static (T Gcd, T X, T Y) ExtendedGcd<T>(T a, T b) where T : IBinaryInteger<T>
+{
+    if (b == T.Zero)
+        return (T.Abs(a), a < T.Zero ? -T.One : T.One, T.Zero);
+
+    var (g, x1, y1) = ExtendedGcd(b, a % b);
+    return (g, y1, x1 - (a / b) * y1);
+}
+
+public static T ModInverse<T>(T a, T mod) where T : IBinaryInteger<T>
+{
+    var (gcd, x, _) = ExtendedGcd(a, mod);
+    if (gcd != T.One)
+        throw new InvalidOperationException($"Modular inverse does not exist: {a} and {mod} are not coprime.");
+
+    return (x % mod + mod) % mod;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>minv (cp_minv)</Title>
+            <Shortcut>cp_minv</Shortcut>
+            <Description>Computes the modular multiplicative inverse of a modulo mod.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static (T Gcd, T X, T Y) ExtendedGcd<T>(T a, T b) where T : IBinaryInteger<T>
+{
+    if (b == T.Zero)
+        return (T.Abs(a), a < T.Zero ? -T.One : T.One, T.Zero);
+
+    var (g, x1, y1) = ExtendedGcd(b, a % b);
+    return (g, y1, x1 - (a / b) * y1);
+}
+
+public static T ModInverse<T>(T a, T mod) where T : IBinaryInteger<T>
+{
+    var (gcd, x, _) = ExtendedGcd(a, mod);
+    if (gcd != T.One)
+        throw new InvalidOperationException($"Modular inverse does not exist: {a} and {mod} are not coprime.");
+
+    return (x % mod + mod) % mod;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>minv (minv)</Title>
+            <Shortcut>minv</Shortcut>
+            <Description>Computes the modular multiplicative inverse of a modulo mod.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static (T Gcd, T X, T Y) ExtendedGcd<T>(T a, T b) where T : IBinaryInteger<T>
+{
+    if (b == T.Zero)
+        return (T.Abs(a), a < T.Zero ? -T.One : T.One, T.Zero);
+
+    var (g, x1, y1) = ExtendedGcd(b, a % b);
+    return (g, y1, x1 - (a / b) * y1);
+}
+
+public static T ModInverse<T>(T a, T mod) where T : IBinaryInteger<T>
+{
+    var (gcd, x, _) = ExtendedGcd(a, mod);
+    if (gcd != T.One)
+        throw new InvalidOperationException($"Modular inverse does not exist: {a} and {mod} are not coprime.");
+
+    return (x % mod + mod) % mod;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>minv (ModInverse)</Title>
+            <Shortcut>ModInverse</Shortcut>
+            <Description>Computes the modular multiplicative inverse of a modulo mod.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static (T Gcd, T X, T Y) ExtendedGcd<T>(T a, T b) where T : IBinaryInteger<T>
+{
+    if (b == T.Zero)
+        return (T.Abs(a), a < T.Zero ? -T.One : T.One, T.Zero);
+
+    var (g, x1, y1) = ExtendedGcd(b, a % b);
+    return (g, y1, x1 - (a / b) * y1);
+}
+
+public static T ModInverse<T>(T a, T mod) where T : IBinaryInteger<T>
+{
+    var (gcd, x, _) = ExtendedGcd(a, mod);
+    if (gcd != T.One)
+        throw new InvalidOperationException($"Modular inverse does not exist: {a} and {mod} are not coprime.");
+
+    return (x % mod + mod) % mod;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>div (cpdiv)</Title>
+            <Shortcut>cpdiv</Shortcut>
+            <Description>Extracts all divisors of n in sorted order.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static List<T> GetDivisors<T>(T n) where T : IBinaryInteger<T>
+{
+    List<T> small = new();
+    List<T> large = new();
+
+    for (T i = T.One; i * i <= n; i++)
+    {
+        if ((n % i) != T.Zero) continue;
+
+        small.Add(i);
+        T paired = n / i;
+        if (paired != i)
+            large.Add(paired);
+    }
+
+    large.Reverse();
+    small.AddRange(large);
+    return small;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>div (cp_div)</Title>
+            <Shortcut>cp_div</Shortcut>
+            <Description>Extracts all divisors of n in sorted order.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static List<T> GetDivisors<T>(T n) where T : IBinaryInteger<T>
+{
+    List<T> small = new();
+    List<T> large = new();
+
+    for (T i = T.One; i * i <= n; i++)
+    {
+        if ((n % i) != T.Zero) continue;
+
+        small.Add(i);
+        T paired = n / i;
+        if (paired != i)
+            large.Add(paired);
+    }
+
+    large.Reverse();
+    small.AddRange(large);
+    return small;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>div (div)</Title>
+            <Shortcut>div</Shortcut>
+            <Description>Extracts all divisors of n in sorted order.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static List<T> GetDivisors<T>(T n) where T : IBinaryInteger<T>
+{
+    List<T> small = new();
+    List<T> large = new();
+
+    for (T i = T.One; i * i <= n; i++)
+    {
+        if ((n % i) != T.Zero) continue;
+
+        small.Add(i);
+        T paired = n / i;
+        if (paired != i)
+            large.Add(paired);
+    }
+
+    large.Reverse();
+    small.AddRange(large);
+    return small;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>div (GetDivisors)</Title>
+            <Shortcut>GetDivisors</Shortcut>
+            <Description>Extracts all divisors of n in sorted order.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static List<T> GetDivisors<T>(T n) where T : IBinaryInteger<T>
+{
+    List<T> small = new();
+    List<T> large = new();
+
+    for (T i = T.One; i * i <= n; i++)
+    {
+        if ((n % i) != T.Zero) continue;
+
+        small.Add(i);
+        T paired = n / i;
+        if (paired != i)
+            large.Add(paired);
+    }
+
+    large.Reverse();
+    small.AddRange(large);
+    return small;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>comb (cpcomb)</Title>
+            <Shortcut>cpcomb</Shortcut>
+            <Description>Precomputes factorials and inverse factorials for modular combinatorics queries under a prime modulus.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ModPower<T>(T @base, T exp, T mod) where T : IBinaryInteger<T>
+{
+    if (exp < T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(exp), "Negative exponent not supported.");
+    if (mod <= T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(mod), "Modulus must be positive.");
+
+    T result = T.One % mod;
+    T b = (@base % mod + mod) % mod;
+
+    while (exp > T.Zero)
+    {
+        if ((exp & T.One) == T.One)
+            result = (result * b) % mod;
+
+        b = (b * b) % mod;
+        exp >>= 1;
+    }
+
+    return result;
+}
+
+public static T ModInversePrime<T>(T a, T mod) where T : IBinaryInteger<T>
+    => ModPower(a, mod - (T.One + T.One), mod);
+
+public sealed class ModularCombinatorics<T> where T : IBinaryInteger<T>
+{
+    private readonly T[] _fact;
+    private readonly T[] _invFact;
+    private readonly T _mod;
+    public ModularCombinatorics(int maxN, T mod)
+    {
+        _mod = mod;
+        _fact = new T[maxN + 1];
+        _invFact = new T[maxN + 1];
+
+        _fact[0] = T.One;
+        _invFact[0] = T.One;
+
+        for (int i = 1; i <= maxN; i++)
+        {
+            _fact[i] = (_fact[i - 1] * T.CreateChecked(i)) % _mod;
+        }
+
+        _invFact[maxN] = NumberTheoryToolkit.ModInversePrime(_fact[maxN], _mod);
+
+        for (int i = maxN - 1; i >= 1; i--)
+        {
+            _invFact[i] = (_invFact[i + 1] * T.CreateChecked(i + 1)) % _mod;
+        }
+    }
+    public T NCr(int n, int r)
+    {
+        if (r < 0 || r > n) return T.Zero;
+        return (_fact[n] * _invFact[r] % _mod) * _invFact[n - r] % _mod;
+    }
+    public T NPr(int n, int r)
+    {
+        if (r < 0 || r > n) return T.Zero;
+        return _fact[n] * _invFact[n - r] % _mod;
+    }
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>comb (cp_comb)</Title>
+            <Shortcut>cp_comb</Shortcut>
+            <Description>Precomputes factorials and inverse factorials for modular combinatorics queries under a prime modulus.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ModPower<T>(T @base, T exp, T mod) where T : IBinaryInteger<T>
+{
+    if (exp < T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(exp), "Negative exponent not supported.");
+    if (mod <= T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(mod), "Modulus must be positive.");
+
+    T result = T.One % mod;
+    T b = (@base % mod + mod) % mod;
+
+    while (exp > T.Zero)
+    {
+        if ((exp & T.One) == T.One)
+            result = (result * b) % mod;
+
+        b = (b * b) % mod;
+        exp >>= 1;
+    }
+
+    return result;
+}
+
+public static T ModInversePrime<T>(T a, T mod) where T : IBinaryInteger<T>
+    => ModPower(a, mod - (T.One + T.One), mod);
+
+public sealed class ModularCombinatorics<T> where T : IBinaryInteger<T>
+{
+    private readonly T[] _fact;
+    private readonly T[] _invFact;
+    private readonly T _mod;
+    public ModularCombinatorics(int maxN, T mod)
+    {
+        _mod = mod;
+        _fact = new T[maxN + 1];
+        _invFact = new T[maxN + 1];
+
+        _fact[0] = T.One;
+        _invFact[0] = T.One;
+
+        for (int i = 1; i <= maxN; i++)
+        {
+            _fact[i] = (_fact[i - 1] * T.CreateChecked(i)) % _mod;
+        }
+
+        _invFact[maxN] = NumberTheoryToolkit.ModInversePrime(_fact[maxN], _mod);
+
+        for (int i = maxN - 1; i >= 1; i--)
+        {
+            _invFact[i] = (_invFact[i + 1] * T.CreateChecked(i + 1)) % _mod;
+        }
+    }
+    public T NCr(int n, int r)
+    {
+        if (r < 0 || r > n) return T.Zero;
+        return (_fact[n] * _invFact[r] % _mod) * _invFact[n - r] % _mod;
+    }
+    public T NPr(int n, int r)
+    {
+        if (r < 0 || r > n) return T.Zero;
+        return _fact[n] * _invFact[n - r] % _mod;
+    }
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>comb (comb)</Title>
+            <Shortcut>comb</Shortcut>
+            <Description>Precomputes factorials and inverse factorials for modular combinatorics queries under a prime modulus.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ModPower<T>(T @base, T exp, T mod) where T : IBinaryInteger<T>
+{
+    if (exp < T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(exp), "Negative exponent not supported.");
+    if (mod <= T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(mod), "Modulus must be positive.");
+
+    T result = T.One % mod;
+    T b = (@base % mod + mod) % mod;
+
+    while (exp > T.Zero)
+    {
+        if ((exp & T.One) == T.One)
+            result = (result * b) % mod;
+
+        b = (b * b) % mod;
+        exp >>= 1;
+    }
+
+    return result;
+}
+
+public static T ModInversePrime<T>(T a, T mod) where T : IBinaryInteger<T>
+    => ModPower(a, mod - (T.One + T.One), mod);
+
+public sealed class ModularCombinatorics<T> where T : IBinaryInteger<T>
+{
+    private readonly T[] _fact;
+    private readonly T[] _invFact;
+    private readonly T _mod;
+    public ModularCombinatorics(int maxN, T mod)
+    {
+        _mod = mod;
+        _fact = new T[maxN + 1];
+        _invFact = new T[maxN + 1];
+
+        _fact[0] = T.One;
+        _invFact[0] = T.One;
+
+        for (int i = 1; i <= maxN; i++)
+        {
+            _fact[i] = (_fact[i - 1] * T.CreateChecked(i)) % _mod;
+        }
+
+        _invFact[maxN] = NumberTheoryToolkit.ModInversePrime(_fact[maxN], _mod);
+
+        for (int i = maxN - 1; i >= 1; i--)
+        {
+            _invFact[i] = (_invFact[i + 1] * T.CreateChecked(i + 1)) % _mod;
+        }
+    }
+    public T NCr(int n, int r)
+    {
+        if (r < 0 || r > n) return T.Zero;
+        return (_fact[n] * _invFact[r] % _mod) * _invFact[n - r] % _mod;
+    }
+    public T NPr(int n, int r)
+    {
+        if (r < 0 || r > n) return T.Zero;
+        return _fact[n] * _invFact[n - r] % _mod;
+    }
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>comb (ModularCombinatorics)</Title>
+            <Shortcut>ModularCombinatorics</Shortcut>
+            <Description>Precomputes factorials and inverse factorials for modular combinatorics queries under a prime modulus.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T ModPower<T>(T @base, T exp, T mod) where T : IBinaryInteger<T>
+{
+    if (exp < T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(exp), "Negative exponent not supported.");
+    if (mod <= T.Zero)
+        throw new ArgumentOutOfRangeException(nameof(mod), "Modulus must be positive.");
+
+    T result = T.One % mod;
+    T b = (@base % mod + mod) % mod;
+
+    while (exp > T.Zero)
+    {
+        if ((exp & T.One) == T.One)
+            result = (result * b) % mod;
+
+        b = (b * b) % mod;
+        exp >>= 1;
+    }
+
+    return result;
+}
+
+public static T ModInversePrime<T>(T a, T mod) where T : IBinaryInteger<T>
+    => ModPower(a, mod - (T.One + T.One), mod);
+
+public sealed class ModularCombinatorics<T> where T : IBinaryInteger<T>
+{
+    private readonly T[] _fact;
+    private readonly T[] _invFact;
+    private readonly T _mod;
+    public ModularCombinatorics(int maxN, T mod)
+    {
+        _mod = mod;
+        _fact = new T[maxN + 1];
+        _invFact = new T[maxN + 1];
+
+        _fact[0] = T.One;
+        _invFact[0] = T.One;
+
+        for (int i = 1; i <= maxN; i++)
+        {
+            _fact[i] = (_fact[i - 1] * T.CreateChecked(i)) % _mod;
+        }
+
+        _invFact[maxN] = NumberTheoryToolkit.ModInversePrime(_fact[maxN], _mod);
+
+        for (int i = maxN - 1; i >= 1; i--)
+        {
+            _invFact[i] = (_invFact[i + 1] * T.CreateChecked(i + 1)) % _mod;
+        }
+    }
+    public T NCr(int n, int r)
+    {
+        if (r < 0 || r > n) return T.Zero;
+        return (_fact[n] * _invFact[r] % _mod) * _invFact[n - r] % _mod;
+    }
+    public T NPr(int n, int r)
+    {
+        if (r < 0 || r > n) return T.Zero;
+        return _fact[n] * _invFact[n - r] % _mod;
+    }
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>siv (cpsiv)</Title>
+            <Shortcut>cpsiv</Shortcut>
+            <Description>Generates a boolean array of size n + 1 where isPrime[i] indicates if i is prime.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool[] SieveOfEratosthenes(int n)
+{
+    if (n < 2) return new bool[Math.Max(n + 1, 0)];
+
+    bool[] isPrime = new bool[n + 1];
+    Array.Fill(isPrime, true, 2, n - 1);
+
+    for (int i = 2; (long)i * i <= n; i++)
+    {
+        if (!isPrime[i]) continue;
+
+        for (int j = i * i; j <= n; j += i)
+            isPrime[j] = false;
+    }
+
+    return isPrime;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>siv (cp_siv)</Title>
+            <Shortcut>cp_siv</Shortcut>
+            <Description>Generates a boolean array of size n + 1 where isPrime[i] indicates if i is prime.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool[] SieveOfEratosthenes(int n)
+{
+    if (n < 2) return new bool[Math.Max(n + 1, 0)];
+
+    bool[] isPrime = new bool[n + 1];
+    Array.Fill(isPrime, true, 2, n - 1);
+
+    for (int i = 2; (long)i * i <= n; i++)
+    {
+        if (!isPrime[i]) continue;
+
+        for (int j = i * i; j <= n; j += i)
+            isPrime[j] = false;
+    }
+
+    return isPrime;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>siv (siv)</Title>
+            <Shortcut>siv</Shortcut>
+            <Description>Generates a boolean array of size n + 1 where isPrime[i] indicates if i is prime.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool[] SieveOfEratosthenes(int n)
+{
+    if (n < 2) return new bool[Math.Max(n + 1, 0)];
+
+    bool[] isPrime = new bool[n + 1];
+    Array.Fill(isPrime, true, 2, n - 1);
+
+    for (int i = 2; (long)i * i <= n; i++)
+    {
+        if (!isPrime[i]) continue;
+
+        for (int j = i * i; j <= n; j += i)
+            isPrime[j] = false;
+    }
+
+    return isPrime;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>siv (SieveOfEratosthenes)</Title>
+            <Shortcut>SieveOfEratosthenes</Shortcut>
+            <Description>Generates a boolean array of size n + 1 where isPrime[i] indicates if i is prime.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool[] SieveOfEratosthenes(int n)
+{
+    if (n < 2) return new bool[Math.Max(n + 1, 0)];
+
+    bool[] isPrime = new bool[n + 1];
+    Array.Fill(isPrime, true, 2, n - 1);
+
+    for (int i = 2; (long)i * i <= n; i++)
+    {
+        if (!isPrime[i]) continue;
+
+        for (int j = i * i; j <= n; j += i)
+            isPrime[j] = false;
+    }
+
+    return isPrime;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lsiv (cplsiv)</Title>
+            <Shortcut>cplsiv</Shortcut>
+            <Description>Computes all primes up to n and each number&apos;s Smallest Prime Factor (SPF).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static (int[] Primes, int[] Spf) LinearSieve(int n)
+{
+    int[] spf = new int[n + 1];
+    List<int> primes = new();
+
+    for (int i = 2; i <= n; i++)
+    {
+        if (spf[i] == 0)
+        {
+            spf[i] = i;
+            primes.Add(i);
+        }
+
+        for (int j = 0; j < primes.Count && primes[j] <= spf[i] && (long)i * primes[j] <= n; j++)
+        {
+            spf[i * primes[j]] = primes[j];
+        }
+    }
+
+    return (primes.ToArray(), spf);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lsiv (cp_lsiv)</Title>
+            <Shortcut>cp_lsiv</Shortcut>
+            <Description>Computes all primes up to n and each number&apos;s Smallest Prime Factor (SPF).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static (int[] Primes, int[] Spf) LinearSieve(int n)
+{
+    int[] spf = new int[n + 1];
+    List<int> primes = new();
+
+    for (int i = 2; i <= n; i++)
+    {
+        if (spf[i] == 0)
+        {
+            spf[i] = i;
+            primes.Add(i);
+        }
+
+        for (int j = 0; j < primes.Count && primes[j] <= spf[i] && (long)i * primes[j] <= n; j++)
+        {
+            spf[i * primes[j]] = primes[j];
+        }
+    }
+
+    return (primes.ToArray(), spf);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lsiv (lsiv)</Title>
+            <Shortcut>lsiv</Shortcut>
+            <Description>Computes all primes up to n and each number&apos;s Smallest Prime Factor (SPF).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static (int[] Primes, int[] Spf) LinearSieve(int n)
+{
+    int[] spf = new int[n + 1];
+    List<int> primes = new();
+
+    for (int i = 2; i <= n; i++)
+    {
+        if (spf[i] == 0)
+        {
+            spf[i] = i;
+            primes.Add(i);
+        }
+
+        for (int j = 0; j < primes.Count && primes[j] <= spf[i] && (long)i * primes[j] <= n; j++)
+        {
+            spf[i * primes[j]] = primes[j];
+        }
+    }
+
+    return (primes.ToArray(), spf);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lsiv (LinearSieve)</Title>
+            <Shortcut>LinearSieve</Shortcut>
+            <Description>Computes all primes up to n and each number&apos;s Smallest Prime Factor (SPF).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static (int[] Primes, int[] Spf) LinearSieve(int n)
+{
+    int[] spf = new int[n + 1];
+    List<int> primes = new();
+
+    for (int i = 2; i <= n; i++)
+    {
+        if (spf[i] == 0)
+        {
+            spf[i] = i;
+            primes.Add(i);
+        }
+
+        for (int j = 0; j < primes.Count && primes[j] <= spf[i] && (long)i * primes[j] <= n; j++)
+        {
+            spf[i * primes[j]] = primes[j];
+        }
+    }
+
+    return (primes.ToArray(), spf);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>egcd (cpegcd)</Title>
+            <Shortcut>cpegcd</Shortcut>
+            <Description>Computes gcd(a, b) and Bézout coefficients x and y such that a*x + b*y = gcd(a, b).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static (T Gcd, T X, T Y) ExtendedGcd<T>(T a, T b) where T : IBinaryInteger<T>
+{
+    if (b == T.Zero)
+        return (T.Abs(a), a < T.Zero ? -T.One : T.One, T.Zero);
+
+    var (g, x1, y1) = ExtendedGcd(b, a % b);
+    return (g, y1, x1 - (a / b) * y1);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>egcd (cp_egcd)</Title>
+            <Shortcut>cp_egcd</Shortcut>
+            <Description>Computes gcd(a, b) and Bézout coefficients x and y such that a*x + b*y = gcd(a, b).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static (T Gcd, T X, T Y) ExtendedGcd<T>(T a, T b) where T : IBinaryInteger<T>
+{
+    if (b == T.Zero)
+        return (T.Abs(a), a < T.Zero ? -T.One : T.One, T.Zero);
+
+    var (g, x1, y1) = ExtendedGcd(b, a % b);
+    return (g, y1, x1 - (a / b) * y1);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>egcd (egcd)</Title>
+            <Shortcut>egcd</Shortcut>
+            <Description>Computes gcd(a, b) and Bézout coefficients x and y such that a*x + b*y = gcd(a, b).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static (T Gcd, T X, T Y) ExtendedGcd<T>(T a, T b) where T : IBinaryInteger<T>
+{
+    if (b == T.Zero)
+        return (T.Abs(a), a < T.Zero ? -T.One : T.One, T.Zero);
+
+    var (g, x1, y1) = ExtendedGcd(b, a % b);
+    return (g, y1, x1 - (a / b) * y1);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>egcd (ExtendedGcd)</Title>
+            <Shortcut>ExtendedGcd</Shortcut>
+            <Description>Computes gcd(a, b) and Bézout coefficients x and y such that a*x + b*y = gcd(a, b).</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static (T Gcd, T X, T Y) ExtendedGcd<T>(T a, T b) where T : IBinaryInteger<T>
+{
+    if (b == T.Zero)
+        return (T.Abs(a), a < T.Zero ? -T.One : T.One, T.Zero);
+
+    var (g, x1, y1) = ExtendedGcd(b, a % b);
+    return (g, y1, x1 - (a / b) * y1);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>istp (cpistp)</Title>
+            <Shortcut>cpistp</Shortcut>
+            <Description>Checks whether n has exactly 3 positive divisors.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool IsPrime<T>(T n) where T : IBinaryInteger<T>
+{
+    T two = T.CreateChecked(2);
+    T three = T.CreateChecked(3);
+
+    if (n <= T.One) return false;
+    if (n <= three) return true;
+    if ((n % two) == T.Zero || (n % three) == T.Zero) return false;
+
+    T step = T.CreateChecked(6);
+    for (T i = T.CreateChecked(5); i * i <= n; i += step)
+    {
+        if ((n % i) == T.Zero || (n % (i + two)) == T.Zero)
+            return false;
+    }
+
+    return true;
+}
+
+public static bool IsTPrime<T>(T n) where T : IBinaryInteger<T>
+{
+    if (n < T.CreateChecked(4)) return false;
+
+    double sqrtVal = Math.Round(Math.Sqrt(double.CreateChecked(n)));
+    T root = T.CreateChecked(sqrtVal);
+
+    return (root * root == n) && IsPrime(root);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>istp (cp_istp)</Title>
+            <Shortcut>cp_istp</Shortcut>
+            <Description>Checks whether n has exactly 3 positive divisors.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool IsPrime<T>(T n) where T : IBinaryInteger<T>
+{
+    T two = T.CreateChecked(2);
+    T three = T.CreateChecked(3);
+
+    if (n <= T.One) return false;
+    if (n <= three) return true;
+    if ((n % two) == T.Zero || (n % three) == T.Zero) return false;
+
+    T step = T.CreateChecked(6);
+    for (T i = T.CreateChecked(5); i * i <= n; i += step)
+    {
+        if ((n % i) == T.Zero || (n % (i + two)) == T.Zero)
+            return false;
+    }
+
+    return true;
+}
+
+public static bool IsTPrime<T>(T n) where T : IBinaryInteger<T>
+{
+    if (n < T.CreateChecked(4)) return false;
+
+    double sqrtVal = Math.Round(Math.Sqrt(double.CreateChecked(n)));
+    T root = T.CreateChecked(sqrtVal);
+
+    return (root * root == n) && IsPrime(root);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>istp (istp)</Title>
+            <Shortcut>istp</Shortcut>
+            <Description>Checks whether n has exactly 3 positive divisors.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool IsPrime<T>(T n) where T : IBinaryInteger<T>
+{
+    T two = T.CreateChecked(2);
+    T three = T.CreateChecked(3);
+
+    if (n <= T.One) return false;
+    if (n <= three) return true;
+    if ((n % two) == T.Zero || (n % three) == T.Zero) return false;
+
+    T step = T.CreateChecked(6);
+    for (T i = T.CreateChecked(5); i * i <= n; i += step)
+    {
+        if ((n % i) == T.Zero || (n % (i + two)) == T.Zero)
+            return false;
+    }
+
+    return true;
+}
+
+public static bool IsTPrime<T>(T n) where T : IBinaryInteger<T>
+{
+    if (n < T.CreateChecked(4)) return false;
+
+    double sqrtVal = Math.Round(Math.Sqrt(double.CreateChecked(n)));
+    T root = T.CreateChecked(sqrtVal);
+
+    return (root * root == n) && IsPrime(root);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>istp (IsTPrime)</Title>
+            <Shortcut>IsTPrime</Shortcut>
+            <Description>Checks whether n has exactly 3 positive divisors.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool IsPrime<T>(T n) where T : IBinaryInteger<T>
+{
+    T two = T.CreateChecked(2);
+    T three = T.CreateChecked(3);
+
+    if (n <= T.One) return false;
+    if (n <= three) return true;
+    if ((n % two) == T.Zero || (n % three) == T.Zero) return false;
+
+    T step = T.CreateChecked(6);
+    for (T i = T.CreateChecked(5); i * i <= n; i += step)
+    {
+        if ((n % i) == T.Zero || (n % (i + two)) == T.Zero)
+            return false;
+    }
+
+    return true;
+}
+
+public static bool IsTPrime<T>(T n) where T : IBinaryInteger<T>
+{
+    if (n < T.CreateChecked(4)) return false;
+
+    double sqrtVal = Math.Round(Math.Sqrt(double.CreateChecked(n)));
+    T root = T.CreateChecked(sqrtVal);
+
+    return (root * root == n) && IsPrime(root);
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>isp (cpisp)</Title>
+            <Shortcut>cpisp</Shortcut>
+            <Description>Determines whether a number is prime.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool IsPrime<T>(T n) where T : IBinaryInteger<T>
+{
+    T two = T.CreateChecked(2);
+    T three = T.CreateChecked(3);
+
+    if (n <= T.One) return false;
+    if (n <= three) return true;
+    if ((n % two) == T.Zero || (n % three) == T.Zero) return false;
+
+    T step = T.CreateChecked(6);
+    for (T i = T.CreateChecked(5); i * i <= n; i += step)
+    {
+        if ((n % i) == T.Zero || (n % (i + two)) == T.Zero)
+            return false;
+    }
+
+    return true;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>isp (cp_isp)</Title>
+            <Shortcut>cp_isp</Shortcut>
+            <Description>Determines whether a number is prime.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool IsPrime<T>(T n) where T : IBinaryInteger<T>
+{
+    T two = T.CreateChecked(2);
+    T three = T.CreateChecked(3);
+
+    if (n <= T.One) return false;
+    if (n <= three) return true;
+    if ((n % two) == T.Zero || (n % three) == T.Zero) return false;
+
+    T step = T.CreateChecked(6);
+    for (T i = T.CreateChecked(5); i * i <= n; i += step)
+    {
+        if ((n % i) == T.Zero || (n % (i + two)) == T.Zero)
+            return false;
+    }
+
+    return true;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>isp (isp)</Title>
+            <Shortcut>isp</Shortcut>
+            <Description>Determines whether a number is prime.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool IsPrime<T>(T n) where T : IBinaryInteger<T>
+{
+    T two = T.CreateChecked(2);
+    T three = T.CreateChecked(3);
+
+    if (n <= T.One) return false;
+    if (n <= three) return true;
+    if ((n % two) == T.Zero || (n % three) == T.Zero) return false;
+
+    T step = T.CreateChecked(6);
+    for (T i = T.CreateChecked(5); i * i <= n; i += step)
+    {
+        if ((n % i) == T.Zero || (n % (i + two)) == T.Zero)
+            return false;
+    }
+
+    return true;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>isp (IsPrime)</Title>
+            <Shortcut>IsPrime</Shortcut>
+            <Description>Determines whether a number is prime.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static bool IsPrime<T>(T n) where T : IBinaryInteger<T>
+{
+    T two = T.CreateChecked(2);
+    T three = T.CreateChecked(3);
+
+    if (n <= T.One) return false;
+    if (n <= three) return true;
+    if ((n % two) == T.Zero || (n % three) == T.Zero) return false;
+
+    T step = T.CreateChecked(6);
+    for (T i = T.CreateChecked(5); i * i <= n; i += step)
+    {
+        if ((n % i) == T.Zero || (n % (i + two)) == T.Zero)
+            return false;
+    }
+
+    return true;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>ncr (cpncr)</Title>
+            <Shortcut>cpncr</Shortcut>
+            <Description>Computes nCr.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T NCr<T>(T n, T r) where T : IBinaryInteger<T>
+{
+    if (r < T.Zero || r > n) return T.Zero;
+    if (r == T.Zero || r == n) return T.One;
+
+    if (r > n - r)
+        r = n - r;
+
+    T result = T.One;
+    for (T i = T.One; i <= r; i++)
+    {
+        result = (result * (n - r + i)) / i;
+    }
+
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>ncr (cp_ncr)</Title>
+            <Shortcut>cp_ncr</Shortcut>
+            <Description>Computes nCr.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T NCr<T>(T n, T r) where T : IBinaryInteger<T>
+{
+    if (r < T.Zero || r > n) return T.Zero;
+    if (r == T.Zero || r == n) return T.One;
+
+    if (r > n - r)
+        r = n - r;
+
+    T result = T.One;
+    for (T i = T.One; i <= r; i++)
+    {
+        result = (result * (n - r + i)) / i;
+    }
+
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>ncr (ncr)</Title>
+            <Shortcut>ncr</Shortcut>
+            <Description>Computes nCr.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T NCr<T>(T n, T r) where T : IBinaryInteger<T>
+{
+    if (r < T.Zero || r > n) return T.Zero;
+    if (r == T.Zero || r == n) return T.One;
+
+    if (r > n - r)
+        r = n - r;
+
+    T result = T.One;
+    for (T i = T.One; i <= r; i++)
+    {
+        result = (result * (n - r + i)) / i;
+    }
+
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>ncr (NCr)</Title>
+            <Shortcut>NCr</Shortcut>
+            <Description>Computes nCr.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T NCr<T>(T n, T r) where T : IBinaryInteger<T>
+{
+    if (r < T.Zero || r > n) return T.Zero;
+    if (r == T.Zero || r == n) return T.One;
+
+    if (r > n - r)
+        r = n - r;
+
+    T result = T.One;
+    for (T i = T.One; i <= r; i++)
+    {
+        result = (result * (n - r + i)) / i;
+    }
+
+    return result;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>fastio (cpfastio)</Title>
+            <Shortcut>cpfastio</Shortcut>
+            <Description>Lightweight fast I/O helper using built-in StreamReader and token queuing.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static class IO
+{
+    private static StreamReader _reader = new(Console.OpenStandardInput(), bufferSize: 65536);
+    private static StreamWriter _writer = new(Console.OpenStandardOutput(), bufferSize: 65536);
+    private static readonly Queue<string> _tokens = new();
+    public static void SetFileIO(string inputPath = "input.txt", string outputPath = "output.txt")
+    {
+        if (File.Exists(inputPath))
+            _reader = new StreamReader(new FileStream(inputPath, FileMode.Open, FileAccess.Read), bufferSize: 65536);
+        if (!string.IsNullOrEmpty(outputPath))
+            _writer = new StreamWriter(new FileStream(outputPath, FileMode.Create, FileAccess.Write), bufferSize: 65536);
+    }
+    public static string? Next()
+    {
+        while (_tokens.Count == 0)
+        {
+            string? line = _reader.ReadLine();
+            if (line == null) return null;
+            foreach (var t in line.Split((char[])null!, StringSplitOptions.RemoveEmptyEntries))
+                _tokens.Enqueue(t);
+        }
+        return _tokens.Dequeue();
+    }
+    public static int NextInt() => int.Parse(Next()!);
+    public static long NextLong() => long.Parse(Next()!);
+    public static double NextDouble() => double.Parse(Next()!, CultureInfo.InvariantCulture);
+    public static string? NextLine()
+    {
+        _tokens.Clear();
+        return _reader.ReadLine();
+    }
+    public static void Print<T>(T val) => _writer.Write(val);
+    public static void Println() => _writer.WriteLine();
+    public static void Println<T>(T val) => _writer.WriteLine(val);
+    public static void Print<T>(IEnumerable<T> col, string sep = " ") =>
+        _writer.Write(string.Join(sep, col));
+    public static void Println<T>(IEnumerable<T> col, string sep = " ") =>
+        _writer.WriteLine(string.Join(sep, col));
+    public static void Flush() => _writer.Flush();
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>fastio (cp_fastio)</Title>
+            <Shortcut>cp_fastio</Shortcut>
+            <Description>Lightweight fast I/O helper using built-in StreamReader and token queuing.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static class IO
+{
+    private static StreamReader _reader = new(Console.OpenStandardInput(), bufferSize: 65536);
+    private static StreamWriter _writer = new(Console.OpenStandardOutput(), bufferSize: 65536);
+    private static readonly Queue<string> _tokens = new();
+    public static void SetFileIO(string inputPath = "input.txt", string outputPath = "output.txt")
+    {
+        if (File.Exists(inputPath))
+            _reader = new StreamReader(new FileStream(inputPath, FileMode.Open, FileAccess.Read), bufferSize: 65536);
+        if (!string.IsNullOrEmpty(outputPath))
+            _writer = new StreamWriter(new FileStream(outputPath, FileMode.Create, FileAccess.Write), bufferSize: 65536);
+    }
+    public static string? Next()
+    {
+        while (_tokens.Count == 0)
+        {
+            string? line = _reader.ReadLine();
+            if (line == null) return null;
+            foreach (var t in line.Split((char[])null!, StringSplitOptions.RemoveEmptyEntries))
+                _tokens.Enqueue(t);
+        }
+        return _tokens.Dequeue();
+    }
+    public static int NextInt() => int.Parse(Next()!);
+    public static long NextLong() => long.Parse(Next()!);
+    public static double NextDouble() => double.Parse(Next()!, CultureInfo.InvariantCulture);
+    public static string? NextLine()
+    {
+        _tokens.Clear();
+        return _reader.ReadLine();
+    }
+    public static void Print<T>(T val) => _writer.Write(val);
+    public static void Println() => _writer.WriteLine();
+    public static void Println<T>(T val) => _writer.WriteLine(val);
+    public static void Print<T>(IEnumerable<T> col, string sep = " ") =>
+        _writer.Write(string.Join(sep, col));
+    public static void Println<T>(IEnumerable<T> col, string sep = " ") =>
+        _writer.WriteLine(string.Join(sep, col));
+    public static void Flush() => _writer.Flush();
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>fastio (fastio)</Title>
+            <Shortcut>fastio</Shortcut>
+            <Description>Lightweight fast I/O helper using built-in StreamReader and token queuing.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static class IO
+{
+    private static StreamReader _reader = new(Console.OpenStandardInput(), bufferSize: 65536);
+    private static StreamWriter _writer = new(Console.OpenStandardOutput(), bufferSize: 65536);
+    private static readonly Queue<string> _tokens = new();
+    public static void SetFileIO(string inputPath = "input.txt", string outputPath = "output.txt")
+    {
+        if (File.Exists(inputPath))
+            _reader = new StreamReader(new FileStream(inputPath, FileMode.Open, FileAccess.Read), bufferSize: 65536);
+        if (!string.IsNullOrEmpty(outputPath))
+            _writer = new StreamWriter(new FileStream(outputPath, FileMode.Create, FileAccess.Write), bufferSize: 65536);
+    }
+    public static string? Next()
+    {
+        while (_tokens.Count == 0)
+        {
+            string? line = _reader.ReadLine();
+            if (line == null) return null;
+            foreach (var t in line.Split((char[])null!, StringSplitOptions.RemoveEmptyEntries))
+                _tokens.Enqueue(t);
+        }
+        return _tokens.Dequeue();
+    }
+    public static int NextInt() => int.Parse(Next()!);
+    public static long NextLong() => long.Parse(Next()!);
+    public static double NextDouble() => double.Parse(Next()!, CultureInfo.InvariantCulture);
+    public static string? NextLine()
+    {
+        _tokens.Clear();
+        return _reader.ReadLine();
+    }
+    public static void Print<T>(T val) => _writer.Write(val);
+    public static void Println() => _writer.WriteLine();
+    public static void Println<T>(T val) => _writer.WriteLine(val);
+    public static void Print<T>(IEnumerable<T> col, string sep = " ") =>
+        _writer.Write(string.Join(sep, col));
+    public static void Println<T>(IEnumerable<T> col, string sep = " ") =>
+        _writer.WriteLine(string.Join(sep, col));
+    public static void Flush() => _writer.Flush();
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>fastio (IO)</Title>
+            <Shortcut>IO</Shortcut>
+            <Description>Lightweight fast I/O helper using built-in StreamReader and token queuing.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static class IO
+{
+    private static StreamReader _reader = new(Console.OpenStandardInput(), bufferSize: 65536);
+    private static StreamWriter _writer = new(Console.OpenStandardOutput(), bufferSize: 65536);
+    private static readonly Queue<string> _tokens = new();
+    public static void SetFileIO(string inputPath = "input.txt", string outputPath = "output.txt")
+    {
+        if (File.Exists(inputPath))
+            _reader = new StreamReader(new FileStream(inputPath, FileMode.Open, FileAccess.Read), bufferSize: 65536);
+        if (!string.IsNullOrEmpty(outputPath))
+            _writer = new StreamWriter(new FileStream(outputPath, FileMode.Create, FileAccess.Write), bufferSize: 65536);
+    }
+    public static string? Next()
+    {
+        while (_tokens.Count == 0)
+        {
+            string? line = _reader.ReadLine();
+            if (line == null) return null;
+            foreach (var t in line.Split((char[])null!, StringSplitOptions.RemoveEmptyEntries))
+                _tokens.Enqueue(t);
+        }
+        return _tokens.Dequeue();
+    }
+    public static int NextInt() => int.Parse(Next()!);
+    public static long NextLong() => long.Parse(Next()!);
+    public static double NextDouble() => double.Parse(Next()!, CultureInfo.InvariantCulture);
+    public static string? NextLine()
+    {
+        _tokens.Clear();
+        return _reader.ReadLine();
+    }
+    public static void Print<T>(T val) => _writer.Write(val);
+    public static void Println() => _writer.WriteLine();
+    public static void Println<T>(T val) => _writer.WriteLine(val);
+    public static void Print<T>(IEnumerable<T> col, string sep = " ") =>
+        _writer.Write(string.Join(sep, col));
+    public static void Println<T>(IEnumerable<T> col, string sep = " ") =>
+        _writer.WriteLine(string.Join(sep, col));
+    public static void Flush() => _writer.Flush();
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>tsreal (cptsreal)</Title>
+            <Shortcut>cptsreal</Shortcut>
+            <Description>Finds the real number x in [lo, hi] that optimizes f according to the predicate.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static double TernarySearch(double lo, double hi, Func<double, double> f, Func<double, double, bool> predicate, int iterations = 100)
+{
+    for (int i = 0; i < iterations; i++)
+    {
+        double m1 = lo + (hi - lo) / 3.0;
+        double m2 = hi - (hi - lo) / 3.0;
+
+        if (predicate(f(m1), f(m2)))
+            hi = m2;
+        else
+            lo = m1;
+    }
+
+    return (lo + hi) / 2.0;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>tsreal (cp_tsreal)</Title>
+            <Shortcut>cp_tsreal</Shortcut>
+            <Description>Finds the real number x in [lo, hi] that optimizes f according to the predicate.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static double TernarySearch(double lo, double hi, Func<double, double> f, Func<double, double, bool> predicate, int iterations = 100)
+{
+    for (int i = 0; i < iterations; i++)
+    {
+        double m1 = lo + (hi - lo) / 3.0;
+        double m2 = hi - (hi - lo) / 3.0;
+
+        if (predicate(f(m1), f(m2)))
+            hi = m2;
+        else
+            lo = m1;
+    }
+
+    return (lo + hi) / 2.0;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>tsreal (tsreal)</Title>
+            <Shortcut>tsreal</Shortcut>
+            <Description>Finds the real number x in [lo, hi] that optimizes f according to the predicate.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static double TernarySearch(double lo, double hi, Func<double, double> f, Func<double, double, bool> predicate, int iterations = 100)
+{
+    for (int i = 0; i < iterations; i++)
+    {
+        double m1 = lo + (hi - lo) / 3.0;
+        double m2 = hi - (hi - lo) / 3.0;
+
+        if (predicate(f(m1), f(m2)))
+            hi = m2;
+        else
+            lo = m1;
+    }
+
+    return (lo + hi) / 2.0;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>tsreal (TernarySearch)</Title>
+            <Shortcut>TernarySearch</Shortcut>
+            <Description>Finds the real number x in [lo, hi] that optimizes f according to the predicate.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static double TernarySearch(double lo, double hi, Func<double, double> f, Func<double, double, bool> predicate, int iterations = 100)
+{
+    for (int i = 0; i < iterations; i++)
+    {
+        double m1 = lo + (hi - lo) / 3.0;
+        double m2 = hi - (hi - lo) / 3.0;
+
+        if (predicate(f(m1), f(m2)))
+            hi = m2;
+        else
+            lo = m1;
+    }
+
+    return (lo + hi) / 2.0;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>bsreal (cpbsreal)</Title>
+            <Shortcut>cpbsreal</Shortcut>
+            <Description>Finds the real number in [lo, hi] where predicate(val) becomes true using fixed iterations.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static double BinarySearch(double lo, double hi, Func<double, bool> predicate, int iterations = 100)
+{
+    for (int i = 0; i < iterations; i++)
+    {
+        double mid = lo + (hi - lo) / 2.0;
+
+        if (predicate(mid))
+            hi = mid;
+        else
+            lo = mid;
+    }
+
+    return (lo + hi) / 2.0;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>bsreal (cp_bsreal)</Title>
+            <Shortcut>cp_bsreal</Shortcut>
+            <Description>Finds the real number in [lo, hi] where predicate(val) becomes true using fixed iterations.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static double BinarySearch(double lo, double hi, Func<double, bool> predicate, int iterations = 100)
+{
+    for (int i = 0; i < iterations; i++)
+    {
+        double mid = lo + (hi - lo) / 2.0;
+
+        if (predicate(mid))
+            hi = mid;
+        else
+            lo = mid;
+    }
+
+    return (lo + hi) / 2.0;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>bsreal (bsreal)</Title>
+            <Shortcut>bsreal</Shortcut>
+            <Description>Finds the real number in [lo, hi] where predicate(val) becomes true using fixed iterations.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static double BinarySearch(double lo, double hi, Func<double, bool> predicate, int iterations = 100)
+{
+    for (int i = 0; i < iterations; i++)
+    {
+        double mid = lo + (hi - lo) / 2.0;
+
+        if (predicate(mid))
+            hi = mid;
+        else
+            lo = mid;
+    }
+
+    return (lo + hi) / 2.0;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>bsreal (BinarySearch)</Title>
+            <Shortcut>BinarySearch</Shortcut>
+            <Description>Finds the real number in [lo, hi] where predicate(val) becomes true using fixed iterations.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static double BinarySearch(double lo, double hi, Func<double, bool> predicate, int iterations = 100)
+{
+    for (int i = 0; i < iterations; i++)
+    {
+        double mid = lo + (hi - lo) / 2.0;
+
+        if (predicate(mid))
+            hi = mid;
+        else
+            lo = mid;
+    }
+
+    return (lo + hi) / 2.0;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>bs (cpbs)</Title>
+            <Shortcut>cpbs</Shortcut>
+            <Description>Finds the first value in [lo, hi] where predicate(val) is true, or hi + 1 if not found.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T BinarySearch<T>(T lo, T hi, Func<T, bool> predicate) where T : IBinaryInteger<T>
+{
+    while (lo <= hi)
+    {
+        T mid = lo + ((hi - lo) >> 1);
+
+        if (predicate(mid))
+            hi = mid - T.One;
+        else
+            lo = mid + T.One;
+    }
+
+    return lo;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>bs (cp_bs)</Title>
+            <Shortcut>cp_bs</Shortcut>
+            <Description>Finds the first value in [lo, hi] where predicate(val) is true, or hi + 1 if not found.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T BinarySearch<T>(T lo, T hi, Func<T, bool> predicate) where T : IBinaryInteger<T>
+{
+    while (lo <= hi)
+    {
+        T mid = lo + ((hi - lo) >> 1);
+
+        if (predicate(mid))
+            hi = mid - T.One;
+        else
+            lo = mid + T.One;
+    }
+
+    return lo;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>bs (bs)</Title>
+            <Shortcut>bs</Shortcut>
+            <Description>Finds the first value in [lo, hi] where predicate(val) is true, or hi + 1 if not found.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T BinarySearch<T>(T lo, T hi, Func<T, bool> predicate) where T : IBinaryInteger<T>
+{
+    while (lo <= hi)
+    {
+        T mid = lo + ((hi - lo) >> 1);
+
+        if (predicate(mid))
+            hi = mid - T.One;
+        else
+            lo = mid + T.One;
+    }
+
+    return lo;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>bs (BinarySearch)</Title>
+            <Shortcut>BinarySearch</Shortcut>
+            <Description>Finds the first value in [lo, hi] where predicate(val) is true, or hi + 1 if not found.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static T BinarySearch<T>(T lo, T hi, Func<T, bool> predicate) where T : IBinaryInteger<T>
+{
+    while (lo <= hi)
+    {
+        T mid = lo + ((hi - lo) >> 1);
+
+        if (predicate(mid))
+            hi = mid - T.One;
+        else
+            lo = mid + T.One;
+    }
+
+    return lo;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>ub (cpub)</Title>
+            <Shortcut>cpub</Shortcut>
+            <Description>Finds the first index in [lo, hi] where source[i] &gt; target according to the comparer, or hi + 1 if not found.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int UpperBound<T>(IReadOnlyList<T> source, int lo, int hi, T target, IComparer<T> comparer)
+{
+    while (lo <= hi)
+    {
+        int mid = lo + ((hi - lo) >> 1);
+
+        if (comparer.Compare(source[mid], target) > 0)
+            hi = mid - 1;
+        else
+            lo = mid + 1;
+    }
+
+    return lo;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>ub (cp_ub)</Title>
+            <Shortcut>cp_ub</Shortcut>
+            <Description>Finds the first index in [lo, hi] where source[i] &gt; target according to the comparer, or hi + 1 if not found.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int UpperBound<T>(IReadOnlyList<T> source, int lo, int hi, T target, IComparer<T> comparer)
+{
+    while (lo <= hi)
+    {
+        int mid = lo + ((hi - lo) >> 1);
+
+        if (comparer.Compare(source[mid], target) > 0)
+            hi = mid - 1;
+        else
+            lo = mid + 1;
+    }
+
+    return lo;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>ub (ub)</Title>
+            <Shortcut>ub</Shortcut>
+            <Description>Finds the first index in [lo, hi] where source[i] &gt; target according to the comparer, or hi + 1 if not found.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int UpperBound<T>(IReadOnlyList<T> source, int lo, int hi, T target, IComparer<T> comparer)
+{
+    while (lo <= hi)
+    {
+        int mid = lo + ((hi - lo) >> 1);
+
+        if (comparer.Compare(source[mid], target) > 0)
+            hi = mid - 1;
+        else
+            lo = mid + 1;
+    }
+
+    return lo;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>ub (UpperBound)</Title>
+            <Shortcut>UpperBound</Shortcut>
+            <Description>Finds the first index in [lo, hi] where source[i] &gt; target according to the comparer, or hi + 1 if not found.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int UpperBound<T>(IReadOnlyList<T> source, int lo, int hi, T target, IComparer<T> comparer)
+{
+    while (lo <= hi)
+    {
+        int mid = lo + ((hi - lo) >> 1);
+
+        if (comparer.Compare(source[mid], target) > 0)
+            hi = mid - 1;
+        else
+            lo = mid + 1;
+    }
+
+    return lo;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>ts (cpts)</Title>
+            <Shortcut>cpts</Shortcut>
+            <Description>Finds the integer x in [lo, hi] that optimizes f according to the predicate.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static long TernarySearch(long lo, long hi, Func<long, long> f, Func<long, long, bool> predicate)
+{
+    while (hi - lo > 2)
+    {
+        long m1 = lo + (hi - lo) / 3;
+        long m2 = hi - (hi - lo) / 3;
+
+        if (predicate(f(m1), f(m2)))
+            hi = m2 - 1;
+        else
+            lo = m1 + 1;
+    }
+
+    long best = lo;
+    for (long i = lo + 1; i <= hi; i++)
+    {
+        if (predicate(f(i), f(best)))
+            best = i;
+    }
+
+    return best;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>ts (cp_ts)</Title>
+            <Shortcut>cp_ts</Shortcut>
+            <Description>Finds the integer x in [lo, hi] that optimizes f according to the predicate.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static long TernarySearch(long lo, long hi, Func<long, long> f, Func<long, long, bool> predicate)
+{
+    while (hi - lo > 2)
+    {
+        long m1 = lo + (hi - lo) / 3;
+        long m2 = hi - (hi - lo) / 3;
+
+        if (predicate(f(m1), f(m2)))
+            hi = m2 - 1;
+        else
+            lo = m1 + 1;
+    }
+
+    long best = lo;
+    for (long i = lo + 1; i <= hi; i++)
+    {
+        if (predicate(f(i), f(best)))
+            best = i;
+    }
+
+    return best;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>ts (ts)</Title>
+            <Shortcut>ts</Shortcut>
+            <Description>Finds the integer x in [lo, hi] that optimizes f according to the predicate.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static long TernarySearch(long lo, long hi, Func<long, long> f, Func<long, long, bool> predicate)
+{
+    while (hi - lo > 2)
+    {
+        long m1 = lo + (hi - lo) / 3;
+        long m2 = hi - (hi - lo) / 3;
+
+        if (predicate(f(m1), f(m2)))
+            hi = m2 - 1;
+        else
+            lo = m1 + 1;
+    }
+
+    long best = lo;
+    for (long i = lo + 1; i <= hi; i++)
+    {
+        if (predicate(f(i), f(best)))
+            best = i;
+    }
+
+    return best;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>ts (TernarySearch)</Title>
+            <Shortcut>TernarySearch</Shortcut>
+            <Description>Finds the integer x in [lo, hi] that optimizes f according to the predicate.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static long TernarySearch(long lo, long hi, Func<long, long> f, Func<long, long, bool> predicate)
+{
+    while (hi - lo > 2)
+    {
+        long m1 = lo + (hi - lo) / 3;
+        long m2 = hi - (hi - lo) / 3;
+
+        if (predicate(f(m1), f(m2)))
+            hi = m2 - 1;
+        else
+            lo = m1 + 1;
+    }
+
+    long best = lo;
+    for (long i = lo + 1; i <= hi; i++)
+    {
+        if (predicate(f(i), f(best)))
+            best = i;
+    }
+
+    return best;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lb (cplb)</Title>
+            <Shortcut>cplb</Shortcut>
+            <Description>Finds the first index in [lo, hi] where source[i] &gt;= target according to the comparer, or hi + 1 if not found.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int LowerBound<T>(IReadOnlyList<T> source, int lo, int hi, T target, IComparer<T> comparer)
+{
+    while (lo <= hi)
+    {
+        int mid = lo + ((hi - lo) >> 1);
+
+        if (comparer.Compare(source[mid], target) >= 0)
+            hi = mid - 1;
+        else
+            lo = mid + 1;
+    }
+
+    return lo;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lb (cp_lb)</Title>
+            <Shortcut>cp_lb</Shortcut>
+            <Description>Finds the first index in [lo, hi] where source[i] &gt;= target according to the comparer, or hi + 1 if not found.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int LowerBound<T>(IReadOnlyList<T> source, int lo, int hi, T target, IComparer<T> comparer)
+{
+    while (lo <= hi)
+    {
+        int mid = lo + ((hi - lo) >> 1);
+
+        if (comparer.Compare(source[mid], target) >= 0)
+            hi = mid - 1;
+        else
+            lo = mid + 1;
+    }
+
+    return lo;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lb (lb)</Title>
+            <Shortcut>lb</Shortcut>
+            <Description>Finds the first index in [lo, hi] where source[i] &gt;= target according to the comparer, or hi + 1 if not found.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int LowerBound<T>(IReadOnlyList<T> source, int lo, int hi, T target, IComparer<T> comparer)
+{
+    while (lo <= hi)
+    {
+        int mid = lo + ((hi - lo) >> 1);
+
+        if (comparer.Compare(source[mid], target) >= 0)
+            hi = mid - 1;
+        else
+            lo = mid + 1;
+    }
+
+    return lo;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lb (LowerBound)</Title>
+            <Shortcut>LowerBound</Shortcut>
+            <Description>Finds the first index in [lo, hi] where source[i] &gt;= target according to the comparer, or hi + 1 if not found.</Description>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="csharp"><![CDATA[public static int LowerBound<T>(IReadOnlyList<T> source, int lo, int hi, T target, IComparer<T> comparer)
+{
+    while (lo <= hi)
+    {
+        int mid = lo + ((hi - lo) >> 1);
+
+        if (comparer.Compare(source[mid], target) >= 0)
+            hi = mid - 1;
+        else
+            lo = mid + 1;
+    }
+
+    return lo;
+}$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

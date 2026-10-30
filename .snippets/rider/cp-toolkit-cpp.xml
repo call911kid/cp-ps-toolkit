@@ -1,0 +1,412 @@
+﻿<templateSet group="cp-ps-toolkit">
+  <template name="cpsbit" value="long long SetBit(long long n, int index, bool value = true)&#10;{&#10;    return value ? (n | (1LL &lt;&lt; index)) : (n &amp; ~(1LL &lt;&lt; index));&#10;}$END$" description="Sets the bit at the given 0-based index to 1 (default), or to 0 if value is false." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cp_sbit" value="long long SetBit(long long n, int index, bool value = true)&#10;{&#10;    return value ? (n | (1LL &lt;&lt; index)) : (n &amp; ~(1LL &lt;&lt; index));&#10;}$END$" description="Sets the bit at the given 0-based index to 1 (default), or to 0 if value is false." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="sbit" value="long long SetBit(long long n, int index, bool value = true)&#10;{&#10;    return value ? (n | (1LL &lt;&lt; index)) : (n &amp; ~(1LL &lt;&lt; index));&#10;}$END$" description="Sets the bit at the given 0-based index to 1 (default), or to 0 if value is false." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="SetBit" value="long long SetBit(long long n, int index, bool value = true)&#10;{&#10;    return value ? (n | (1LL &lt;&lt; index)) : (n &amp; ~(1LL &lt;&lt; index));&#10;}$END$" description="Sets the bit at the given 0-based index to 1 (default), or to 0 if value is false." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cppopc" value="int CountSetBits(long long n)&#10;{&#10;    return popcount((unsigned long long)n);&#10;}$END$" description="Counts the total number of set bits (popcount)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cp_popc" value="int CountSetBits(long long n)&#10;{&#10;    return popcount((unsigned long long)n);&#10;}$END$" description="Counts the total number of set bits (popcount)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="popc" value="int CountSetBits(long long n)&#10;{&#10;    return popcount((unsigned long long)n);&#10;}$END$" description="Counts the total number of set bits (popcount)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="CountSetBits" value="int CountSetBits(long long n)&#10;{&#10;    return popcount((unsigned long long)n);&#10;}$END$" description="Counts the total number of set bits (popcount)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cpisp2" value="bool IsPowerOfTwo(long long n)&#10;{&#10;    return n &gt; 0 &amp;&amp; has_single_bit((unsigned long long)n);&#10;}$END$" description="Checks whether n is a positive power of two (n &gt; 0 and (n &amp; (n - 1)) == 0)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cp_isp2" value="bool IsPowerOfTwo(long long n)&#10;{&#10;    return n &gt; 0 &amp;&amp; has_single_bit((unsigned long long)n);&#10;}$END$" description="Checks whether n is a positive power of two (n &gt; 0 and (n &amp; (n - 1)) == 0)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="isp2" value="bool IsPowerOfTwo(long long n)&#10;{&#10;    return n &gt; 0 &amp;&amp; has_single_bit((unsigned long long)n);&#10;}$END$" description="Checks whether n is a positive power of two (n &gt; 0 and (n &amp; (n - 1)) == 0)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="IsPowerOfTwo" value="bool IsPowerOfTwo(long long n)&#10;{&#10;    return n &gt; 0 &amp;&amp; has_single_bit((unsigned long long)n);&#10;}$END$" description="Checks whether n is a positive power of two (n &gt; 0 and (n &amp; (n - 1)) == 0)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cpclsb" value="long long ClearLowestSetBit(long long n)&#10;{&#10;    return n &amp; (n - 1LL);&#10;}$END$" description="Clears the lowest set bit (LSB) of n (n &amp; (n - 1))." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cp_clsb" value="long long ClearLowestSetBit(long long n)&#10;{&#10;    return n &amp; (n - 1LL);&#10;}$END$" description="Clears the lowest set bit (LSB) of n (n &amp; (n - 1))." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="clsb" value="long long ClearLowestSetBit(long long n)&#10;{&#10;    return n &amp; (n - 1LL);&#10;}$END$" description="Clears the lowest set bit (LSB) of n (n &amp; (n - 1))." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="ClearLowestSetBit" value="long long ClearLowestSetBit(long long n)&#10;{&#10;    return n &amp; (n - 1LL);&#10;}$END$" description="Clears the lowest set bit (LSB) of n (n &amp; (n - 1))." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cpmsbi" value="int GetHighestSetBitIndex(long long n)&#10;{&#10;    return n == 0 ? -1 : bit_width((unsigned long long)n) - 1;&#10;}$END$" description="Returns the 0-based index of the highest set bit, or -1 if n is 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cp_msbi" value="int GetHighestSetBitIndex(long long n)&#10;{&#10;    return n == 0 ? -1 : bit_width((unsigned long long)n) - 1;&#10;}$END$" description="Returns the 0-based index of the highest set bit, or -1 if n is 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="msbi" value="int GetHighestSetBitIndex(long long n)&#10;{&#10;    return n == 0 ? -1 : bit_width((unsigned long long)n) - 1;&#10;}$END$" description="Returns the 0-based index of the highest set bit, or -1 if n is 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="GetHighestSetBitIndex" value="int GetHighestSetBitIndex(long long n)&#10;{&#10;    return n == 0 ? -1 : bit_width((unsigned long long)n) - 1;&#10;}$END$" description="Returns the 0-based index of the highest set bit, or -1 if n is 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cpm2s" value="string MaskToString(int mask)&#10;{&#10;    string result;&#10;    result.reserve(26);&#10;    for (int i = 0; i &lt; 26; ++i)&#10;    {&#10;        if ((mask &gt;&gt; i) &amp; 1)&#10;        {&#10;            result += static_cast&lt;char&gt;('a' + i);&#10;        }&#10;    }&#10;    return result;&#10;}$END$" description="Reconstructs a sorted string of lowercase English letters from a 26-bit integer mask." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cp_m2s" value="string MaskToString(int mask)&#10;{&#10;    string result;&#10;    result.reserve(26);&#10;    for (int i = 0; i &lt; 26; ++i)&#10;    {&#10;        if ((mask &gt;&gt; i) &amp; 1)&#10;        {&#10;            result += static_cast&lt;char&gt;('a' + i);&#10;        }&#10;    }&#10;    return result;&#10;}$END$" description="Reconstructs a sorted string of lowercase English letters from a 26-bit integer mask." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="m2s" value="string MaskToString(int mask)&#10;{&#10;    string result;&#10;    result.reserve(26);&#10;    for (int i = 0; i &lt; 26; ++i)&#10;    {&#10;        if ((mask &gt;&gt; i) &amp; 1)&#10;        {&#10;            result += static_cast&lt;char&gt;('a' + i);&#10;        }&#10;    }&#10;    return result;&#10;}$END$" description="Reconstructs a sorted string of lowercase English letters from a 26-bit integer mask." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="MaskToString" value="string MaskToString(int mask)&#10;{&#10;    string result;&#10;    result.reserve(26);&#10;    for (int i = 0; i &lt; 26; ++i)&#10;    {&#10;        if ((mask &gt;&gt; i) &amp; 1)&#10;        {&#10;            result += static_cast&lt;char&gt;('a' + i);&#10;        }&#10;    }&#10;    return result;&#10;}$END$" description="Reconstructs a sorted string of lowercase English letters from a 26-bit integer mask." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cplsbi" value="int GetLowestSetBitIndex(long long n)&#10;{&#10;    return n == 0 ? -1 : countr_zero((unsigned long long)n);&#10;}$END$" description="Returns the 0-based index of the lowest set bit, or -1 if n is 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cp_lsbi" value="int GetLowestSetBitIndex(long long n)&#10;{&#10;    return n == 0 ? -1 : countr_zero((unsigned long long)n);&#10;}$END$" description="Returns the 0-based index of the lowest set bit, or -1 if n is 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="lsbi" value="int GetLowestSetBitIndex(long long n)&#10;{&#10;    return n == 0 ? -1 : countr_zero((unsigned long long)n);&#10;}$END$" description="Returns the 0-based index of the lowest set bit, or -1 if n is 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="GetLowestSetBitIndex" value="int GetLowestSetBitIndex(long long n)&#10;{&#10;    return n == 0 ? -1 : countr_zero((unsigned long long)n);&#10;}$END$" description="Returns the 0-based index of the lowest set bit, or -1 if n is 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cpparity" value="bool HasOddParity(long long n)&#10;{&#10;    return (popcount((unsigned long long)n) &amp; 1) == 1;&#10;}$END$" description="Checks whether the count of set bits in n is odd." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cp_parity" value="bool HasOddParity(long long n)&#10;{&#10;    return (popcount((unsigned long long)n) &amp; 1) == 1;&#10;}$END$" description="Checks whether the count of set bits in n is odd." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="parity" value="bool HasOddParity(long long n)&#10;{&#10;    return (popcount((unsigned long long)n) &amp; 1) == 1;&#10;}$END$" description="Checks whether the count of set bits in n is odd." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="HasOddParity" value="bool HasOddParity(long long n)&#10;{&#10;    return (popcount((unsigned long long)n) &amp; 1) == 1;&#10;}$END$" description="Checks whether the count of set bits in n is odd." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cpnextp" value="long long NextPermutation(long long mask)&#10;{&#10;    unsigned long long umask = mask;&#10;    unsigned long long c = umask &amp; -umask;&#10;    unsigned long long r = umask + c;&#10;    return (((r ^ umask) &gt;&gt; (countr_zero(c) + 2)) | r);&#10;}$END$" description="Returns the lexicographically next integer with the same number of set bits in O(1)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cp_nextp" value="long long NextPermutation(long long mask)&#10;{&#10;    unsigned long long umask = mask;&#10;    unsigned long long c = umask &amp; -umask;&#10;    unsigned long long r = umask + c;&#10;    return (((r ^ umask) &gt;&gt; (countr_zero(c) + 2)) | r);&#10;}$END$" description="Returns the lexicographically next integer with the same number of set bits in O(1)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="nextp" value="long long NextPermutation(long long mask)&#10;{&#10;    unsigned long long umask = mask;&#10;    unsigned long long c = umask &amp; -umask;&#10;    unsigned long long r = umask + c;&#10;    return (((r ^ umask) &gt;&gt; (countr_zero(c) + 2)) | r);&#10;}$END$" description="Returns the lexicographically next integer with the same number of set bits in O(1)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="NextPermutation" value="long long NextPermutation(long long mask)&#10;{&#10;    unsigned long long umask = mask;&#10;    unsigned long long c = umask &amp; -umask;&#10;    unsigned long long r = umask + c;&#10;    return (((r ^ umask) &gt;&gt; (countr_zero(c) + 2)) | r);&#10;}$END$" description="Returns the lexicographically next integer with the same number of set bits in O(1)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cpcbit" value="long long ClearBit(long long n, int index)&#10;{&#10;    return n &amp; ~(1LL &lt;&lt; index);&#10;}$END$" description="Clears the bit at the given 0-based index to 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cp_cbit" value="long long ClearBit(long long n, int index)&#10;{&#10;    return n &amp; ~(1LL &lt;&lt; index);&#10;}$END$" description="Clears the bit at the given 0-based index to 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cbit" value="long long ClearBit(long long n, int index)&#10;{&#10;    return n &amp; ~(1LL &lt;&lt; index);&#10;}$END$" description="Clears the bit at the given 0-based index to 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="ClearBit" value="long long ClearBit(long long n, int index)&#10;{&#10;    return n &amp; ~(1LL &lt;&lt; index);&#10;}$END$" description="Clears the bit at the given 0-based index to 0." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cptbit" value="long long ToggleBit(long long n, int index)&#10;{&#10;    return n ^ (1LL &lt;&lt; index);&#10;}$END$" description="Inverts (flips) the bit at the given 0-based index." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cp_tbit" value="long long ToggleBit(long long n, int index)&#10;{&#10;    return n ^ (1LL &lt;&lt; index);&#10;}$END$" description="Inverts (flips) the bit at the given 0-based index." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="tbit" value="long long ToggleBit(long long n, int index)&#10;{&#10;    return n ^ (1LL &lt;&lt; index);&#10;}$END$" description="Inverts (flips) the bit at the given 0-based index." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="ToggleBit" value="long long ToggleBit(long long n, int index)&#10;{&#10;    return n ^ (1LL &lt;&lt; index);&#10;}$END$" description="Inverts (flips) the bit at the given 0-based index." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cplsb" value="long long GetLowestSetBit(long long n)&#10;{&#10;    return n &amp; -n;&#10;}$END$" description="Isolates the lowest set bit (LSB) value via two's complement (n &amp; -n)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cp_lsb" value="long long GetLowestSetBit(long long n)&#10;{&#10;    return n &amp; -n;&#10;}$END$" description="Isolates the lowest set bit (LSB) value via two's complement (n &amp; -n)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="lsb" value="long long GetLowestSetBit(long long n)&#10;{&#10;    return n &amp; -n;&#10;}$END$" description="Isolates the lowest set bit (LSB) value via two's complement (n &amp; -n)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="GetLowestSetBit" value="long long GetLowestSetBit(long long n)&#10;{&#10;    return n &amp; -n;&#10;}$END$" description="Isolates the lowest set bit (LSB) value via two's complement (n &amp; -n)." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cpisbit" value="bool IsBitSet(long long n, int index)&#10;{&#10;    return ((n &gt;&gt; index) &amp; 1LL) == 1LL;&#10;}$END$" description="Checks if the bit at the given 0-based index is set to 1." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cp_isbit" value="bool IsBitSet(long long n, int index)&#10;{&#10;    return ((n &gt;&gt; index) &amp; 1LL) == 1LL;&#10;}$END$" description="Checks if the bit at the given 0-based index is set to 1." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="isbit" value="bool IsBitSet(long long n, int index)&#10;{&#10;    return ((n &gt;&gt; index) &amp; 1LL) == 1LL;&#10;}$END$" description="Checks if the bit at the given 0-based index is set to 1." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="IsBitSet" value="bool IsBitSet(long long n, int index)&#10;{&#10;    return ((n &gt;&gt; index) &amp; 1LL) == 1LL;&#10;}$END$" description="Checks if the bit at the given 0-based index is set to 1." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cps2m" value="int StringToMask(string_view s)&#10;{&#10;    int mask = 0;&#10;    for (char c : s)&#10;    {&#10;        mask |= (1 &lt;&lt; (c - 'a'));&#10;    }&#10;    return mask;&#10;}$END$" description="Converts a string of lowercase English letters ('a'-'z') into a 26-bit integer mask." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cp_s2m" value="int StringToMask(string_view s)&#10;{&#10;    int mask = 0;&#10;    for (char c : s)&#10;    {&#10;        mask |= (1 &lt;&lt; (c - 'a'));&#10;    }&#10;    return mask;&#10;}$END$" description="Converts a string of lowercase English letters ('a'-'z') into a 26-bit integer mask." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="s2m" value="int StringToMask(string_view s)&#10;{&#10;    int mask = 0;&#10;    for (char c : s)&#10;    {&#10;        mask |= (1 &lt;&lt; (c - 'a'));&#10;    }&#10;    return mask;&#10;}$END$" description="Converts a string of lowercase English letters ('a'-'z') into a 26-bit integer mask." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="StringToMask" value="int StringToMask(string_view s)&#10;{&#10;    int mask = 0;&#10;    for (char c : s)&#10;    {&#10;        mask |= (1 &lt;&lt; (c - 'a'));&#10;    }&#10;    return mask;&#10;}$END$" description="Converts a string of lowercase English letters ('a'-'z') into a 26-bit integer mask." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cprbit" value="long long ReverseBits(long long n, int bitCount)&#10;{&#10;    long long rev = 0;&#10;    for (int i = 0; i &lt; bitCount; ++i)&#10;    {&#10;        rev = (rev &lt;&lt; 1) | ((n &gt;&gt; i) &amp; 1LL);&#10;    }&#10;    return rev;&#10;}$END$" description="Reverses the lowest bitCount bits of n." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cp_rbit" value="long long ReverseBits(long long n, int bitCount)&#10;{&#10;    long long rev = 0;&#10;    for (int i = 0; i &lt; bitCount; ++i)&#10;    {&#10;        rev = (rev &lt;&lt; 1) | ((n &gt;&gt; i) &amp; 1LL);&#10;    }&#10;    return rev;&#10;}$END$" description="Reverses the lowest bitCount bits of n." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="rbit" value="long long ReverseBits(long long n, int bitCount)&#10;{&#10;    long long rev = 0;&#10;    for (int i = 0; i &lt; bitCount; ++i)&#10;    {&#10;        rev = (rev &lt;&lt; 1) | ((n &gt;&gt; i) &amp; 1LL);&#10;    }&#10;    return rev;&#10;}$END$" description="Reverses the lowest bitCount bits of n." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="ReverseBits" value="long long ReverseBits(long long n, int bitCount)&#10;{&#10;    long long rev = 0;&#10;    for (int i = 0; i &lt; bitCount; ++i)&#10;    {&#10;        rev = (rev &lt;&lt; 1) | ((n &gt;&gt; i) &amp; 1LL);&#10;    }&#10;    return rev;&#10;}$END$" description="Reverses the lowest bitCount bits of n." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cpfastio" value="inline void FastIO()&#10;{&#10;    ios_base::sync_with_stdio(0);&#10;    cin.tie(0);&#10;}$END$" description="Desynchronizes C/C++ standard streams and unties cin for fast I/O." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cp_fastio" value="inline void FastIO()&#10;{&#10;    ios_base::sync_with_stdio(0);&#10;    cin.tie(0);&#10;}$END$" description="Desynchronizes C/C++ standard streams and unties cin for fast I/O." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="fastio" value="inline void FastIO()&#10;{&#10;    ios_base::sync_with_stdio(0);&#10;    cin.tie(0);&#10;}$END$" description="Desynchronizes C/C++ standard streams and unties cin for fast I/O." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="FastIO" value="inline void FastIO()&#10;{&#10;    ios_base::sync_with_stdio(0);&#10;    cin.tie(0);&#10;}$END$" description="Desynchronizes C/C++ standard streams and unties cin for fast I/O." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cpfileio" value="inline void FileIO(const char* inputFile = &quot;input.txt&quot;, const char* outputFile = &quot;output.txt&quot;)&#10;{&#10;#ifndef ONLINE_JUDGE&#10;    freopen(inputFile, &quot;r&quot;, stdin);&#10;    freopen(outputFile, &quot;w&quot;, stdout);&#10;#endif&#10;}$END$" description="Redirects standard streams to local files for offline testing." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cp_fileio" value="inline void FileIO(const char* inputFile = &quot;input.txt&quot;, const char* outputFile = &quot;output.txt&quot;)&#10;{&#10;#ifndef ONLINE_JUDGE&#10;    freopen(inputFile, &quot;r&quot;, stdin);&#10;    freopen(outputFile, &quot;w&quot;, stdout);&#10;#endif&#10;}$END$" description="Redirects standard streams to local files for offline testing." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="fileio" value="inline void FileIO(const char* inputFile = &quot;input.txt&quot;, const char* outputFile = &quot;output.txt&quot;)&#10;{&#10;#ifndef ONLINE_JUDGE&#10;    freopen(inputFile, &quot;r&quot;, stdin);&#10;    freopen(outputFile, &quot;w&quot;, stdout);&#10;#endif&#10;}$END$" description="Redirects standard streams to local files for offline testing." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="FileIO" value="inline void FileIO(const char* inputFile = &quot;input.txt&quot;, const char* outputFile = &quot;output.txt&quot;)&#10;{&#10;#ifndef ONLINE_JUDGE&#10;    freopen(inputFile, &quot;r&quot;, stdin);&#10;    freopen(outputFile, &quot;w&quot;, stdout);&#10;#endif&#10;}$END$" description="Redirects standard streams to local files for offline testing." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cpprintln" value="#define println(x) cout &lt;&lt; (x) &lt;&lt; '\n'$END$" description="Shorthand macro to print a value followed by a newline." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cp_println" value="#define println(x) cout &lt;&lt; (x) &lt;&lt; '\n'$END$" description="Shorthand macro to print a value followed by a newline." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="println" value="#define println(x) cout &lt;&lt; (x) &lt;&lt; '\n'$END$" description="Shorthand macro to print a value followed by a newline." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cpprint" value="#define print(x) cout &lt;&lt; (x) &lt;&lt; ' '$END$" description="Shorthand macro to print a value followed by a space." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cp_print" value="#define print(x) cout &lt;&lt; (x) &lt;&lt; ' '$END$" description="Shorthand macro to print a value followed by a space." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="print" value="#define print(x) cout &lt;&lt; (x) &lt;&lt; ' '$END$" description="Shorthand macro to print a value followed by a space." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cpprintv" value="template &lt;typename T&gt;&#10;inline void Println(const vector&lt;T&gt;&amp; vec, const string&amp; sep = &quot; &quot;)&#10;{&#10;    for (size_t i = 0; i &lt; vec.size(); ++i)&#10;    {&#10;        if (i &gt; 0) cout &lt;&lt; sep;&#10;        cout &lt;&lt; vec[i];&#10;    }&#10;    cout &lt;&lt; '\n';&#10;}$END$" description="Prints elements of a vector separated by a delimiter followed by a newline." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cp_printv" value="template &lt;typename T&gt;&#10;inline void Println(const vector&lt;T&gt;&amp; vec, const string&amp; sep = &quot; &quot;)&#10;{&#10;    for (size_t i = 0; i &lt; vec.size(); ++i)&#10;    {&#10;        if (i &gt; 0) cout &lt;&lt; sep;&#10;        cout &lt;&lt; vec[i];&#10;    }&#10;    cout &lt;&lt; '\n';&#10;}$END$" description="Prints elements of a vector separated by a delimiter followed by a newline." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="printv" value="template &lt;typename T&gt;&#10;inline void Println(const vector&lt;T&gt;&amp; vec, const string&amp; sep = &quot; &quot;)&#10;{&#10;    for (size_t i = 0; i &lt; vec.size(); ++i)&#10;    {&#10;        if (i &gt; 0) cout &lt;&lt; sep;&#10;        cout &lt;&lt; vec[i];&#10;    }&#10;    cout &lt;&lt; '\n';&#10;}$END$" description="Prints elements of a vector separated by a delimiter followed by a newline." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="Println" value="template &lt;typename T&gt;&#10;inline void Println(const vector&lt;T&gt;&amp; vec, const string&amp; sep = &quot; &quot;)&#10;{&#10;    for (size_t i = 0; i &lt; vec.size(); ++i)&#10;    {&#10;        if (i &gt; 0) cout &lt;&lt; sep;&#10;        cout &lt;&lt; vec[i];&#10;    }&#10;    cout &lt;&lt; '\n';&#10;}$END$" description="Prints elements of a vector separated by a delimiter followed by a newline." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cpprintm" value="template &lt;typename T&gt;&#10;inline void PrintMatrix(const vector&lt;vector&lt;T&gt;&gt;&amp; matrix, const string&amp; sep = &quot; &quot;)&#10;{&#10;    for (const auto&amp; row : matrix)&#10;    {&#10;        for (size_t i = 0; i &lt; row.size(); ++i)&#10;        {&#10;            if (i &gt; 0) cout &lt;&lt; sep;&#10;            cout &lt;&lt; row[i];&#10;        }&#10;        cout &lt;&lt; '\n';&#10;    }&#10;}$END$" description="Prints a 2D matrix row by row followed by newlines." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="cp_printm" value="template &lt;typename T&gt;&#10;inline void PrintMatrix(const vector&lt;vector&lt;T&gt;&gt;&amp; matrix, const string&amp; sep = &quot; &quot;)&#10;{&#10;    for (const auto&amp; row : matrix)&#10;    {&#10;        for (size_t i = 0; i &lt; row.size(); ++i)&#10;        {&#10;            if (i &gt; 0) cout &lt;&lt; sep;&#10;            cout &lt;&lt; row[i];&#10;        }&#10;        cout &lt;&lt; '\n';&#10;    }&#10;}$END$" description="Prints a 2D matrix row by row followed by newlines." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="printm" value="template &lt;typename T&gt;&#10;inline void PrintMatrix(const vector&lt;vector&lt;T&gt;&gt;&amp; matrix, const string&amp; sep = &quot; &quot;)&#10;{&#10;    for (const auto&amp; row : matrix)&#10;    {&#10;        for (size_t i = 0; i &lt; row.size(); ++i)&#10;        {&#10;            if (i &gt; 0) cout &lt;&lt; sep;&#10;            cout &lt;&lt; row[i];&#10;        }&#10;        cout &lt;&lt; '\n';&#10;    }&#10;}$END$" description="Prints a 2D matrix row by row followed by newlines." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+  <template name="PrintMatrix" value="template &lt;typename T&gt;&#10;inline void PrintMatrix(const vector&lt;vector&lt;T&gt;&gt;&amp; matrix, const string&amp; sep = &quot; &quot;)&#10;{&#10;    for (const auto&amp; row : matrix)&#10;    {&#10;        for (size_t i = 0; i &lt; row.size(); ++i)&#10;        {&#10;            if (i &gt; 0) cout &lt;&lt; sep;&#10;            cout &lt;&lt; row[i];&#10;        }&#10;        cout &lt;&lt; '\n';&#10;    }&#10;}$END$" description="Prints a 2D matrix row by row followed by newlines." toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="cpp" value="true" />
+    </context>
+  </template>
+</templateSet>
