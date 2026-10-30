@@ -1,1 +1,4 @@
-.snippets/** linguist-generated=true
+*.snippet linguist-generated
+*.snippet linguist-vendored
+.snippets/** linguist-generated
+.snippets/** linguist-vendored
