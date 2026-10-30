@@ -1,0 +1,14 @@
+{
+  "defaultLanguage": "cs",
+  "shortcutPrefix": "cp",
+  "outputDir": "cp-snippets",
+  "vsOutputDir": "cp-snippets",
+  "languages": {
+    "cs": {
+      "vsLanguage": "csharp"
+    },
+    "cpp": {
+      "vsLanguage": "cpp"
+    }
+  }
+}
