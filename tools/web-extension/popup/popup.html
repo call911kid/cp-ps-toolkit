@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CP PS Toolkit</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="mono-header">
+    <div class="brand-group">
+      <svg class="brand-logo" viewBox="0 0 64 64" width="16" height="16" fill="none">
+        <g transform="translate(2, 2)">
+          <path d="M 18 12 L 44 30 L 18 48" stroke="#EA580C" stroke-width="5.5" stroke-linecap="butt" stroke-linejoin="round"/>
+          <circle cx="18" cy="12" r="7" fill="#FFFFFF"/>
+          <circle cx="44" cy="30" r="8.5" fill="#FFFFFF"/>
+          <circle cx="18" cy="48" r="7" fill="#EA580C"/>
+        </g>
+      </svg>
+      <span class="brand-title">cp-ps-toolkit</span>
+    </div>
+
+    <div class="mono-actions" id="snippets-header-actions">
+      <button id="import-btn" class="mono-btn highlight" title="Import custom snippet file (.json or .code-snippets)">+ import</button>
+    </div>
+    <input type="file" id="import-file-input" accept=".json,.code-snippets" style="display: none;">
+  </header>
+
+  <div id="sync-ribbon" class="sync-git-bar hidden">
+    <div class="sync-git-left">
+      <span class="sync-git-prompt">&gt;</span>
+      <span class="sync-git-branch">main</span> behind <span id="sync-git-diff" class="sync-git-diff">updates available</span>
+      <span id="sync-git-sha" class="sync-git-sha"></span>
+    </div>
+    <button id="sync-btn" class="sync-git-btn" title="Sync latest snippets from GitHub">~ sync</button>
+  </div>
+
+  <div class="popup-body">
+    <nav class="icon-rail" role="tablist" aria-label="Main Navigation">
+      <button class="rail-btn active" id="rail-btn-snippets" role="tab" aria-selected="true" aria-controls="view-snippets" aria-label="Snippets" title="Snippets (< / >)">
+        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 18 22 12 16 6"/>
+          <polyline points="8 6 2 12 8 18"/>
+        </svg>
+      </button>
+      <button class="rail-btn" id="rail-btn-websites" role="tab" aria-selected="false" aria-controls="view-websites" aria-label="Websites" title="Websites">
+        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+      </button>
+      <button class="rail-btn" id="rail-btn-about" role="tab" aria-selected="false" aria-controls="view-about" aria-label="About" title="About / Info">
+        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+      </button>
+    </nav>
+
+    <main class="rail-views">
+      <section class="view-pane" id="view-snippets" role="tabpanel" aria-labelledby="rail-btn-snippets">
+        <div class="mono-row-header">
+          <span class="col-file">COLLECTION / FILE</span>
+          <span class="col-source">SOURCE</span>
+          <span class="col-action"></span>
+        </div>
+
+        <div id="collections-list" class="mono-list"></div>
+      </section>
+
+      <section class="view-pane hidden" id="view-websites" role="tabpanel" aria-labelledby="rail-btn-websites">
+        <div class="website-search-wrap">
+          <div class="website-search-box">
+            <svg class="search-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#a1a1aa" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="text" id="add-website-input" class="website-search-input" placeholder="Add domain (e.g. dmoj.ca)..." spellcheck="false">
+          </div>
+        </div>
+
+        <div id="websites-list" class="website-cards-list"></div>
+      </section>
+
+      <section class="view-pane hidden" id="view-about" role="tabpanel" aria-labelledby="rail-btn-about">
+        <div class="about-card">
+          <div class="about-header">
+            <span class="about-title">cp-ps-toolkit</span>
+            <span class="about-badge">v1.0.0</span>
+          </div>
+          <p class="about-desc">
+            Competitive programming snippets and tools injected directly into problem-solving judges.
+          </p>
+          <div class="about-section">
+            <span class="about-label">SHORTCUT</span>
+            <span class="about-val"><code>Alt + C</code> (Toggle side panel)</span>
+          </div>
+          <div class="about-section">
+            <span class="about-label">STORAGE</span>
+            <span class="about-val">Synced in <code>chrome.storage.local</code></span>
+          </div>
+          <div class="about-section">
+            <span class="about-label">SOURCE CODE</span>
+            <span class="about-val"><a href="https://github.com/call911kid/cp-ps-toolkit" target="_blank" rel="noopener noreferrer" class="footer-link">github.com/call911kid/cp-ps-toolkit</a></span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="mono-footer">
+    <a href="https://github.com/call911kid/cp-ps-toolkit" target="_blank" rel="noopener noreferrer" class="footer-link">github.com/call911kid/cp-ps-toolkit</a>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
