@@ -1,0 +1,30 @@
+name: Release Web Extension
+
+on:
+  push:
+    tags:
+      - 'web-extension-v*'
+
+jobs:
+  release-web-extension:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build web extension zip
+        run: |
+          cd tools/web-extension
+          zip -r ../../cp-web-extension.zip . -x "scripts/*" "package*.json" "node_modules/*" "dist/*"
+
+      - name: Create GitHub Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            cp-web-extension.zip \
+            --title "Web Extension $GITHUB_REF_NAME" \
+            --generate-notes
