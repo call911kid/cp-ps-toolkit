@@ -1,0 +1,25 @@
+name: Verify CLI Version
+
+on:
+  pull_request:
+    paths:
+      - 'tools/cli/**'
+
+jobs:
+  verify-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check version bump
+        run: |
+          VERSION_DIFF=$(git diff origin/main...HEAD -U0 tools/cli/package.json | grep '^\+[ ]*"version"')
+
+          if [ -z "$VERSION_DIFF" ]; then
+            echo "Error: Files in tools/cli/ changed, but version in tools/cli/package.json was not updated."
+            exit 1
+          fi
+          echo "Version update confirmed."
