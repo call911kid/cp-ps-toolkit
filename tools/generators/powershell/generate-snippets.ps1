@@ -208,7 +208,7 @@ $files = Get-ChildItem -Path $repoRoot -Recurse -Filter $filePattern
 $entries = [System.Collections.Generic.Dictionary[string, SnippetEntry]]::new([System.StringComparer]::OrdinalIgnoreCase)
 
 $allowExpr = ($langKey -eq "cs")
-$allowTrailingSemi = ($langKey -eq "cpp")
+$allowTrailingSemi = ($langKey -eq "cpp" -or $langKey -eq "cs")
 
 foreach ($file in $files) {
     $content = [System.IO.File]::ReadAllText($file.FullName)

@@ -16,5 +16,5 @@ public sealed class CSharpProvider : ILanguageProvider
     /// Extracts all snippets defined in a C# source file.
     /// </summary>
     public IEnumerable<Snippet> Extract(string filePath, string text) =>
-        CodeExtractor.ExtractSnippets(text, allowExpressionBody: true);
+        CodeExtractor.ExtractSnippets(text, allowExpressionBody: true, allowTrailingSemicolon: true);
 }
