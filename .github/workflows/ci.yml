@@ -17,3 +17,11 @@ jobs:
 
       - name: Run Tests
         run: dotnet test tests/tests.csproj
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run CLI Tests
+        run: node --test tools/cli/cli.test.js

@@ -1,0 +1,42 @@
+#!/bin/sh
+
+STAGED_FILES=$(git diff --cached --name-only)
+
+# Check if any file in tools/cli/ is staged
+if echo "$STAGED_FILES" | grep -q "^tools/cli/"; then
+    NEW_VER=$(git show :tools/cli/package.json 2>/dev/null | grep '"version"' | sed 's/.*"version"[ ]*:[ ]*"\([^"]*\)".*/\1/')
+
+    if [ -z "$NEW_VER" ]; then
+        echo ""
+        echo "[ERROR] You modified files in tools/cli/, but tools/cli/package.json was not staged or has no valid version."
+        echo "Please stage tools/cli/package.json with a valid version."
+        exit 1
+    fi
+
+    # 1. Compare against Git HEAD if it exists in HEAD
+    if git rev-parse --verify HEAD:tools/cli/package.json >/dev/null 2>&1; then
+        OLD_VER=$(git show HEAD:tools/cli/package.json 2>/dev/null | grep '"version"' | sed 's/.*"version"[ ]*:[ ]*"\([^"]*\)".*/\1/')
+        if [ "$OLD_VER" = "$NEW_VER" ]; then
+            echo ""
+            echo "[ERROR] Version was not bumped compared to HEAD."
+            echo "Current version in HEAD: $OLD_VER"
+            echo "Staged version:         $NEW_VER"
+            echo ""
+            echo "npm will reject publishing if the version is not increased."
+            echo "Please bump the version in tools/cli/package.json, stage it, and commit again."
+            exit 1
+        fi
+    fi
+
+    # 2. Compare against published npm registry version
+    NPM_VER=$(npm view cp-ps-toolkit version 2>/dev/null)
+    if [ -n "$NPM_VER" ] && [ "$NEW_VER" = "$NPM_VER" ]; then
+        echo ""
+        echo "[ERROR] Version $NEW_VER is already published on npm!"
+        echo "npm will reject publishing duplicate version $NEW_VER."
+        echo "Please bump the version in tools/cli/package.json to something higher (e.g. 1.0.1)."
+        exit 1
+    fi
+fi
+
+exit 0

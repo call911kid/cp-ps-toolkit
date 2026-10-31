@@ -1,0 +1,26 @@
+{
+  "name": "cp-ps-toolkit",
+  "version": "1.0.1",
+  "description": "growing collection of competitive programming tips, tricks, and reusable templates, with tools and shortcuts ready for editor, browser, and CLI.",
+  "main": "cli.js",
+  "bin": {
+    "cp-ps-toolkit": "./cli.js"
+  },
+  "files": [
+    "cli.js",
+    "web-extension"
+  ],
+  "scripts": {
+    "test": "node --test cli.test.js"
+  },
+  "keywords": [
+    "competitive-programming",
+    "problem-solving"
+  ],
+  "author": "Mustafa Hassan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/call911kid/cp-ps-toolkit.git"
+  }
+}
