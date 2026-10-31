@@ -1,0 +1,28 @@
+name: Release Snippets
+
+on:
+  push:
+    tags:
+      - 'snippets-v*'
+
+jobs:
+  release-snippets:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build snippets zip
+        run: zip -r cp-snippets.zip .snippets/
+
+      - name: Create GitHub Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            cp-snippets.zip \
+            --title "Snippets $GITHUB_REF_NAME" \
+            --generate-notes
