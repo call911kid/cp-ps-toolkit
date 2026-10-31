@@ -1,0 +1,18 @@
+{
+  "name": "cp-ps-toolkit-web-extension",
+  "version": "1.0.0",
+  "description": "Browser extension to insert and copy competitive programming snippets.",
+  "private": true,
+  "scripts": {
+    "build:prism": "node scripts/build-prism.js",
+    "lint": "eslint . --ext .js",
+    "package": "node scripts/package.js"
+  },
+  "dependencies": {
+    "prismjs": "^1.29.0"
+  },
+  "devDependencies": {
+    "archiver": "^7.0.1",
+    "eslint": "^8.57.0"
+  }
+}

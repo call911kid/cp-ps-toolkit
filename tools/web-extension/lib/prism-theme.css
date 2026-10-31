@@ -1,0 +1,96 @@
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #dcdcdc;
+  background: none;
+  font-family: "Cascadia Code", "Cascadia Mono", Consolas, "Courier New", monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+}
+
+code[class*="language-"] .token,
+pre[class*="language-"] .token {
+  font-family: inherit;
+}
+
+code[class*="language-"]::selection,
+code[class*="language-"] *::selection,
+pre[class*="language-"]::selection,
+pre[class*="language-"] *::selection {
+  background: #ea580c;
+  color: #ffffff;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #57a64a;
+  font-style: normal;
+}
+
+.token.punctuation {
+  color: #dcdcdc;
+}
+
+.token.keyword {
+  color: #569cd6;
+}
+
+.token.control-flow {
+  color: #d8a0df;
+}
+
+.token.class-name,
+.token.type,
+.token.builtin {
+  color: #4ec9b0;
+}
+
+.token.function,
+.token.function-name {
+  color: #dcdcaa;
+}
+
+.token.string,
+.token.char,
+.token.attr-value {
+  color: #d69d85;
+}
+
+.token.number,
+.token.boolean {
+  color: #b5cea8;
+}
+
+.token.operator {
+  color: #b4b4b4;
+}
+
+.token.variable,
+.token.property {
+  color: #9cdcfe;
+}
+
+.token.constant {
+  color: #4fc1ff;
+}
+
+.token.namespace {
+  color: #4ec9b0;
+}
+
+.token.bold,
+.token.important {
+  font-weight: 700;
+}
+
+.token.italic {
+  font-style: italic;
+}
