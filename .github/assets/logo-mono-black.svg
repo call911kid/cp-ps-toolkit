@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 75" width="510" height="75">
+  <g transform="translate(4, 4)">
+    <path d="M 10 8 L 31 24 L 10 40" fill="none" stroke="#000000" stroke-width="4.5" stroke-linecap="butt" stroke-linejoin="round"/>
+    <circle cx="10" cy="8" r="5" fill="#000000"/>
+    <circle cx="31" cy="24" r="6.5" fill="#000000"/>
+    <circle cx="10" cy="40" r="5" fill="#000000"/>
+    <text x="50" y="32" font-family="'JetBrains Mono', monospace" font-size="30" font-weight="800" fill="#000000" letter-spacing="-0.5">cp-ps<tspan fill="#000000">/toolkit</tspan></text>
+    <text x="51.5" y="58" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600" fill="#000000" letter-spacing="0.5">$ npx cp-ps-toolkit</text>
+  </g>
+</svg>
