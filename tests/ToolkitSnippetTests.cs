@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text.Json;
 using Xunit;
@@ -82,6 +83,45 @@ public class ToolkitSnippetTests
                 process.ExitCode == 0,
                 $"C++ compilation failed in {Path.GetRelativePath(root, file)}:\n{error}"
             );
+        }
+    }
+
+    /// <summary>
+    /// Verifies that C# and PowerShell generators produce identical snippet output.
+    /// </summary>
+    [Theory]
+    [InlineData("cs")]
+    [InlineData("cpp")]
+    public void GeneratorsProduceIdenticalSnippets(string lang)
+    {
+        string root = GetToolkitRoot();
+        string temp = Path.Combine(Path.GetTempPath(), $"parity_{lang}_{Guid.NewGuid():N}");
+        string csOut = Path.Combine(temp, "cs");
+        string psOut = Path.Combine(temp, "ps");
+
+        try
+        {
+            Process.Start("dotnet", $"run --project \"{root}/tools/generators/csharp\" -- --lang {lang} --output \"{csOut}\"")!.WaitForExit();
+            string ps = OperatingSystem.IsWindows() ? "powershell" : "pwsh";
+            Process.Start(ps, $"-File \"{root}/tools/generators/powershell/generate-snippets.ps1\" -Lang {lang} -OutputDir \"{psOut}\"")!.WaitForExit();
+
+            var csDoc = JsonDocument.Parse(File.ReadAllText(Directory.GetFiles(csOut, "*.code-snippets")[0])).RootElement;
+            var psDoc = JsonDocument.Parse(File.ReadAllText(Directory.GetFiles(psOut, "*.code-snippets")[0])).RootElement;
+
+            var csKeys = csDoc.EnumerateObject().Select(p => p.Name).OrderBy(x => x);
+            var psKeys = psDoc.EnumerateObject().Select(p => p.Name).OrderBy(x => x);
+            Assert.Equal(csKeys, psKeys);
+
+            foreach (var prop in csDoc.EnumerateObject())
+            {
+                var csBody = string.Join("\n", prop.Value.GetProperty("body").EnumerateArray());
+                var psBody = string.Join("\n", psDoc.GetProperty(prop.Name).GetProperty("body").EnumerateArray());
+                Assert.Equal(csBody.Replace("\r", ""), psBody.Replace("\r", ""));
+            }
+        }
+        finally
+        {
+            if (Directory.Exists(temp)) Directory.Delete(temp, true);
         }
     }
 
