@@ -1,6 +1,6 @@
 {
   "name": "cp-ps-toolkit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "growing collection of competitive programming tips, tricks, and reusable templates, with tools and shortcuts ready for editor, browser, and CLI.",
   "main": "cli.js",
   "bin": {
