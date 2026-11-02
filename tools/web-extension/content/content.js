@@ -30,6 +30,7 @@
   const DRAG_THRESHOLD_PX = 4;
   const TAB_MIN_PCT = 5;
   const TAB_MAX_PCT = 95;
+  const PANEL_TRANSITION_MS = 260;
 
 
   function checkDomainMatch(enabledDomains) {
@@ -105,6 +106,7 @@
   let isHoveringFlyoutCard = false;
   let flyoutHideTimer = null;
   let searchDebounceTimer = null;
+  let panelOpeningTimer = null;
 
   let isDraggingTab = false;
   let hasDraggedTab = false;
@@ -299,22 +301,25 @@
 
       triggerEl.classList.add('tab-hidden');
       overlayEl.classList.add('open');
-      panelEl.classList.add('open');
+      panelEl.classList.add('open', 'is-opening');
+
+      clearTimeout(panelOpeningTimer);
+      panelOpeningTimer = setTimeout(() => {
+        if (panelEl) {
+          panelEl.classList.remove('is-opening');
+        }
+      }, PANEL_TRANSITION_MS);
       setTimeout(() => {
         if (isOpen && searchInput) {
           searchInput.focus();
           searchInput.select();
         }
       }, SEARCH_FOCUS_DELAY_MS);
-
-      if (filteredList.length > 0 && listViewport) {
-        const firstRow = listViewport.querySelector('.panel-item-row');
-        showFlyout(filteredList[highlightedIndex] || filteredList[0], firstRow);
-      }
     } else {
       triggerEl.classList.remove('tab-hidden');
       overlayEl.classList.remove('open');
-      panelEl.classList.remove('open');
+      panelEl.classList.remove('open', 'is-opening');
+      clearTimeout(panelOpeningTimer);
       clearTimeout(flyoutHideTimer);
       clearTimeout(searchDebounceTimer);
       isHoveringFlyoutCard = false;
@@ -435,6 +440,12 @@
       row.className = 'panel-item-row' + (idx === highlightedIndex ? ' selected' : '');
       row.dataset.index = String(idx);
 
+      const previewBtn = document.createElement('span');
+      previewBtn.className = 'panel-item-preview-btn';
+      previewBtn.title = 'Preview snippet';
+      previewBtn.textContent = '>_';
+      row.appendChild(previewBtn);
+
       const nameSpan = document.createElement('span');
       nameSpan.className = 'panel-item-name';
       nameSpan.textContent = item.name;
@@ -456,21 +467,43 @@
     if (!listViewport) return;
 
     listViewport.addEventListener('mouseover', e => {
-      if (!isOpen) return;
+      if (!isOpen || (panelEl && panelEl.classList.contains('is-opening'))) return;
       const row = e.target.closest('.panel-item-row');
       if (!row) return;
-      if (e.relatedTarget && row.contains(e.relatedTarget)) return;
 
-      clearTimeout(flyoutHideTimer);
+      const previewBtn = e.target.closest('.panel-item-preview-btn');
+      if (previewBtn) {
+        clearTimeout(flyoutHideTimer);
+        const idx = Number(row.dataset.index);
+        if (!Number.isNaN(idx) && filteredList[idx]) {
+          highlightedIndex = idx;
+          updateSelectedRow();
+          showFlyout(filteredList[idx], row);
+        }
+        return;
+      }
+
+      if (e.relatedTarget && row.contains(e.relatedTarget)) return;
       const idx = Number(row.dataset.index);
-      if (!Number.isNaN(idx) && filteredList[idx]) {
+      if (!Number.isNaN(idx)) {
         highlightedIndex = idx;
         updateSelectedRow();
-        showFlyout(filteredList[idx], row);
       }
     });
 
     listViewport.addEventListener('mouseout', e => {
+      const previewBtn = e.target.closest('.panel-item-preview-btn');
+      if (previewBtn) {
+        if (e.relatedTarget && previewBtn.contains(e.relatedTarget)) return;
+        clearTimeout(flyoutHideTimer);
+        flyoutHideTimer = setTimeout(() => {
+          if (!isHoveringFlyoutCard) {
+            hideFlyoutCard();
+          }
+        }, FLYOUT_HIDE_DELAY_MS);
+        return;
+      }
+
       const row = e.target.closest('.panel-item-row');
       if (!row) return;
       if (e.relatedTarget && row.contains(e.relatedTarget)) return;
@@ -786,6 +819,10 @@
     isPanelAttached = false;
     isDraggingTab = false;
     hasDraggedTab = false;
+    if (panelOpeningTimer !== null) {
+      clearTimeout(panelOpeningTimer);
+      panelOpeningTimer = null;
+    }
     if (dragRafId !== null) {
       cancelAnimationFrame(dragRafId);
       dragRafId = null;

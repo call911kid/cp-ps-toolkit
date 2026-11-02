@@ -21,7 +21,10 @@ body {
 }
 
 .mono-header {
-  padding: 9px 12px;
+  height: 40px;
+  min-height: 40px;
+  box-sizing: border-box;
+  padding: 0 12px;
   border-bottom: 1px solid #1f2029;
   background-color: #0d0e14;
   display: flex;
@@ -56,6 +59,7 @@ body {
   align-items: center;
   gap: 5px;
   flex-shrink: 0;
+  height: 22px;
 }
 
 .mono-btn {
@@ -63,8 +67,14 @@ body {
   border: 1px solid #2a2c3a;
   color: #d4d4d8;
   font-size: 10.5px;
+  line-height: 14px;
   font-family: inherit;
-  padding: 3px 8px;
+  padding: 0 8px;
+  height: 22px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.15s ease;
@@ -93,83 +103,66 @@ body {
   color: #fb923c;
 }
 
-.sync-git-bar {
-  background-color: #0d0f17;
-  border-bottom: 1px solid #1c2233;
-  padding: 5px 12px;
-  display: flex;
+.mono-btn.icon-btn {
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  font-size: 9.5px;
-  color: #94a3b8;
-  flex-shrink: 0;
-  animation: ribbonSlide 0.2s ease-out;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
 }
 
-.sync-git-bar.hidden,
-.sync-git-bar.view-hidden {
-  display: none !important;
+.mono-btn .sync-icon {
+  display: block;
+  transition: transform 0.2s ease, stroke 0.2s ease;
+  color: #a1a1aa;
 }
 
-.sync-git-left {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+.mono-btn.icon-btn:hover .sync-icon {
+  color: #ffffff;
 }
 
-.sync-git-prompt {
-  color: #ea580c;
-  font-weight: 700;
+.mono-btn.has-updates {
+  border-color: #ea580c;
 }
 
-.sync-git-branch {
-  color: #e2e8f0;
-  font-weight: 600;
-}
-
-.sync-git-diff {
+.mono-btn.has-updates .sync-icon {
   color: #fb923c;
 }
 
-.sync-git-sha {
-  color: #94a3b8;
-  font-size: 9px;
-}
-
-.sync-git-btn {
-  background-color: transparent;
-  border: 1px solid #334155;
-  color: #f1f5f9;
-  font-family: inherit;
-  font-size: 9.5px;
-  font-weight: 600;
-  padding: 2px 7px;
-  border-radius: 2px;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: all 0.15s ease;
-  flex-shrink: 0;
-}
-
-.sync-git-btn:hover {
-  border-color: #ea580c;
+.mono-btn.syncing .sync-icon {
+  animation: syncSpin 0.75s linear infinite;
   color: #ea580c;
-  background-color: rgba(234, 88, 12, 0.08);
 }
 
-.sync-git-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  border-color: #334155;
+.mono-btn.sync-success .sync-icon {
+  color: #22c55e;
 }
 
-@keyframes ribbonSlide {
-  from { opacity: 0; transform: translateY(-4px); }
-  to { opacity: 1; transform: translateY(0); }
+.mono-btn.sync-error .sync-icon {
+  color: #ef4444;
+}
+
+.mono-btn .sync-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #ea580c;
+  border: 1px solid #0d0e14;
+}
+
+.mono-btn .sync-badge.hidden {
+  display: none !important;
+}
+
+@keyframes syncSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .popup-body {
@@ -621,4 +614,69 @@ body {
 
 .footer-link:hover {
   color: #ea580c;
+}
+
+
+.toast-notice {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  right: 10px;
+  padding: 6px 10px;
+  background-color: #0d0e14;
+  border: 1px solid #27272a;
+  border-radius: 4px;
+  color: #e5e5e5;
+  font-size: 10px;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.toast-notice.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.toast-notice.toast-success {
+  border-color: #ea580c;
+}
+
+.toast-notice.toast-error {
+  border-color: #ef4444;
+  color: #fca5a5;
+}
+
+.toast-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.toast-dot.success {
+  background-color: #ea580c;
+  box-shadow: 0 0 4px #ea580c;
+}
+
+.toast-dot.info {
+  background-color: #38bdf8;
+}
+
+.toast-dot.error {
+  background-color: #ef4444;
+}
+
+.toast-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

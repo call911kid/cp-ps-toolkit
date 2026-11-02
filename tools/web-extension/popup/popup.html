@@ -21,19 +21,17 @@
     </div>
 
     <div class="mono-actions" id="snippets-header-actions">
+      <button id="sync-btn" class="mono-btn icon-btn" title="Sync latest snippets from GitHub" aria-label="Sync snippets">
+        <svg class="sync-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 4 23 10 17 10"></polyline>
+          <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+        </svg>
+        <span id="sync-badge" class="sync-badge hidden"></span>
+      </button>
       <button id="import-btn" class="mono-btn highlight" title="Import custom snippet file (.json or .code-snippets)">+ import</button>
     </div>
     <input type="file" id="import-file-input" accept=".json,.code-snippets" style="display: none;">
   </header>
-
-  <div id="sync-ribbon" class="sync-git-bar hidden">
-    <div class="sync-git-left">
-      <span class="sync-git-prompt">&gt;</span>
-      <span class="sync-git-branch">main</span> behind <span id="sync-git-diff" class="sync-git-diff">updates available</span>
-      <span id="sync-git-sha" class="sync-git-sha"></span>
-    </div>
-    <button id="sync-btn" class="sync-git-btn" title="Sync latest snippets from GitHub">~ sync</button>
-  </div>
 
   <div class="popup-body">
     <nav class="icon-rail" role="tablist" aria-label="Main Navigation">
@@ -61,11 +59,6 @@
 
     <main class="rail-views">
       <section class="view-pane" id="view-snippets" role="tabpanel" aria-labelledby="rail-btn-snippets">
-        <div class="mono-row-header">
-          <span class="col-file">COLLECTION / FILE</span>
-          <span class="col-source">SOURCE</span>
-          <span class="col-action"></span>
-        </div>
 
         <div id="collections-list" class="mono-list"></div>
       </section>
@@ -77,7 +70,7 @@
               <circle cx="11" cy="11" r="8"/>
               <line x1="21" y1="21" x2="16.65" y2="16.65"/>
             </svg>
-            <input type="text" id="add-website-input" class="website-search-input" placeholder="Add domain (e.g. dmoj.ca)..." spellcheck="false">
+            <input type="text" id="add-website-input" class="website-search-input" placeholder="Add domain (e.g. codeforces.com)..." spellcheck="false">
           </div>
         </div>
 
@@ -98,10 +91,6 @@
             <span class="about-val"><code>Alt + C</code> (Toggle side panel)</span>
           </div>
           <div class="about-section">
-            <span class="about-label">STORAGE</span>
-            <span class="about-val">Synced in <code>chrome.storage.local</code></span>
-          </div>
-          <div class="about-section">
             <span class="about-label">SOURCE CODE</span>
             <span class="about-val"><a href="https://github.com/call911kid/cp-ps-toolkit" target="_blank" rel="noopener noreferrer" class="footer-link">github.com/call911kid/cp-ps-toolkit</a></span>
           </div>
@@ -114,6 +103,7 @@
     <a href="https://github.com/call911kid/cp-ps-toolkit" target="_blank" rel="noopener noreferrer" class="footer-link">github.com/call911kid/cp-ps-toolkit</a>
   </footer>
 
+    <div id="toast" class="toast-notice" aria-live="polite"></div>
   <script src="popup.js"></script>
 </body>
 </html>
