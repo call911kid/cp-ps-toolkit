@@ -1,68 +1,4 @@
 ﻿{
-  "sbit": {
-    "scope": "cpp",
-    "prefix": [
-      "cpsbit",
-      "cp_sbit",
-      "sbit",
-      "SetBit"
-    ],
-    "body": [
-      "long long SetBit(long long n, int index, bool value = true)",
-      "{",
-      "    return value ? (n | (1LL << index)) : (n & ~(1LL << index));",
-      "}"
-    ],
-    "description": "Sets the bit at the given 0-based index to 1 (default), or to 0 if value is false."
-  },
-  "popc": {
-    "scope": "cpp",
-    "prefix": [
-      "cppopc",
-      "cp_popc",
-      "popc",
-      "CountSetBits"
-    ],
-    "body": [
-      "int CountSetBits(long long n)",
-      "{",
-      "    return popcount((unsigned long long)n);",
-      "}"
-    ],
-    "description": "Counts the total number of set bits (popcount)."
-  },
-  "isp2": {
-    "scope": "cpp",
-    "prefix": [
-      "cpisp2",
-      "cp_isp2",
-      "isp2",
-      "IsPowerOfTwo"
-    ],
-    "body": [
-      "bool IsPowerOfTwo(long long n)",
-      "{",
-      "    return n > 0 && has_single_bit((unsigned long long)n);",
-      "}"
-    ],
-    "description": "Checks whether n is a positive power of two (n > 0 and (n & (n - 1)) == 0)."
-  },
-  "clsb": {
-    "scope": "cpp",
-    "prefix": [
-      "cpclsb",
-      "cp_clsb",
-      "clsb",
-      "ClearLowestSetBit"
-    ],
-    "body": [
-      "long long ClearLowestSetBit(long long n)",
-      "{",
-      "    return n & (n - 1LL);",
-      "}"
-    ],
-    "description": "Clears the lowest set bit (LSB) of n (n & (n - 1))."
-  },
   "msbi": {
     "scope": "cpp",
     "prefix": [
@@ -104,38 +40,6 @@
     ],
     "description": "Reconstructs a sorted string of lowercase English letters from a 26-bit integer mask."
   },
-  "lsbi": {
-    "scope": "cpp",
-    "prefix": [
-      "cplsbi",
-      "cp_lsbi",
-      "lsbi",
-      "GetLowestSetBitIndex"
-    ],
-    "body": [
-      "int GetLowestSetBitIndex(long long n)",
-      "{",
-      "    return n == 0 ? -1 : countr_zero((unsigned long long)n);",
-      "}"
-    ],
-    "description": "Returns the 0-based index of the lowest set bit, or -1 if n is 0."
-  },
-  "parity": {
-    "scope": "cpp",
-    "prefix": [
-      "cpparity",
-      "cp_parity",
-      "parity",
-      "HasOddParity"
-    ],
-    "body": [
-      "bool HasOddParity(long long n)",
-      "{",
-      "    return (popcount((unsigned long long)n) & 1) == 1;",
-      "}"
-    ],
-    "description": "Checks whether the count of set bits in n is odd."
-  },
   "nextp": {
     "scope": "cpp",
     "prefix": [
@@ -155,21 +59,53 @@
     ],
     "description": "Returns the lexicographically next integer with the same number of set bits in O(1)."
   },
-  "cbit": {
+  "isbit": {
     "scope": "cpp",
     "prefix": [
-      "cpcbit",
-      "cp_cbit",
-      "cbit",
-      "ClearBit"
+      "cpisbit",
+      "cp_isbit",
+      "isbit",
+      "IsBitSet"
     ],
     "body": [
-      "long long ClearBit(long long n, int index)",
+      "bool IsBitSet(long long n, int index)",
       "{",
-      "    return n & ~(1LL << index);",
+      "    return ((n >> index) & 1LL) == 1LL;",
       "}"
     ],
-    "description": "Clears the bit at the given 0-based index to 0."
+    "description": "Checks if the bit at the given 0-based index is set to 1."
+  },
+  "isp2": {
+    "scope": "cpp",
+    "prefix": [
+      "cpisp2",
+      "cp_isp2",
+      "isp2",
+      "IsPowerOfTwo"
+    ],
+    "body": [
+      "bool IsPowerOfTwo(long long n)",
+      "{",
+      "    return n > 0 && has_single_bit((unsigned long long)n);",
+      "}"
+    ],
+    "description": "Checks whether n is a positive power of two (n > 0 and (n & (n - 1)) == 0)."
+  },
+  "popc": {
+    "scope": "cpp",
+    "prefix": [
+      "cppopc",
+      "cp_popc",
+      "popc",
+      "CountSetBits"
+    ],
+    "body": [
+      "int CountSetBits(long long n)",
+      "{",
+      "    return popcount((unsigned long long)n);",
+      "}"
+    ],
+    "description": "Counts the total number of set bits (popcount)."
   },
   "tbit": {
     "scope": "cpp",
@@ -187,37 +123,74 @@
     ],
     "description": "Inverts (flips) the bit at the given 0-based index."
   },
-  "lsb": {
+  "parity": {
     "scope": "cpp",
     "prefix": [
-      "cplsb",
-      "cp_lsb",
-      "lsb",
-      "GetLowestSetBit"
+      "cpparity",
+      "cp_parity",
+      "parity",
+      "HasOddParity"
     ],
     "body": [
-      "long long GetLowestSetBit(long long n)",
+      "bool HasOddParity(long long n)",
       "{",
-      "    return n & -n;",
+      "    return (popcount((unsigned long long)n) & 1) == 1;",
       "}"
     ],
-    "description": "Isolates the lowest set bit (LSB) value via two's complement (n & -n)."
+    "description": "Checks whether the count of set bits in n is odd."
   },
-  "isbit": {
+  "rbit": {
     "scope": "cpp",
     "prefix": [
-      "cpisbit",
-      "cp_isbit",
-      "isbit",
-      "IsBitSet"
+      "cprbit",
+      "cp_rbit",
+      "rbit",
+      "ReverseBits"
     ],
     "body": [
-      "bool IsBitSet(long long n, int index)",
+      "long long ReverseBits(long long n, int bitCount)",
       "{",
-      "    return ((n >> index) & 1LL) == 1LL;",
+      "    long long rev = 0;",
+      "    for (int i = 0; i < bitCount; ++i)",
+      "    {",
+      "        rev = (rev << 1) | ((n >> i) & 1LL);",
+      "    }",
+      "    return rev;",
       "}"
     ],
-    "description": "Checks if the bit at the given 0-based index is set to 1."
+    "description": "Reverses the lowest bitCount bits of n."
+  },
+  "sbit": {
+    "scope": "cpp",
+    "prefix": [
+      "cpsbit",
+      "cp_sbit",
+      "sbit",
+      "SetBit"
+    ],
+    "body": [
+      "long long SetBit(long long n, int index, bool value = true)",
+      "{",
+      "    return value ? (n | (1LL << index)) : (n & ~(1LL << index));",
+      "}"
+    ],
+    "description": "Sets the bit at the given 0-based index to 1 (default), or to 0 if value is false."
+  },
+  "clsb": {
+    "scope": "cpp",
+    "prefix": [
+      "cpclsb",
+      "cp_clsb",
+      "clsb",
+      "ClearLowestSetBit"
+    ],
+    "body": [
+      "long long ClearLowestSetBit(long long n)",
+      "{",
+      "    return n & (n - 1LL);",
+      "}"
+    ],
+    "description": "Clears the lowest set bit (LSB) of n (n & (n - 1))."
   },
   "s2m": {
     "scope": "cpp",
@@ -240,26 +213,53 @@
     ],
     "description": "Converts a string of lowercase English letters ('a'-'z') into a 26-bit integer mask."
   },
-  "rbit": {
+  "lsbi": {
     "scope": "cpp",
     "prefix": [
-      "cprbit",
-      "cp_rbit",
-      "rbit",
-      "ReverseBits"
+      "cplsbi",
+      "cp_lsbi",
+      "lsbi",
+      "GetLowestSetBitIndex"
     ],
     "body": [
-      "long long ReverseBits(long long n, int bitCount)",
+      "int GetLowestSetBitIndex(long long n)",
       "{",
-      "    long long rev = 0;",
-      "    for (int i = 0; i < bitCount; ++i)",
-      "    {",
-      "        rev = (rev << 1) | ((n >> i) & 1LL);",
-      "    }",
-      "    return rev;",
+      "    return n == 0 ? -1 : countr_zero((unsigned long long)n);",
       "}"
     ],
-    "description": "Reverses the lowest bitCount bits of n."
+    "description": "Returns the 0-based index of the lowest set bit, or -1 if n is 0."
+  },
+  "lsb": {
+    "scope": "cpp",
+    "prefix": [
+      "cplsb",
+      "cp_lsb",
+      "lsb",
+      "GetLowestSetBit"
+    ],
+    "body": [
+      "long long GetLowestSetBit(long long n)",
+      "{",
+      "    return n & -n;",
+      "}"
+    ],
+    "description": "Isolates the lowest set bit (LSB) value via two's complement (n & -n)."
+  },
+  "cbit": {
+    "scope": "cpp",
+    "prefix": [
+      "cpcbit",
+      "cp_cbit",
+      "cbit",
+      "ClearBit"
+    ],
+    "body": [
+      "long long ClearBit(long long n, int index)",
+      "{",
+      "    return n & ~(1LL << index);",
+      "}"
+    ],
+    "description": "Clears the bit at the given 0-based index to 0."
   },
   "fastio": {
     "scope": "cpp",
