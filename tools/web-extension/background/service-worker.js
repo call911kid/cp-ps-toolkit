@@ -158,13 +158,17 @@ async function syncSnippetsFromGitHub() {
 
   const stored = await chrome.storage.local.get([
     STORAGE_KEYS.COLLECTIONS_META,
-    STORAGE_KEYS.CACHED_REMOTE_SHA
+    STORAGE_KEYS.CACHED_REMOTE_SHA,
+    STORAGE_KEYS.LAST_SYNCED_SHA
   ]);
 
   const existing = Array.isArray(stored[STORAGE_KEYS.COLLECTIONS_META])
     ? stored[STORAGE_KEYS.COLLECTIONS_META]
     : [];
   const localCollections = existing.filter(c => c.isCustom);
+
+  const hadUpdates = !stored[STORAGE_KEYS.LAST_SYNCED_SHA] ||
+    (Boolean(stored[STORAGE_KEYS.CACHED_REMOTE_SHA]) && stored[STORAGE_KEYS.CACHED_REMOTE_SHA] !== stored[STORAGE_KEYS.LAST_SYNCED_SHA]);
 
   storageUpdate[STORAGE_KEYS.COLLECTIONS_META] = [...newGithubCollections, ...localCollections];
   storageUpdate[STORAGE_KEYS.LAST_SYNC] = new Date().toISOString();
@@ -176,7 +180,8 @@ async function syncSnippetsFromGitHub() {
 
   return {
     success: true,
-    count: newGithubCollections.length
+    count: newGithubCollections.length,
+    hadUpdates
   };
 }
 
