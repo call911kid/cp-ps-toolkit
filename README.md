@@ -5,7 +5,6 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/call911kid/cp-ps-toolkit/actions"><img src="https://img.shields.io/github/actions/workflow/status/call911kid/cp-ps-toolkit/ci.yml?branch=main&label=ci&style=flat-square" alt="CI"></a>
   <a href="https://github.com/call911kid/cp-ps-toolkit/releases"><img src="https://img.shields.io/badge/releases-2-ea580c?style=flat-square" alt="Releases"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/call911kid/cp-ps-toolkit?style=flat-square&color=ea580c" alt="License"></a>
   <a href="https://www.npmjs.com/package/cp-ps-toolkit"><img src="https://img.shields.io/npm/v/cp-ps-toolkit?style=flat-square&color=ea580c" alt="npm package"></a>
@@ -22,8 +21,6 @@ After 3 years of C++, I switched to C# and wanted a toolkit that follows my work
 
 When solving problems, I constantly jump between my local editor and online judges. This toolkit keeps my templates, data structures, and past contest notes ready in both places, so I can focus on the problem itself instead of digging through old submissions, rewriting code under time pressure, or falling into the same traps.
 
-This repository also archives 30+ original problems I wrote as a problem setter for ACPC, marathons, and CodeChef.
-
 ## In Your Editor (VS Code, Visual Studio, Rider)
 
 > Native snippets and auto-expanding templates with automatic dependency resolution.
@@ -32,6 +29,8 @@ This repository also archives 30+ original problems I wrote as a problem setter 
 - **Automatic dependencies**: If an algorithm needs helper code (like GCD or modular inverse), the snippet brings it in automatically.
 - **Supported editors**: Currently supports **VS Code** (`.code-snippets`), **Visual Studio** (`.snippet`), and **JetBrains Rider** (`.xml` live templates).
 - **Included templates**: My own C# and C++ implementations of algorithms and data structures I use in contests.
+
+![CP PS Toolkit Snippet Expansion in VS Code](.github/assets/editor-preview.gif)
 
 ### Install Snippets
 
